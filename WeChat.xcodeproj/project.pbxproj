@@ -1,0 +1,850 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		33E27A7418E2670CBE8AA6C9 /* Pods_WeChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FF820A0F8297C78F9A0254 /* Pods_WeChat.framework */; };
+		4F100B2F289A70BC0041C11F /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F100B2E289A70BC0041C11F /* PhotoPicker.swift */; };
+		4F2B188028858BC9007BCB85 /* MomentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B187F28858BC9007BCB85 /* MomentScreen.swift */; };
+		4F2B188228858C37007BCB85 /* ChatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B188128858C37007BCB85 /* ChatScreen.swift */; };
+		4F2B188428858C4C007BCB85 /* ContactsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B188328858C4C007BCB85 /* ContactsScreen.swift */; };
+		4F2B188628858C5F007BCB85 /* MeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B188528858C5F007BCB85 /* MeScreen.swift */; };
+		4F2B188828858C6D007BCB85 /* SettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B188728858C6D007BCB85 /* SettingScreen.swift */; };
+		4F2B189B288598CE007BCB85 /* YorkieDEMO-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F2B188B288598CE007BCB85 /* YorkieDEMO-BoldItalic.otf */; };
+		4F2B189C288598CE007BCB85 /* YorkieDEMO-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F2B188C288598CE007BCB85 /* YorkieDEMO-ExtraLight.otf */; };
+		4F2B189D288598CE007BCB85 /* YorkieDEMO-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F2B188D288598CE007BCB85 /* YorkieDEMO-ThinItalic.otf */; };
+		4F2B189E288598CE007BCB85 /* YorkieDEMO-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F2B188E288598CE007BCB85 /* YorkieDEMO-Regular.otf */; };
+		4F2B189F288598CE007BCB85 /* YorkieDEMO-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F2B188F288598CE007BCB85 /* YorkieDEMO-LightItalic.otf */; };
+		4F2B18A0288598CE007BCB85 /* YorkieDEMO-SemiBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F2B1890288598CE007BCB85 /* YorkieDEMO-SemiBoldItalic.otf */; };
+		4F2B18A1288598CE007BCB85 /* YorkieDEMO-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F2B1891288598CE007BCB85 /* YorkieDEMO-SemiBold.otf */; };
+		4F2B18A2288598CE007BCB85 /* YorkieDEMO-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F2B1892288598CE007BCB85 /* YorkieDEMO-MediumItalic.otf */; };
+		4F2B18A3288598CE007BCB85 /* YorkieDEMO-ExtraLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F2B1893288598CE007BCB85 /* YorkieDEMO-ExtraLightItalic.otf */; };
+		4F2B18A4288598CE007BCB85 /* YorkieDEMO-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F2B1894288598CE007BCB85 /* YorkieDEMO-Italic.otf */; };
+		4F2B18A5288598CE007BCB85 /* YorkieDEMO-ExtraBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F2B1895288598CE007BCB85 /* YorkieDEMO-ExtraBoldItalic.otf */; };
+		4F2B18A6288598CE007BCB85 /* YorkieDEMO-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F2B1896288598CE007BCB85 /* YorkieDEMO-Light.otf */; };
+		4F2B18A7288598CE007BCB85 /* YorkieDEMO-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F2B1897288598CE007BCB85 /* YorkieDEMO-Medium.otf */; };
+		4F2B18A8288598CE007BCB85 /* YorkieDEMO-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F2B1898288598CE007BCB85 /* YorkieDEMO-Bold.otf */; };
+		4F2B18A9288598CE007BCB85 /* YorkieDEMO-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F2B1899288598CE007BCB85 /* YorkieDEMO-ExtraBold.otf */; };
+		4F2B18AA288598CE007BCB85 /* YorkieDEMO-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F2B189A288598CE007BCB85 /* YorkieDEMO-Thin.otf */; };
+		4F2B18B028859D86007BCB85 /* MomentVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B18AF28859D86007BCB85 /* MomentVO.swift */; };
+		4F2B18B328859ED8007BCB85 /* moments.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F2B18B228859ED8007BCB85 /* moments.json */; };
+		4F2B18B62885A448007BCB85 /* MomentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B18B52885A448007BCB85 /* MomentViewModel.swift */; };
+		4F2B18B82885A45F007BCB85 /* MockDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B18B72885A45F007BCB85 /* MockDataViewModel.swift */; };
+		4F2B18BA2885A535007BCB85 /* MomentItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B18B92885A535007BCB85 /* MomentItemView.swift */; };
+		4F2B18BC288657E9007BCB85 /* AddNewMomentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B18BB288657E9007BCB85 /* AddNewMomentScreen.swift */; };
+		4F2B18C228867517007BCB85 /* WCViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B18C128867517007BCB85 /* WCViewModifiers.swift */; };
+		4F2B18C4288687AB007BCB85 /* ChatHeadItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B18C3288687AB007BCB85 /* ChatHeadItemView.swift */; };
+		4F2B18C6288696A9007BCB85 /* ChatItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B18C5288696A9007BCB85 /* ChatItemView.swift */; };
+		4F2D1B76288D83D600F06083 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2D1B75288D83D600F06083 /* AudioManager.swift */; };
+		4F2D1B78288D86E500F06083 /* UserVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2D1B77288D86E500F06083 /* UserVO.swift */; };
+		4F2D1B7A288D8A9C00F06083 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F2D1B79288D8A9C00F06083 /* users.json */; };
+		4F2D1B7C288D8CE500F06083 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2D1B7B288D8CE500F06083 /* ContactsViewModel.swift */; };
+		4F2D1B7E288DA03000F06083 /* AddNewGroupScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2D1B7D288DA03000F06083 /* AddNewGroupScreen.swift */; };
+		4F33E26B2884F81800E15B12 /* WeChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F33E26A2884F81800E15B12 /* WeChatApp.swift */; };
+		4F33E26D2884F81800E15B12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F33E26C2884F81800E15B12 /* ContentView.swift */; };
+		4F33E26F2884F81900E15B12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F33E26E2884F81900E15B12 /* Assets.xcassets */; };
+		4F33E2722884F81900E15B12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F33E2712884F81900E15B12 /* Preview Assets.xcassets */; };
+		4F33E27A2885000600E15B12 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F33E2792885000600E15B12 /* SplashScreen.swift */; };
+		4F33E27F288521D500E15B12 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F33E27E288521D500E15B12 /* LoginScreen.swift */; };
+		4F33E2822885225400E15B12 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F33E2812885225400E15B12 /* Colors.swift */; };
+		4F33E2842885277300E15B12 /* VIewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F33E2832885277300E15B12 /* VIewExtensions.swift */; };
+		4F33E28A28853D5D00E15B12 /* OTPScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F33E28928853D5D00E15B12 /* OTPScreen.swift */; };
+		4F33E28C28854B6E00E15B12 /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F33E28B28854B6E00E15B12 /* RegisterScreen.swift */; };
+		4F33E28E288558C500E15B12 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F33E28D288558C500E15B12 /* CheckBoxView.swift */; };
+		4F3D47A1289E4485000155EE /* MessageActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D47A0289E4485000155EE /* MessageActionView.swift */; };
+		4F3D47A3289E44C5000155EE /* ChatImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D47A2289E44C5000155EE /* ChatImagePicker.swift */; };
+		4F3D47A5289E4519000155EE /* LoadedImageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D47A4289E4519000155EE /* LoadedImageItemView.swift */; };
+		4F3D47A8289E466B000155EE /* SearchContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D47A7289E466B000155EE /* SearchContactView.swift */; };
+		4F3D47AA289E4697000155EE /* ContactGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D47A9289E4697000155EE /* ContactGroupView.swift */; };
+		4F3D47AC289E46D9000155EE /* ContactSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D47AB289E46D9000155EE /* ContactSectionView.swift */; };
+		4F3D47AE289E46F3000155EE /* ContactItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D47AD289E46F3000155EE /* ContactItemView.swift */; };
+		4F3D47B0289E4728000155EE /* SelectableContactSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D47AF289E4728000155EE /* SelectableContactSectionView.swift */; };
+		4F3D47B2289E4748000155EE /* SelectableContactItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D47B1289E4748000155EE /* SelectableContactItemView.swift */; };
+		4F3D47B6289E4826000155EE /* ScannerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D47B5289E4826000155EE /* ScannerPreview.swift */; };
+		4F5A3B322887E2D400110D82 /* ChatThreadScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5A3B312887E2D400110D82 /* ChatThreadScreen.swift */; };
+		4F5A3B3A288CE05500110D82 /* MessageVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5A3B39288CE05500110D82 /* MessageVO.swift */; };
+		4F5A3B3C288CE5AE00110D82 /* messages.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F5A3B3B288CE5AE00110D82 /* messages.json */; };
+		4F5A3B40288CEF6700110D82 /* MessageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5A3B3F288CEF6700110D82 /* MessageItemView.swift */; };
+		4F6120452887AACA00B56051 /* ContactGroupItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6120442887AACA00B56051 /* ContactGroupItemView.swift */; };
+		4F6120472887CC9F00B56051 /* AddNewContactScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6120462887CC9F00B56051 /* AddNewContactScreen.swift */; };
+		4F89DE4228952BB700B23008 /* DSWaveformImage in Frameworks */ = {isa = PBXBuildFile; productRef = 4F89DE4128952BB700B23008 /* DSWaveformImage */; };
+		4F89DE4428952BEE00B23008 /* WaveFormImageViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F89DE4328952BEE00B23008 /* WaveFormImageViewUI.swift */; };
+		4F89DE4628954CEC00B23008 /* MaterialTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F89DE4528954CEC00B23008 /* MaterialTextField.swift */; };
+		4F89DE4A28955CE400B23008 /* OTPInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F89DE4928955CE400B23008 /* OTPInputView.swift */; };
+		4F93335128963D33008A41F5 /* MomentImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F93335028963D33008A41F5 /* MomentImageGridView.swift */; };
+		4F93335328965274008A41F5 /* MomentImagePickingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F93335228965274008A41F5 /* MomentImagePickingView.swift */; };
+		4F9333B12898D879008A41F5 /* WCCameraScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9333B02898D879008A41F5 /* WCCameraScreen.swift */; };
+		4FAC6CDB288CFACB00EAA161 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 4FAC6CDA288CFACB00EAA161 /* CachedAsyncImage */; };
+		4FAC6CDF288D279900EAA161 /* VoiceMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC6CDE288D279900EAA161 /* VoiceMessageView.swift */; };
+		4FAC6CE1288D280B00EAA161 /* VoiceMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC6CE0288D280B00EAA161 /* VoiceMessageViewModel.swift */; };
+		4FAC6CE3288D338900EAA161 /* TextMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC6CE2288D338900EAA161 /* TextMessageView.swift */; };
+		4FAC6CE5288D37FF00EAA161 /* ImageMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC6CE4288D37FF00EAA161 /* ImageMessageView.swift */; };
+		4FCCA638289E53DC00C27DA2 /* SelectedMemberItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCCA637289E53DC00C27DA2 /* SelectedMemberItemView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		274AF923DA50B57D9626AD65 /* Pods-WeChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChat.release.xcconfig"; path = "Target Support Files/Pods-WeChat/Pods-WeChat.release.xcconfig"; sourceTree = "<group>"; };
+		4F100B2E289A70BC0041C11F /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		4F2B187F28858BC9007BCB85 /* MomentScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentScreen.swift; sourceTree = "<group>"; };
+		4F2B188128858C37007BCB85 /* ChatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreen.swift; sourceTree = "<group>"; };
+		4F2B188328858C4C007BCB85 /* ContactsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsScreen.swift; sourceTree = "<group>"; };
+		4F2B188528858C5F007BCB85 /* MeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeScreen.swift; sourceTree = "<group>"; };
+		4F2B188728858C6D007BCB85 /* SettingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreen.swift; sourceTree = "<group>"; };
+		4F2B188B288598CE007BCB85 /* YorkieDEMO-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YorkieDEMO-BoldItalic.otf"; sourceTree = "<group>"; };
+		4F2B188C288598CE007BCB85 /* YorkieDEMO-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YorkieDEMO-ExtraLight.otf"; sourceTree = "<group>"; };
+		4F2B188D288598CE007BCB85 /* YorkieDEMO-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YorkieDEMO-ThinItalic.otf"; sourceTree = "<group>"; };
+		4F2B188E288598CE007BCB85 /* YorkieDEMO-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YorkieDEMO-Regular.otf"; sourceTree = "<group>"; };
+		4F2B188F288598CE007BCB85 /* YorkieDEMO-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YorkieDEMO-LightItalic.otf"; sourceTree = "<group>"; };
+		4F2B1890288598CE007BCB85 /* YorkieDEMO-SemiBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YorkieDEMO-SemiBoldItalic.otf"; sourceTree = "<group>"; };
+		4F2B1891288598CE007BCB85 /* YorkieDEMO-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YorkieDEMO-SemiBold.otf"; sourceTree = "<group>"; };
+		4F2B1892288598CE007BCB85 /* YorkieDEMO-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YorkieDEMO-MediumItalic.otf"; sourceTree = "<group>"; };
+		4F2B1893288598CE007BCB85 /* YorkieDEMO-ExtraLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YorkieDEMO-ExtraLightItalic.otf"; sourceTree = "<group>"; };
+		4F2B1894288598CE007BCB85 /* YorkieDEMO-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YorkieDEMO-Italic.otf"; sourceTree = "<group>"; };
+		4F2B1895288598CE007BCB85 /* YorkieDEMO-ExtraBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YorkieDEMO-ExtraBoldItalic.otf"; sourceTree = "<group>"; };
+		4F2B1896288598CE007BCB85 /* YorkieDEMO-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YorkieDEMO-Light.otf"; sourceTree = "<group>"; };
+		4F2B1897288598CE007BCB85 /* YorkieDEMO-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YorkieDEMO-Medium.otf"; sourceTree = "<group>"; };
+		4F2B1898288598CE007BCB85 /* YorkieDEMO-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YorkieDEMO-Bold.otf"; sourceTree = "<group>"; };
+		4F2B1899288598CE007BCB85 /* YorkieDEMO-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YorkieDEMO-ExtraBold.otf"; sourceTree = "<group>"; };
+		4F2B189A288598CE007BCB85 /* YorkieDEMO-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YorkieDEMO-Thin.otf"; sourceTree = "<group>"; };
+		4F2B18AC2885991E007BCB85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4F2B18AF28859D86007BCB85 /* MomentVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentVO.swift; sourceTree = "<group>"; };
+		4F2B18B228859ED8007BCB85 /* moments.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = moments.json; sourceTree = "<group>"; };
+		4F2B18B52885A448007BCB85 /* MomentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentViewModel.swift; sourceTree = "<group>"; };
+		4F2B18B72885A45F007BCB85 /* MockDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataViewModel.swift; sourceTree = "<group>"; };
+		4F2B18B92885A535007BCB85 /* MomentItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentItemView.swift; sourceTree = "<group>"; };
+		4F2B18BB288657E9007BCB85 /* AddNewMomentScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewMomentScreen.swift; sourceTree = "<group>"; };
+		4F2B18C128867517007BCB85 /* WCViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCViewModifiers.swift; sourceTree = "<group>"; };
+		4F2B18C3288687AB007BCB85 /* ChatHeadItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHeadItemView.swift; sourceTree = "<group>"; };
+		4F2B18C5288696A9007BCB85 /* ChatItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatItemView.swift; sourceTree = "<group>"; };
+		4F2D1B75288D83D600F06083 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		4F2D1B77288D86E500F06083 /* UserVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVO.swift; sourceTree = "<group>"; };
+		4F2D1B79288D8A9C00F06083 /* users.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
+		4F2D1B7B288D8CE500F06083 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
+		4F2D1B7D288DA03000F06083 /* AddNewGroupScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewGroupScreen.swift; sourceTree = "<group>"; };
+		4F33E2672884F81800E15B12 /* WeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F33E26A2884F81800E15B12 /* WeChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeChatApp.swift; sourceTree = "<group>"; };
+		4F33E26C2884F81800E15B12 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4F33E26E2884F81900E15B12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4F33E2712884F81900E15B12 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4F33E2792885000600E15B12 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		4F33E27E288521D500E15B12 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		4F33E2812885225400E15B12 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		4F33E2832885277300E15B12 /* VIewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIewExtensions.swift; sourceTree = "<group>"; };
+		4F33E28928853D5D00E15B12 /* OTPScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPScreen.swift; sourceTree = "<group>"; };
+		4F33E28B28854B6E00E15B12 /* RegisterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
+		4F33E28D288558C500E15B12 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
+		4F3D47A0289E4485000155EE /* MessageActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageActionView.swift; sourceTree = "<group>"; };
+		4F3D47A2289E44C5000155EE /* ChatImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatImagePicker.swift; sourceTree = "<group>"; };
+		4F3D47A4289E4519000155EE /* LoadedImageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadedImageItemView.swift; sourceTree = "<group>"; };
+		4F3D47A7289E466B000155EE /* SearchContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchContactView.swift; sourceTree = "<group>"; };
+		4F3D47A9289E4697000155EE /* ContactGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactGroupView.swift; sourceTree = "<group>"; };
+		4F3D47AB289E46D9000155EE /* ContactSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSectionView.swift; sourceTree = "<group>"; };
+		4F3D47AD289E46F3000155EE /* ContactItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactItemView.swift; sourceTree = "<group>"; };
+		4F3D47AF289E4728000155EE /* SelectableContactSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableContactSectionView.swift; sourceTree = "<group>"; };
+		4F3D47B1289E4748000155EE /* SelectableContactItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableContactItemView.swift; sourceTree = "<group>"; };
+		4F3D47B5289E4826000155EE /* ScannerPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerPreview.swift; sourceTree = "<group>"; };
+		4F5A3B312887E2D400110D82 /* ChatThreadScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatThreadScreen.swift; sourceTree = "<group>"; };
+		4F5A3B39288CE05500110D82 /* MessageVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVO.swift; sourceTree = "<group>"; };
+		4F5A3B3B288CE5AE00110D82 /* messages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = messages.json; sourceTree = "<group>"; };
+		4F5A3B3F288CEF6700110D82 /* MessageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItemView.swift; sourceTree = "<group>"; };
+		4F6120442887AACA00B56051 /* ContactGroupItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactGroupItemView.swift; sourceTree = "<group>"; };
+		4F6120462887CC9F00B56051 /* AddNewContactScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewContactScreen.swift; sourceTree = "<group>"; };
+		4F89DE4328952BEE00B23008 /* WaveFormImageViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveFormImageViewUI.swift; sourceTree = "<group>"; };
+		4F89DE4528954CEC00B23008 /* MaterialTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialTextField.swift; sourceTree = "<group>"; };
+		4F89DE4928955CE400B23008 /* OTPInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPInputView.swift; sourceTree = "<group>"; };
+		4F93335028963D33008A41F5 /* MomentImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentImageGridView.swift; sourceTree = "<group>"; };
+		4F93335228965274008A41F5 /* MomentImagePickingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentImagePickingView.swift; sourceTree = "<group>"; };
+		4F9333B02898D879008A41F5 /* WCCameraScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCCameraScreen.swift; sourceTree = "<group>"; };
+		4FAC6CDE288D279900EAA161 /* VoiceMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMessageView.swift; sourceTree = "<group>"; };
+		4FAC6CE0288D280B00EAA161 /* VoiceMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMessageViewModel.swift; sourceTree = "<group>"; };
+		4FAC6CE2288D338900EAA161 /* TextMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMessageView.swift; sourceTree = "<group>"; };
+		4FAC6CE4288D37FF00EAA161 /* ImageMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMessageView.swift; sourceTree = "<group>"; };
+		4FCCA637289E53DC00C27DA2 /* SelectedMemberItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedMemberItemView.swift; sourceTree = "<group>"; };
+		96FF820A0F8297C78F9A0254 /* Pods_WeChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE59151C3CEE70DEE84E381C /* Pods-WeChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChat.debug.xcconfig"; path = "Target Support Files/Pods-WeChat/Pods-WeChat.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F33E2642884F81800E15B12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33E27A7418E2670CBE8AA6C9 /* Pods_WeChat.framework in Frameworks */,
+				4F89DE4228952BB700B23008 /* DSWaveformImage in Frameworks */,
+				4FAC6CDB288CFACB00EAA161 /* CachedAsyncImage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4F2B1889288598BE007BCB85 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4F2B18B128859E90007BCB85 /* MockJSON */,
+				4F2B18AB288598F3007BCB85 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4F2B188A288598CE007BCB85 /* yorkie */ = {
+			isa = PBXGroup;
+			children = (
+				4F2B188B288598CE007BCB85 /* YorkieDEMO-BoldItalic.otf */,
+				4F2B188C288598CE007BCB85 /* YorkieDEMO-ExtraLight.otf */,
+				4F2B188D288598CE007BCB85 /* YorkieDEMO-ThinItalic.otf */,
+				4F2B188E288598CE007BCB85 /* YorkieDEMO-Regular.otf */,
+				4F2B188F288598CE007BCB85 /* YorkieDEMO-LightItalic.otf */,
+				4F2B1890288598CE007BCB85 /* YorkieDEMO-SemiBoldItalic.otf */,
+				4F2B1891288598CE007BCB85 /* YorkieDEMO-SemiBold.otf */,
+				4F2B1892288598CE007BCB85 /* YorkieDEMO-MediumItalic.otf */,
+				4F2B1893288598CE007BCB85 /* YorkieDEMO-ExtraLightItalic.otf */,
+				4F2B1894288598CE007BCB85 /* YorkieDEMO-Italic.otf */,
+				4F2B1895288598CE007BCB85 /* YorkieDEMO-ExtraBoldItalic.otf */,
+				4F2B1896288598CE007BCB85 /* YorkieDEMO-Light.otf */,
+				4F2B1897288598CE007BCB85 /* YorkieDEMO-Medium.otf */,
+				4F2B1898288598CE007BCB85 /* YorkieDEMO-Bold.otf */,
+				4F2B1899288598CE007BCB85 /* YorkieDEMO-ExtraBold.otf */,
+				4F2B189A288598CE007BCB85 /* YorkieDEMO-Thin.otf */,
+			);
+			path = yorkie;
+			sourceTree = "<group>";
+		};
+		4F2B18AB288598F3007BCB85 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4F2B188A288598CE007BCB85 /* yorkie */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		4F2B18AD28859D62007BCB85 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4F2B18AE28859D6C007BCB85 /* vo */,
+				4F2D1B75288D83D600F06083 /* AudioManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4F2B18AE28859D6C007BCB85 /* vo */ = {
+			isa = PBXGroup;
+			children = (
+				4F2B18AF28859D86007BCB85 /* MomentVO.swift */,
+				4F5A3B39288CE05500110D82 /* MessageVO.swift */,
+				4F2D1B77288D86E500F06083 /* UserVO.swift */,
+			);
+			path = vo;
+			sourceTree = "<group>";
+		};
+		4F2B18B128859E90007BCB85 /* MockJSON */ = {
+			isa = PBXGroup;
+			children = (
+				4F2B18B228859ED8007BCB85 /* moments.json */,
+				4F5A3B3B288CE5AE00110D82 /* messages.json */,
+				4F2D1B79288D8A9C00F06083 /* users.json */,
+			);
+			path = MockJSON;
+			sourceTree = "<group>";
+		};
+		4F2B18B42885A42C007BCB85 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4F2B18B52885A448007BCB85 /* MomentViewModel.swift */,
+				4F2B18B72885A45F007BCB85 /* MockDataViewModel.swift */,
+				4FAC6CE0288D280B00EAA161 /* VoiceMessageViewModel.swift */,
+				4F2D1B7B288D8CE500F06083 /* ContactsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4F33E25E2884F81800E15B12 = {
+			isa = PBXGroup;
+			children = (
+				4F33E2692884F81800E15B12 /* WeChat */,
+				4F33E2682884F81800E15B12 /* Products */,
+				D610F041CB352837B19ADFD5 /* Pods */,
+				96CD4907A91DB895AC5F518A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4F33E2682884F81800E15B12 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F33E2672884F81800E15B12 /* WeChat.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4F33E2692884F81800E15B12 /* WeChat */ = {
+			isa = PBXGroup;
+			children = (
+				4F2B18AD28859D62007BCB85 /* Model */,
+				4F33E2782884F82A00E15B12 /* View */,
+				4F2B18B42885A42C007BCB85 /* ViewModel */,
+				4F2B1889288598BE007BCB85 /* Resources */,
+				4F33E26A2884F81800E15B12 /* WeChatApp.swift */,
+				4F33E26E2884F81900E15B12 /* Assets.xcassets */,
+				4F2B18AC2885991E007BCB85 /* Info.plist */,
+				4F33E2702884F81900E15B12 /* Preview Content */,
+			);
+			path = WeChat;
+			sourceTree = "<group>";
+		};
+		4F33E2702884F81900E15B12 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4F33E2712884F81900E15B12 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4F33E2782884F82A00E15B12 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4F33E280288521DF00E15B12 /* Screens */,
+				4F3D479E289E42BE000155EE /* Moment */,
+				4F3D479F289E4345000155EE /* Chats */,
+				4F3D47A6289E4639000155EE /* Contacts */,
+				4F33E27B2885201600E15B12 /* Common */,
+				4F33E2812885225400E15B12 /* Colors.swift */,
+				4F33E2832885277300E15B12 /* VIewExtensions.swift */,
+				4F2B18C128867517007BCB85 /* WCViewModifiers.swift */,
+				4F33E26C2884F81800E15B12 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4F33E27B2885201600E15B12 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4F33E28D288558C500E15B12 /* CheckBoxView.swift */,
+				4F2B18C3288687AB007BCB85 /* ChatHeadItemView.swift */,
+				4F89DE4328952BEE00B23008 /* WaveFormImageViewUI.swift */,
+				4F89DE4528954CEC00B23008 /* MaterialTextField.swift */,
+				4F89DE4928955CE400B23008 /* OTPInputView.swift */,
+				4F100B2E289A70BC0041C11F /* PhotoPicker.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		4F33E280288521DF00E15B12 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				4F33E2792885000600E15B12 /* SplashScreen.swift */,
+				4F33E27E288521D500E15B12 /* LoginScreen.swift */,
+				4F33E28928853D5D00E15B12 /* OTPScreen.swift */,
+				4F33E28B28854B6E00E15B12 /* RegisterScreen.swift */,
+				4F2B188528858C5F007BCB85 /* MeScreen.swift */,
+				4F2B188728858C6D007BCB85 /* SettingScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		4F3D479E289E42BE000155EE /* Moment */ = {
+			isa = PBXGroup;
+			children = (
+				4F2B187F28858BC9007BCB85 /* MomentScreen.swift */,
+				4F2B18BB288657E9007BCB85 /* AddNewMomentScreen.swift */,
+				4F2B18B92885A535007BCB85 /* MomentItemView.swift */,
+				4F93335228965274008A41F5 /* MomentImagePickingView.swift */,
+				4F93335028963D33008A41F5 /* MomentImageGridView.swift */,
+			);
+			path = Moment;
+			sourceTree = "<group>";
+		};
+		4F3D479F289E4345000155EE /* Chats */ = {
+			isa = PBXGroup;
+			children = (
+				4F2B188128858C37007BCB85 /* ChatScreen.swift */,
+				4F5A3B312887E2D400110D82 /* ChatThreadScreen.swift */,
+				4F2B18C5288696A9007BCB85 /* ChatItemView.swift */,
+				4F5A3B3F288CEF6700110D82 /* MessageItemView.swift */,
+				4FAC6CE2288D338900EAA161 /* TextMessageView.swift */,
+				4FAC6CE4288D37FF00EAA161 /* ImageMessageView.swift */,
+				4FAC6CDE288D279900EAA161 /* VoiceMessageView.swift */,
+				4F3D47A0289E4485000155EE /* MessageActionView.swift */,
+				4F3D47A2289E44C5000155EE /* ChatImagePicker.swift */,
+				4F3D47A4289E4519000155EE /* LoadedImageItemView.swift */,
+				4F9333B02898D879008A41F5 /* WCCameraScreen.swift */,
+			);
+			path = Chats;
+			sourceTree = "<group>";
+		};
+		4F3D47A6289E4639000155EE /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				4F2B188328858C4C007BCB85 /* ContactsScreen.swift */,
+				4F6120462887CC9F00B56051 /* AddNewContactScreen.swift */,
+				4F3D47B5289E4826000155EE /* ScannerPreview.swift */,
+				4F3D47A7289E466B000155EE /* SearchContactView.swift */,
+				4F3D47A9289E4697000155EE /* ContactGroupView.swift */,
+				4F6120442887AACA00B56051 /* ContactGroupItemView.swift */,
+				4F3D47AB289E46D9000155EE /* ContactSectionView.swift */,
+				4F3D47AD289E46F3000155EE /* ContactItemView.swift */,
+				4F2D1B7D288DA03000F06083 /* AddNewGroupScreen.swift */,
+				4FCCA637289E53DC00C27DA2 /* SelectedMemberItemView.swift */,
+				4F3D47AF289E4728000155EE /* SelectableContactSectionView.swift */,
+				4F3D47B1289E4748000155EE /* SelectableContactItemView.swift */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		96CD4907A91DB895AC5F518A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96FF820A0F8297C78F9A0254 /* Pods_WeChat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D610F041CB352837B19ADFD5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE59151C3CEE70DEE84E381C /* Pods-WeChat.debug.xcconfig */,
+				274AF923DA50B57D9626AD65 /* Pods-WeChat.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4F33E2662884F81800E15B12 /* WeChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F33E2752884F81900E15B12 /* Build configuration list for PBXNativeTarget "WeChat" */;
+			buildPhases = (
+				4546070D36F7E05EB317A7A8 /* [CP] Check Pods Manifest.lock */,
+				4F33E2632884F81800E15B12 /* Sources */,
+				4F33E2642884F81800E15B12 /* Frameworks */,
+				4F33E2652884F81800E15B12 /* Resources */,
+				78E41EBAEE367F2E216FAE85 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WeChat;
+			packageProductDependencies = (
+				4FAC6CDA288CFACB00EAA161 /* CachedAsyncImage */,
+				4F89DE4128952BB700B23008 /* DSWaveformImage */,
+			);
+			productName = WeChat;
+			productReference = 4F33E2672884F81800E15B12 /* WeChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4F33E25F2884F81800E15B12 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					4F33E2662884F81800E15B12 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 4F33E2622884F81800E15B12 /* Build configuration list for PBXProject "WeChat" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4F33E25E2884F81800E15B12;
+			packageReferences = (
+				4FAC6CD9288CFACB00EAA161 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
+				4F89DE4028952BB700B23008 /* XCRemoteSwiftPackageReference "DSWaveformImage" */,
+			);
+			productRefGroup = 4F33E2682884F81800E15B12 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4F33E2662884F81800E15B12 /* WeChat */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4F33E2652884F81800E15B12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F2B18A8288598CE007BCB85 /* YorkieDEMO-Bold.otf in Resources */,
+				4F5A3B3C288CE5AE00110D82 /* messages.json in Resources */,
+				4F2B18A2288598CE007BCB85 /* YorkieDEMO-MediumItalic.otf in Resources */,
+				4F2B189E288598CE007BCB85 /* YorkieDEMO-Regular.otf in Resources */,
+				4F2B18A9288598CE007BCB85 /* YorkieDEMO-ExtraBold.otf in Resources */,
+				4F2B18B328859ED8007BCB85 /* moments.json in Resources */,
+				4F2B18A6288598CE007BCB85 /* YorkieDEMO-Light.otf in Resources */,
+				4F33E2722884F81900E15B12 /* Preview Assets.xcassets in Resources */,
+				4F2B18A7288598CE007BCB85 /* YorkieDEMO-Medium.otf in Resources */,
+				4F2B18A4288598CE007BCB85 /* YorkieDEMO-Italic.otf in Resources */,
+				4F2B189C288598CE007BCB85 /* YorkieDEMO-ExtraLight.otf in Resources */,
+				4F2B189B288598CE007BCB85 /* YorkieDEMO-BoldItalic.otf in Resources */,
+				4F2B18A1288598CE007BCB85 /* YorkieDEMO-SemiBold.otf in Resources */,
+				4F33E26F2884F81900E15B12 /* Assets.xcassets in Resources */,
+				4F2B18A5288598CE007BCB85 /* YorkieDEMO-ExtraBoldItalic.otf in Resources */,
+				4F2B189F288598CE007BCB85 /* YorkieDEMO-LightItalic.otf in Resources */,
+				4F2B18AA288598CE007BCB85 /* YorkieDEMO-Thin.otf in Resources */,
+				4F2B18A3288598CE007BCB85 /* YorkieDEMO-ExtraLightItalic.otf in Resources */,
+				4F2D1B7A288D8A9C00F06083 /* users.json in Resources */,
+				4F2B18A0288598CE007BCB85 /* YorkieDEMO-SemiBoldItalic.otf in Resources */,
+				4F2B189D288598CE007BCB85 /* YorkieDEMO-ThinItalic.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4546070D36F7E05EB317A7A8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WeChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78E41EBAEE367F2E216FAE85 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WeChat/Pods-WeChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WeChat/Pods-WeChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WeChat/Pods-WeChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F33E2632884F81800E15B12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F2B188028858BC9007BCB85 /* MomentScreen.swift in Sources */,
+				4F2B18B62885A448007BCB85 /* MomentViewModel.swift in Sources */,
+				4F2B18C228867517007BCB85 /* WCViewModifiers.swift in Sources */,
+				4F2B18C4288687AB007BCB85 /* ChatHeadItemView.swift in Sources */,
+				4F2B18B028859D86007BCB85 /* MomentVO.swift in Sources */,
+				4F33E27A2885000600E15B12 /* SplashScreen.swift in Sources */,
+				4F2B188428858C4C007BCB85 /* ContactsScreen.swift in Sources */,
+				4F93335328965274008A41F5 /* MomentImagePickingView.swift in Sources */,
+				4F33E26D2884F81800E15B12 /* ContentView.swift in Sources */,
+				4F33E28A28853D5D00E15B12 /* OTPScreen.swift in Sources */,
+				4F3D47A5289E4519000155EE /* LoadedImageItemView.swift in Sources */,
+				4F33E2822885225400E15B12 /* Colors.swift in Sources */,
+				4F100B2F289A70BC0041C11F /* PhotoPicker.swift in Sources */,
+				4F2D1B78288D86E500F06083 /* UserVO.swift in Sources */,
+				4F2B18BA2885A535007BCB85 /* MomentItemView.swift in Sources */,
+				4F33E2842885277300E15B12 /* VIewExtensions.swift in Sources */,
+				4F3D47B6289E4826000155EE /* ScannerPreview.swift in Sources */,
+				4FAC6CE5288D37FF00EAA161 /* ImageMessageView.swift in Sources */,
+				4F2B18BC288657E9007BCB85 /* AddNewMomentScreen.swift in Sources */,
+				4F9333B12898D879008A41F5 /* WCCameraScreen.swift in Sources */,
+				4F33E28E288558C500E15B12 /* CheckBoxView.swift in Sources */,
+				4F33E28C28854B6E00E15B12 /* RegisterScreen.swift in Sources */,
+				4F5A3B3A288CE05500110D82 /* MessageVO.swift in Sources */,
+				4FAC6CDF288D279900EAA161 /* VoiceMessageView.swift in Sources */,
+				4FCCA638289E53DC00C27DA2 /* SelectedMemberItemView.swift in Sources */,
+				4F5A3B322887E2D400110D82 /* ChatThreadScreen.swift in Sources */,
+				4F3D47A1289E4485000155EE /* MessageActionView.swift in Sources */,
+				4F89DE4A28955CE400B23008 /* OTPInputView.swift in Sources */,
+				4F3D47AC289E46D9000155EE /* ContactSectionView.swift in Sources */,
+				4F2D1B76288D83D600F06083 /* AudioManager.swift in Sources */,
+				4F2B188828858C6D007BCB85 /* SettingScreen.swift in Sources */,
+				4F3D47AE289E46F3000155EE /* ContactItemView.swift in Sources */,
+				4F2B188628858C5F007BCB85 /* MeScreen.swift in Sources */,
+				4F3D47A3289E44C5000155EE /* ChatImagePicker.swift in Sources */,
+				4F3D47A8289E466B000155EE /* SearchContactView.swift in Sources */,
+				4F2D1B7E288DA03000F06083 /* AddNewGroupScreen.swift in Sources */,
+				4F3D47AA289E4697000155EE /* ContactGroupView.swift in Sources */,
+				4F3D47B2289E4748000155EE /* SelectableContactItemView.swift in Sources */,
+				4FAC6CE3288D338900EAA161 /* TextMessageView.swift in Sources */,
+				4F2D1B7C288D8CE500F06083 /* ContactsViewModel.swift in Sources */,
+				4F33E26B2884F81800E15B12 /* WeChatApp.swift in Sources */,
+				4FAC6CE1288D280B00EAA161 /* VoiceMessageViewModel.swift in Sources */,
+				4F33E27F288521D500E15B12 /* LoginScreen.swift in Sources */,
+				4F6120472887CC9F00B56051 /* AddNewContactScreen.swift in Sources */,
+				4F93335128963D33008A41F5 /* MomentImageGridView.swift in Sources */,
+				4F2B18B82885A45F007BCB85 /* MockDataViewModel.swift in Sources */,
+				4F3D47B0289E4728000155EE /* SelectableContactSectionView.swift in Sources */,
+				4F2B188228858C37007BCB85 /* ChatScreen.swift in Sources */,
+				4F2B18C6288696A9007BCB85 /* ChatItemView.swift in Sources */,
+				4F89DE4428952BEE00B23008 /* WaveFormImageViewUI.swift in Sources */,
+				4F89DE4628954CEC00B23008 /* MaterialTextField.swift in Sources */,
+				4F6120452887AACA00B56051 /* ContactGroupItemView.swift in Sources */,
+				4F5A3B40288CEF6700110D82 /* MessageItemView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4F33E2732884F81900E15B12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4F33E2742884F81900E15B12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4F33E2762884F81900E15B12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE59151C3CEE70DEE84E381C /* Pods-WeChat.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WeChat/Preview Content\"";
+				DEVELOPMENT_TEAM = 834YM747S3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WeChat/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kira.WeChatT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4F33E2772884F81900E15B12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 274AF923DA50B57D9626AD65 /* Pods-WeChat.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WeChat/Preview Content\"";
+				DEVELOPMENT_TEAM = 834YM747S3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WeChat/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kira.WeChatT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F33E2622884F81800E15B12 /* Build configuration list for PBXProject "WeChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F33E2732884F81900E15B12 /* Debug */,
+				4F33E2742884F81900E15B12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F33E2752884F81900E15B12 /* Build configuration list for PBXNativeTarget "WeChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F33E2762884F81900E15B12 /* Debug */,
+				4F33E2772884F81900E15B12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4F89DE4028952BB700B23008 /* XCRemoteSwiftPackageReference "DSWaveformImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmrschmidt/DSWaveformImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		4FAC6CD9288CFACB00EAA161 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lorenzofiamingo/swiftui-cached-async-image";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4F89DE4128952BB700B23008 /* DSWaveformImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F89DE4028952BB700B23008 /* XCRemoteSwiftPackageReference "DSWaveformImage" */;
+			productName = DSWaveformImage;
+		};
+		4FAC6CDA288CFACB00EAA161 /* CachedAsyncImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4FAC6CD9288CFACB00EAA161 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
+			productName = CachedAsyncImage;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 4F33E25F2884F81800E15B12 /* Project object */;
+}

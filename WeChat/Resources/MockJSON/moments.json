@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1001,
+        "authorProfile": "joanna",
+        "authorName": "Joanna",
+        "description": "Nice! @Tun Tun"
+    },
+    {
+        "id": 1002,
+        "authorProfile": "rafaella",
+        "authorName": "Rafaella",
+        "description": "A machine resembling a human being and able to replicate certain human movements and functions automatically."
+    },
+    {
+        "id": 1003,
+        "authorProfile": "rafaella",
+        "authorName": "Rafaella",
+        "description": "A machine resembling a human being and able to replicate certain human movements and functions automatically."
+    },
+    {
+        "id": 1004,
+        "authorProfile": "rafaella",
+        "authorName": "Rafaella",
+        "description": "A machine resembling a human being and able to replicate certain human movements and functions automatically."
+    }
+]

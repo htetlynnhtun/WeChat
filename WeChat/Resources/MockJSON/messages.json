@@ -1,0 +1,131 @@
+[
+   {
+       "id": 1001,
+       "type": "text",
+       "payload": "How are you?",
+       "sender": "Ace",
+       "receiver": "John",
+       "date": "12:30 AM"
+   },
+   {
+       "id": 1002,
+       "type": "text",
+       "payload": "What do you do?",
+       "sender": "Ace",
+       "receiver": "John",
+       "date": "12:30 AM"
+   },
+   {
+       "id": 1003,
+       "type": "text",
+       "payload": "I'm chatting with a robot.",
+       "sender": "John",
+       "receiver": "Ace",
+       "date": "12:32 AM"
+   },
+   {
+       "id": 1003,
+       "type": "image",
+       "payload": "https://via.placeholder.com/600/24f355",
+       "sender": "Ace",
+       "receiver": "John",
+       "date": "12:30 AM"
+   },
+   {
+       "id": 1004,
+       "type": "image",
+       "payload": "https://www.themoviedb.org/t/p/w1066_and_h600_bestv2/tdmlSbLl84hfHx635AqHLB8Qh8M.jpg",
+       "sender": "John",
+       "receiver": "Ace",
+       "date": "12:30 AM"
+   },
+   {
+       "id": 1005,
+       "type": "text",
+       "payload": "I'm chatting with a robot.",
+       "sender": "John",
+       "receiver": "Ace",
+       "date": "12:32 AM"
+   },
+   {
+       "id": 1006,
+       "type": "text",
+       "payload": "I'm chatting with a robot.",
+       "sender": "John",
+       "receiver": "Ace",
+       "date": "12:32 AM"
+   },
+   {
+       "id": 1007,
+       "type": "text",
+       "payload": "I'm chatting with a robot.",
+       "sender": "John",
+       "receiver": "Ace",
+       "date": "12:32 AM"
+   },
+   {
+       "id": 1008,
+       "type": "text",
+       "payload": "I'm chatting with a robot.",
+       "sender": "John",
+       "receiver": "Ace",
+       "date": "12:32 AM"
+   },
+   {
+       "id": 1009,
+       "type": "text",
+       "payload": "What do you do?",
+       "sender": "Ace",
+       "receiver": "John",
+       "date": "12:30 AM"
+   },
+   {
+       "id": 1010,
+       "type": "text",
+       "payload": "What do you do?",
+       "sender": "Ace",
+       "receiver": "John",
+       "date": "12:30 AM"
+   },
+   {
+       "id": 1011,
+       "type": "text",
+       "payload": "What do you do?",
+       "sender": "Ace",
+       "receiver": "John",
+       "date": "12:30 AM"
+   },
+   {
+       "id": 1012,
+       "type": "audio",
+       "//payload": "https://download.samplelib.com/mp3/sample-3s.mp3",
+       "payload": "https://transom.org/wp-content/uploads/2004/03/stereo_96kbps.mp3?_=6",
+       "sender": "John",
+       "receiver": "Ace",
+       "date": "12:30 AM"
+   },
+   {
+       "id": 1013,
+       "type": "text",
+       "payload": "What do you do?",
+       "sender": "Ace",
+       "receiver": "John",
+       "date": "12:30 AM"
+   },
+   {
+       "id": 1014,
+       "type": "text",
+       "payload": "What do you do?",
+       "sender": "Ace",
+       "receiver": "John",
+       "date": "12:30 AM"
+   },
+   {
+       "id": 1015,
+       "type": "audio",
+       "payload": "https://download.samplelib.com/mp3/sample-3s.mp3",
+       "sender": "Ace",
+       "receiver": "John",
+       "date": "12:30 AM"
+   },
+]

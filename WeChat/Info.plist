@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>YorkieDEMO-ThinItalic.otf</string>
+		<string>YorkieDEMO-BoldItalic.otf</string>
+		<string>YorkieDEMO-ExtraLight.otf</string>
+		<string>YorkieDEMO-Regular.otf</string>
+		<string>YorkieDEMO-LightItalic.otf</string>
+		<string>YorkieDEMO-SemiBoldItalic.otf</string>
+		<string>YorkieDEMO-SemiBold.otf</string>
+		<string>YorkieDEMO-MediumItalic.otf</string>
+		<string>YorkieDEMO-ExtraLightItalic.otf</string>
+		<string>YorkieDEMO-Italic.otf</string>
+		<string>YorkieDEMO-ExtraBoldItalic.otf</string>
+		<string>YorkieDEMO-Light.otf</string>
+		<string>YorkieDEMO-Medium.otf</string>
+		<string>YorkieDEMO-Bold.otf</string>
+		<string>YorkieDEMO-ExtraBold.otf</string>
+		<string>YorkieDEMO-Thin.otf</string>
+	</array>
+</dict>
+</plist>
