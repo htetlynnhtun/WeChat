@@ -6,15 +6,21 @@
 //
 
 import SwiftUI
+import CachedAsyncImage
+import SDWebImageSwiftUI
 
 struct MomentImageGridView: View {
-    @EnvironmentObject var mockData: MockDataViewModel
+    var moment: MomentVO
+    
+    init(moment: MomentVO) {
+        self.moment = moment
+    }
     
     private func getWidth(for index: Int, parentWidth: CGFloat) -> CGFloat {
-        if (mockData.images.count % 2 == 0) {
+        if (moment.mediaFiles.count % 2 == 0) {
             return parentWidth / 2
         } else {
-            if (index == mockData.images.count - 1) {
+            if (index == moment.mediaFiles.count - 1) {
                 return parentWidth
             } else {
                 return parentWidth / 2
@@ -25,21 +31,22 @@ struct MomentImageGridView: View {
     var body: some View {
         GeometryReader { geometry in
             HStack(spacing: 8) {
-                ForEach(mockData.images.indices, id: \.self) { index in
+                ForEach(moment.mediaFiles.indices, id: \.self) { index in
                     ZStack {
                         if (index <= 1) {
-                            Image(mockData.images[index])
+                            WebImage(url: moment.mediaFiles[index])
                                 .resizable()
+                                .indicator(.activity)
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: getWidth(for: index, parentWidth: geometry.size.width - 8), height: 205)
                                 .cornerRadius(7)
                         }
                         
-                        if mockData.images.count > 2 && index == 1 {
+                        if moment.mediaFiles.count > 2 && index == 1 {
                             RoundedRectangle(cornerRadius: 5)
                                 .fill(.black.opacity(0.3))
                             
-                            Text("+ \(mockData.images.count - 2)")
+                            Text("+ \(moment.mediaFiles.count - 2)")
                                 .fontWeight(.heavy)
                                 .foregroundColor(.white)
                         }

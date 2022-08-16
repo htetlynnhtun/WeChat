@@ -6,20 +6,27 @@
 //
 
 import SwiftUI
+import CachedAsyncImage
+import SDWebImageSwiftUI
 
 struct MomentItemView: View {
-    var moment: MomentVO
     
-    @EnvironmentObject var mockData: MockDataViewModel
+    @EnvironmentObject var authVM: AuthViewModel
+    @ObservedObject var vm: MomentItemViewModel
+    var moment: MomentVO
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Image("\(moment.authorProfile)-profile")
+                WebImage(url: moment.profilePicture)
+                    .resizable()
+                    .indicator(.activity)
+                    .aspectRatio(contentMode: .fill)
                     .frame(width: 40, height: 40)
+                    .clipShape(Circle())
                 
                 VStack(alignment: .leading) {
-                    Text(moment.authorName)
+                    Text(moment.username)
                         .font(.system(size: 15))
                         .fontWeight(.semibold)
                         .foregroundColor(.colorPrimary)
@@ -41,23 +48,24 @@ struct MomentItemView: View {
                 .foregroundColor(.colorGray)
             
             
-//            Rectangle()
-//                .frame(height: 205)
-            MomentImageGridView()
+            MomentImageGridView(moment: moment)
             
             Spacer()
                 .frame(height: 20)
             
             HStack {
-                Image(systemName: "heart.fill")
+                Image(systemName: vm.heartImage)
                     .resizable()
                     .frame(width: 23, height: 20)
-                    .foregroundColor(.colorRed)
+                    .foregroundColor(vm.heartColor)
+                    .onTapGesture {
+                        vm.onTapLike()
+                    }
                 
-                Text("10")
+                Text("\(moment.likes.count)")
                     .font(.system(size: 15))
                     .fontWeight(.semibold)
-                    .foregroundColor(.colorRed)
+                    .foregroundColor(vm.heartColor)
                 
                 Spacer()
                 
@@ -75,22 +83,27 @@ struct MomentItemView: View {
                 Spacer()
                     .frame(width: 16)
                 
-                Image(systemName: "bookmark")
-                    .foregroundColor(.colorPrimaryVariant)
+                Image(systemName: vm.bookmarkImage)
+                    .foregroundColor(vm.bookmarkColor)
+                    .onTapGesture {
+                        vm.onTapBookmark()
+                    }
             }
         }
     }
+    
+   
 }
 
-struct MomentItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            MomentItemView(moment: MockDataViewModel().moments[0])
-            
-            MomentItemView(moment: MockDataViewModel().moments[1])
-        }
-        .environmentObject(MockDataViewModel())
-        .previewLayout(.fixed(width: 375, height: 350))
-    }
-}
+//struct MomentItemView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            MomentItemView(moment: MockDataViewModel().moments[0])
+//
+//            MomentItemView(moment: MockDataViewModel().moments[1])
+//        }
+//        .environmentObject(MockDataViewModel())
+//        .previewLayout(.fixed(width: 375, height: 350))
+//    }
+//}
 

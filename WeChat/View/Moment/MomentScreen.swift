@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct MomentScreen: View {
-    @EnvironmentObject var mockData: MockDataViewModel
-    @State private var isPresentingNewMoment = false
+    @EnvironmentObject var authVM: AuthViewModel
+    @EnvironmentObject var vm: MomentViewModel
     
     var body: some View {
         NavigationView {
             ScrollView(showsIndicators: false) {
-                ForEach(mockData.moments) { moment in
+                ForEach(vm.moments) { moment in
                     VStack {
-                        MomentItemView(moment: moment)
+                        MomentItemView(vm: MomentItemViewModel(moment: moment, user: authVM.currentUser!), moment: moment)
                             .frame(height: 350)
                             .padding(.horizontal, 15)
                             .padding(.vertical, 20)
@@ -34,16 +34,17 @@ struct MomentScreen: View {
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        isPresentingNewMoment = true
+                        vm.isPresentingNewMoment = true
+                        vm.onViewAddNewMomentScreen()
                     } label: {
                         Image("new-moment")
                             .frame(width: 35, height: 35)
                     }
                 }
             }
-            .fullScreenCover(isPresented: $isPresentingNewMoment) {
+            .fullScreenCover(isPresented: $vm.isPresentingNewMoment) {
                 NavigationView {
-                    AddNewMomentScreen(isPresentingNewMoment: $isPresentingNewMoment)
+                    AddNewMomentScreen()
                 }
             }
             

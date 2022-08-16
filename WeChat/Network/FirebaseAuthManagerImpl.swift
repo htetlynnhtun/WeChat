@@ -58,7 +58,7 @@ class FirebaseAuthManagerImpl: AuthManager {
             if let hash = BCryptSwift.hashPassword(password, withSalt: salt) {
                 
                 DispatchQueue.main.async {
-                    let userVO = UserVO(id: phone, name: name, dob: dob, gender: gender, profilePicture: "", qrCode: phone, password: hash)
+                    let userVO = UserVO(id: phone, name: name, dob: dob, gender: gender, profilePicture: URL(string: "https://i.pravatar.cc/300")!, qrCode: phone, password: hash)
                     do {
                         try docRef.setData(from: userVO) { error in
                             guard error == nil else {

@@ -13,7 +13,7 @@ struct UserVO: Codable, Identifiable {
     var name: String
     var dob: String
     var gender: String
-    var profilePicture: String
+    var profilePicture: URL
     var qrCode: String
     var password: String
     

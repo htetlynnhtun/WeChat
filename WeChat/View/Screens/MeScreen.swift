@@ -95,10 +95,10 @@ struct MeScreen: View {
                     
                     ForEach(mockData.moments) { moment in
                         VStack {
-                            MomentItemView(moment: moment)
-                                .frame(height: 350)
-                                .padding(.horizontal, 15)
-                                .padding(.bottom, 20)
+//                            MomentItemView(moment: moment)
+//                                .frame(height: 350)
+//                                .padding(.horizontal, 15)
+//                                .padding(.bottom, 20)
                             Divider()
                         }
                     }

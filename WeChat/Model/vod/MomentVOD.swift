@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MomentVO: Codable, Identifiable, Hashable {
+struct MomentVOD: Codable, Identifiable, Hashable {
     var id: Int
     var authorProfile: String
     var authorName: String

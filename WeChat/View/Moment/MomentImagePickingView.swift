@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct MomentImagePickingView: View {
+    @EnvironmentObject var momentVM: MomentViewModel
     @State private var isPresentingPicker = false
-    @State private var selectedUIImages = [UIImage]()
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
                 Spacer()
                 
-                ForEach(selectedUIImages.indices, id: \.self) { i in
-                    Image(uiImage: selectedUIImages[i])
+                ForEach(momentVM.selectedUIImages.indices, id: \.self) { i in
+                    Image(uiImage: momentVM.selectedUIImages[i])
                         .resizable()
                         .frame(width: 108, height: 108)
                         .aspectRatio(contentMode: .fit)
@@ -38,7 +38,7 @@ struct MomentImagePickingView: View {
                         .stroke(Color.colorPrimary, lineWidth: 3)
                 }
                 .sheet(isPresented: $isPresentingPicker) {
-                    PhotoPicker(isPresented: $isPresentingPicker, selectedImages: $selectedUIImages)
+                    PhotoPicker(isPresented: $isPresentingPicker, selectedImages: $momentVM.selectedUIImages)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: 111)

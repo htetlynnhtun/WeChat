@@ -37,7 +37,7 @@ class CredentialsRepositoryJSONImpl: CredentialsRepository {
     
     func getCredentials(completion: @escaping (UserVO?) -> Void) {
         let credentialsURL = appSuppDir!.appendingPathComponent("credentials.json")
-//        print("Credentials path: \(credentialsURL.absoluteString)")
+        print("Credentials path: \(credentialsURL.absoluteString)")
         
         do {
             let user = try JSONDecoder().decode(UserVO.self, from: Data(contentsOf: credentialsURL))

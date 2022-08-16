@@ -12,6 +12,7 @@ struct ContentView: View {
     @StateObject var mockData = MockDataViewModel()
     
     @StateObject var authVM = AuthViewModel()
+    @StateObject var momentVM = MomentViewModel()
     
     var body: some View {
         //        WCCameraScreen()
@@ -80,6 +81,7 @@ struct ContentView: View {
                 }
                 .accentColor(.colorPrimary)
                 .environmentObject(mockData)
+                .environmentObject(momentVM)
             }
 
         }

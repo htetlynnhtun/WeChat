@@ -6,78 +6,84 @@
 //
 
 import SwiftUI
+import CachedAsyncImage
+import SDWebImageSwiftUI
 
 struct AddNewMomentScreen: View {
-    @Binding var isPresentingNewMoment: Bool
-    @State private var textEditorValue = ""
+    @EnvironmentObject var momentVM: MomentViewModel
+    @EnvironmentObject var authVM: AuthViewModel
     
     var body: some View {
-        VStack {
-            HStack {
-                Image("lamelo-profile")
-                    .resizable()
-                    .frame(width: 60, height: 60)
-                    .clipShape(Circle())
+        ProgressWrapperView(showActivityIndicator: momentVM.showActivityIndicator) {
+            VStack {
+                HStack {
+                    WebImage(url: authVM.currentUser!.profilePicture)
+                        .resizable()
+                        .indicator(.activity)
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 60, height: 60)
+                        .clipShape(Circle())
+                    
+                    Text(authVM.currentUser!.name)
+                        .font(.system(size: 18))
+                        .foregroundColor(.colorPrimary)
+                    
+                    Spacer()
+                }
                 
-                Text("Lamelo")
-                    .font(.system(size: 18))
-                    .foregroundColor(.colorPrimary)
+                ZStack(alignment: .leading) {
+                    
+                    if momentVM.textEditorValue.isEmpty {
+                        VStack {
+                            Text("What’s on your mind")
+                                .font(.system(size: 18))
+                                .foregroundColor(.black)
+                                .padding(.top, 12)
+                                .padding(.leading, 2)
+                            
+                            Spacer()
+                        }
+                    }
+                    
+                    TextEditor(text: $momentVM.textEditorValue)
+                        .opacity(momentVM.textEditorValue.isEmpty ? 0.5 : 1)
+                }
                 
                 Spacer()
-            }
-            
-            ZStack(alignment: .leading) {
                 
-                if textEditorValue.isEmpty {
-                    VStack {
-                        Text("What’s on your mind")
-                            .font(.system(size: 18))
-                            .foregroundColor(.black)
-                            .padding(.top, 12)
-                            .padding(.leading, 2)
-                        
-                        Spacer()
+                MomentImagePickingView()
+            }
+            .navigationTitle("New Moment")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        momentVM.isPresentingNewMoment = false
+                    } label: {
+                        Image(systemName: "xmark")
+                            .foregroundColor(.colorPrimary)
                     }
                 }
                 
-                TextEditor(text: $textEditorValue)
-                    .opacity(textEditorValue.isEmpty ? 0.5 : 1)
-            }
-            
-            Spacer()
-            
-            MomentImagePickingView()
-        }
-        .navigationTitle("New Moment")
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationBarBackButtonHidden(true)
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button {
-                    isPresentingNewMoment = false
-                } label: {
-                    Image(systemName: "xmark")
-                        .foregroundColor(.colorPrimary)
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        momentVM.onTapCreateMoment(userVO: authVM.currentUser!)
+                    } label: {
+                        Text("Create")
+                            .padding(.trailing, 8)
+                    }
+                    .frame(width: 70, height: 32)
+                    .wcPrimaryButton()
                 }
             }
-            
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    print("Pressed")
-                } label: {
-                    Text("Create")
-                        .padding(.trailing, 8)
-                }
-                .frame(width: 70, height: 32)
-                .wcPrimaryButton()
-            }
+            .padding()
+            .onAppear {
+                UINavigationBar.appearance().titleTextAttributes = [
+                    .font : UIFont(name: "YorkieDEMO-Medium", size: 24)!,
+                    .foregroundColor: UIColor(.colorPrimary)
+                ]
         }
-        .padding()
-        .onAppear {
-            UINavigationBar.appearance().titleTextAttributes = [
-                .font : UIFont(name: "YorkieDEMO-Medium", size: 24)!,
-                .foregroundColor: UIColor(.colorPrimary)
-            ]
         }
         
     }
@@ -87,7 +93,7 @@ struct AddNewMomentScreen: View {
 struct AddNewMomentScreen_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            AddNewMomentScreen(isPresentingNewMoment: .constant(false))
+            AddNewMomentScreen()
         }
     }
 }

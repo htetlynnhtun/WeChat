@@ -30,7 +30,7 @@
 		4F2B18A8288598CE007BCB85 /* YorkieDEMO-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F2B1898288598CE007BCB85 /* YorkieDEMO-Bold.otf */; };
 		4F2B18A9288598CE007BCB85 /* YorkieDEMO-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F2B1899288598CE007BCB85 /* YorkieDEMO-ExtraBold.otf */; };
 		4F2B18AA288598CE007BCB85 /* YorkieDEMO-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F2B189A288598CE007BCB85 /* YorkieDEMO-Thin.otf */; };
-		4F2B18B028859D86007BCB85 /* MomentVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B18AF28859D86007BCB85 /* MomentVO.swift */; };
+		4F2B18B028859D86007BCB85 /* MomentVOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B18AF28859D86007BCB85 /* MomentVOD.swift */; };
 		4F2B18B328859ED8007BCB85 /* moments.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F2B18B228859ED8007BCB85 /* moments.json */; };
 		4F2B18B62885A448007BCB85 /* MomentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B18B52885A448007BCB85 /* MomentViewModel.swift */; };
 		4F2B18B82885A45F007BCB85 /* MockDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B18B72885A45F007BCB85 /* MockDataViewModel.swift */; };
@@ -66,6 +66,15 @@
 		4F3D47B2289E4748000155EE /* SelectableContactItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D47B1289E4748000155EE /* SelectableContactItemView.swift */; };
 		4F3D47B6289E4826000155EE /* ScannerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D47B5289E4826000155EE /* ScannerPreview.swift */; };
 		4F4E986F28AB6494007434C2 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4F4E986E28AB6494007434C2 /* FirebaseFirestoreSwift */; };
+		4F4E987128AB730F007434C2 /* MomentVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E987028AB730F007434C2 /* MomentVO.swift */; };
+		4F4E987328AB7A46007434C2 /* MomentAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E987228AB7A46007434C2 /* MomentAPI.swift */; };
+		4F4E987528AB7A6B007434C2 /* MomentAPIFirestoreImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E987428AB7A6B007434C2 /* MomentAPIFirestoreImpl.swift */; };
+		4F4E987728AB7D79007434C2 /* MomentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E987628AB7D79007434C2 /* MomentModel.swift */; };
+		4F4E987928AB87C2007434C2 /* StorageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E987828AB87C2007434C2 /* StorageAPI.swift */; };
+		4F4E987B28AB87D0007434C2 /* StorageAPIImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E987A28AB87D0007434C2 /* StorageAPIImpl.swift */; };
+		4F4E987D28AB8A50007434C2 /* StorageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E987C28AB8A50007434C2 /* StorageModel.swift */; };
+		4F4E988028ABB402007434C2 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4F4E987F28ABB402007434C2 /* SDWebImageSwiftUI */; };
+		4F4E988228ABB657007434C2 /* MomentItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E988128ABB656007434C2 /* MomentItemViewModel.swift */; };
 		4F5A3B322887E2D400110D82 /* ChatThreadScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5A3B312887E2D400110D82 /* ChatThreadScreen.swift */; };
 		4F5A3B3A288CE05500110D82 /* MessageVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5A3B39288CE05500110D82 /* MessageVO.swift */; };
 		4F5A3B3C288CE5AE00110D82 /* messages.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F5A3B3B288CE5AE00110D82 /* messages.json */; };
@@ -127,7 +136,7 @@
 		4F2B1899288598CE007BCB85 /* YorkieDEMO-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YorkieDEMO-ExtraBold.otf"; sourceTree = "<group>"; };
 		4F2B189A288598CE007BCB85 /* YorkieDEMO-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YorkieDEMO-Thin.otf"; sourceTree = "<group>"; };
 		4F2B18AC2885991E007BCB85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		4F2B18AF28859D86007BCB85 /* MomentVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentVO.swift; sourceTree = "<group>"; };
+		4F2B18AF28859D86007BCB85 /* MomentVOD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentVOD.swift; sourceTree = "<group>"; };
 		4F2B18B228859ED8007BCB85 /* moments.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = moments.json; sourceTree = "<group>"; };
 		4F2B18B52885A448007BCB85 /* MomentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentViewModel.swift; sourceTree = "<group>"; };
 		4F2B18B72885A45F007BCB85 /* MockDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataViewModel.swift; sourceTree = "<group>"; };
@@ -163,6 +172,14 @@
 		4F3D47AF289E4728000155EE /* SelectableContactSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableContactSectionView.swift; sourceTree = "<group>"; };
 		4F3D47B1289E4748000155EE /* SelectableContactItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableContactItemView.swift; sourceTree = "<group>"; };
 		4F3D47B5289E4826000155EE /* ScannerPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerPreview.swift; sourceTree = "<group>"; };
+		4F4E987028AB730F007434C2 /* MomentVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentVO.swift; sourceTree = "<group>"; };
+		4F4E987228AB7A46007434C2 /* MomentAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentAPI.swift; sourceTree = "<group>"; };
+		4F4E987428AB7A6B007434C2 /* MomentAPIFirestoreImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentAPIFirestoreImpl.swift; sourceTree = "<group>"; };
+		4F4E987628AB7D79007434C2 /* MomentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentModel.swift; sourceTree = "<group>"; };
+		4F4E987828AB87C2007434C2 /* StorageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageAPI.swift; sourceTree = "<group>"; };
+		4F4E987A28AB87D0007434C2 /* StorageAPIImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageAPIImpl.swift; sourceTree = "<group>"; };
+		4F4E987C28AB8A50007434C2 /* StorageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageModel.swift; sourceTree = "<group>"; };
+		4F4E988128ABB656007434C2 /* MomentItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentItemViewModel.swift; sourceTree = "<group>"; };
 		4F5A3B312887E2D400110D82 /* ChatThreadScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatThreadScreen.swift; sourceTree = "<group>"; };
 		4F5A3B39288CE05500110D82 /* MessageVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVO.swift; sourceTree = "<group>"; };
 		4F5A3B3B288CE5AE00110D82 /* messages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = messages.json; sourceTree = "<group>"; };
@@ -203,6 +220,7 @@
 				4F79DBB328AA15CA002B9924 /* FirebaseDatabase in Frameworks */,
 				33E27A7418E2670CBE8AA6C9 /* Pods_WeChat.framework in Frameworks */,
 				4F89DE4228952BB700B23008 /* DSWaveformImage in Frameworks */,
+				4F4E988028ABB402007434C2 /* SDWebImageSwiftUI in Frameworks */,
 				4F79DBB128AA15CA002B9924 /* FirebaseAnalytics in Frameworks */,
 				4F79DBB728AA15CA002B9924 /* FirebaseStorage in Frameworks */,
 				4FAC6CDB288CFACB00EAA161 /* CachedAsyncImage in Frameworks */,
@@ -260,6 +278,8 @@
 				4F2B18AE28859D6C007BCB85 /* vod */,
 				4F2D1B75288D83D600F06083 /* AudioManager.swift */,
 				4F79DBBB28AA33B4002B9924 /* AuthModel.swift */,
+				4F4E987628AB7D79007434C2 /* MomentModel.swift */,
+				4F4E987C28AB8A50007434C2 /* StorageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -267,7 +287,7 @@
 		4F2B18AE28859D6C007BCB85 /* vod */ = {
 			isa = PBXGroup;
 			children = (
-				4F2B18AF28859D86007BCB85 /* MomentVO.swift */,
+				4F2B18AF28859D86007BCB85 /* MomentVOD.swift */,
 				4F5A3B39288CE05500110D82 /* MessageVO.swift */,
 				4F2D1B77288D86E500F06083 /* UserVOD.swift */,
 			);
@@ -292,6 +312,7 @@
 				4FAC6CE0288D280B00EAA161 /* VoiceMessageViewModel.swift */,
 				4F2D1B7B288D8CE500F06083 /* ContactsViewModel.swift */,
 				4F79DBBD28AA3457002B9924 /* AuthViewModel.swift */,
+				4F4E988128ABB656007434C2 /* MomentItemViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -446,6 +467,7 @@
 			isa = PBXGroup;
 			children = (
 				4F79DBA428AA08D1002B9924 /* UserVO.swift */,
+				4F4E987028AB730F007434C2 /* MomentVO.swift */,
 			);
 			path = vo;
 			sourceTree = "<group>";
@@ -456,6 +478,10 @@
 				4F79DBA928AA0EE3002B9924 /* AuthManager.swift */,
 				4F79DBAB28AA147D002B9924 /* FirebaseAuthManagerImpl.swift */,
 				4F79DBAD28AA14FE002B9924 /* NetworkConstants.swift */,
+				4F4E987228AB7A46007434C2 /* MomentAPI.swift */,
+				4F4E987428AB7A6B007434C2 /* MomentAPIFirestoreImpl.swift */,
+				4F4E987828AB87C2007434C2 /* StorageAPI.swift */,
+				4F4E987A28AB87D0007434C2 /* StorageAPIImpl.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -512,6 +538,7 @@
 				4F79DBB428AA15CA002B9924 /* FirebaseFirestore */,
 				4F79DBB628AA15CA002B9924 /* FirebaseStorage */,
 				4F4E986E28AB6494007434C2 /* FirebaseFirestoreSwift */,
+				4F4E987F28ABB402007434C2 /* SDWebImageSwiftUI */,
 			);
 			productName = WeChat;
 			productReference = 4F33E2672884F81800E15B12 /* WeChat.app */;
@@ -545,6 +572,7 @@
 				4FAC6CD9288CFACB00EAA161 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
 				4F89DE4028952BB700B23008 /* XCRemoteSwiftPackageReference "DSWaveformImage" */,
 				4F79DBAF28AA15CA002B9924 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				4F4E987E28ABB402007434C2 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 4F33E2682884F81800E15B12 /* Products */;
 			projectDirPath = "";
@@ -636,9 +664,10 @@
 			files = (
 				4F2B188028858BC9007BCB85 /* MomentScreen.swift in Sources */,
 				4F2B18B62885A448007BCB85 /* MomentViewModel.swift in Sources */,
+				4F4E987928AB87C2007434C2 /* StorageAPI.swift in Sources */,
 				4F2B18C228867517007BCB85 /* WCViewModifiers.swift in Sources */,
 				4F2B18C4288687AB007BCB85 /* ChatHeadItemView.swift in Sources */,
-				4F2B18B028859D86007BCB85 /* MomentVO.swift in Sources */,
+				4F2B18B028859D86007BCB85 /* MomentVOD.swift in Sources */,
 				4F33E27A2885000600E15B12 /* SplashScreen.swift in Sources */,
 				4F2B188428858C4C007BCB85 /* ContactsScreen.swift in Sources */,
 				4F93335328965274008A41F5 /* MomentImagePickingView.swift in Sources */,
@@ -648,6 +677,7 @@
 				4FD9A0AB28AA439E0002713A /* ToastViewModifier.swift in Sources */,
 				4F33E2822885225400E15B12 /* Colors.swift in Sources */,
 				4F100B2F289A70BC0041C11F /* PhotoPicker.swift in Sources */,
+				4F4E987528AB7A6B007434C2 /* MomentAPIFirestoreImpl.swift in Sources */,
 				4F2D1B78288D86E500F06083 /* UserVOD.swift in Sources */,
 				4F79DBAE28AA14FE002B9924 /* NetworkConstants.swift in Sources */,
 				4F2B18BA2885A535007BCB85 /* MomentItemView.swift in Sources */,
@@ -662,8 +692,10 @@
 				4F33E28C28854B6E00E15B12 /* RegisterScreen.swift in Sources */,
 				4F5A3B3A288CE05500110D82 /* MessageVO.swift in Sources */,
 				4FAC6CDF288D279900EAA161 /* VoiceMessageView.swift in Sources */,
+				4F4E987328AB7A46007434C2 /* MomentAPI.swift in Sources */,
 				4FCCA638289E53DC00C27DA2 /* SelectedMemberItemView.swift in Sources */,
 				4F5A3B322887E2D400110D82 /* ChatThreadScreen.swift in Sources */,
+				4F4E988228ABB657007434C2 /* MomentItemViewModel.swift in Sources */,
 				4F79DBBC28AA33B4002B9924 /* AuthModel.swift in Sources */,
 				4F3D47A1289E4485000155EE /* MessageActionView.swift in Sources */,
 				4F89DE4A28955CE400B23008 /* OTPInputView.swift in Sources */,
@@ -674,6 +706,7 @@
 				4F2B188828858C6D007BCB85 /* SettingScreen.swift in Sources */,
 				4F3D47AE289E46F3000155EE /* ContactItemView.swift in Sources */,
 				4F2B188628858C5F007BCB85 /* MeScreen.swift in Sources */,
+				4F4E987B28AB87D0007434C2 /* StorageAPIImpl.swift in Sources */,
 				4F3D47A3289E44C5000155EE /* ChatImagePicker.swift in Sources */,
 				4F3D47A8289E466B000155EE /* SearchContactView.swift in Sources */,
 				4F2D1B7E288DA03000F06083 /* AddNewGroupScreen.swift in Sources */,
@@ -688,14 +721,17 @@
 				4F33E27F288521D500E15B12 /* LoginScreen.swift in Sources */,
 				4F6120472887CC9F00B56051 /* AddNewContactScreen.swift in Sources */,
 				4F93335128963D33008A41F5 /* MomentImageGridView.swift in Sources */,
+				4F4E987728AB7D79007434C2 /* MomentModel.swift in Sources */,
 				4F2B18B82885A45F007BCB85 /* MockDataViewModel.swift in Sources */,
 				4F3D47B0289E4728000155EE /* SelectableContactSectionView.swift in Sources */,
 				4F2B188228858C37007BCB85 /* ChatScreen.swift in Sources */,
 				4F2B18C6288696A9007BCB85 /* ChatItemView.swift in Sources */,
 				4F79DBAA28AA0EE3002B9924 /* AuthManager.swift in Sources */,
 				4F89DE4428952BEE00B23008 /* WaveFormImageViewUI.swift in Sources */,
+				4F4E987D28AB8A50007434C2 /* StorageModel.swift in Sources */,
 				4F89DE4628954CEC00B23008 /* MaterialTextField.swift in Sources */,
 				4F6120452887AACA00B56051 /* ContactGroupItemView.swift in Sources */,
+				4F4E987128AB730F007434C2 /* MomentVO.swift in Sources */,
 				4F5A3B40288CEF6700110D82 /* MessageItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -907,6 +943,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4F4E987E28ABB402007434C2 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		4F79DBAF28AA15CA002B9924 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -938,6 +982,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4F79DBAF28AA15CA002B9924 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
+		};
+		4F4E987F28ABB402007434C2 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F4E987E28ABB402007434C2 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 		4F79DBB028AA15CA002B9924 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
