@@ -58,22 +58,35 @@ class FirebaseAuthManagerImpl: AuthManager {
             if let hash = BCryptSwift.hashPassword(password, withSalt: salt) {
                 
                 DispatchQueue.main.async {
-                    docRef.setData([
-                        "phoneNumber": phone,
-                        "name": name,
-                        "dob": dob,
-                        "gender": gender,
-                        "profilePicture": "",
-                        "qrCode": "\(phone)-\(UUID().uuidString)",
-                        "password": hash
-                    ]) { error in
-                        guard error == nil else {
+                    let userVO = UserVO(id: phone, name: name, dob: dob, gender: gender, profilePicture: "", qrCode: phone, password: hash)
+                    do {
+                        try docRef.setData(from: userVO) { error in
+                            guard error == nil else {
                                 completion(false)
-                            return
+                                return
+                            }
+                            
+                            completion(true)
                         }
-                        
-                        completion(true)
+                    } catch {
+                        completion(false)
                     }
+                    //                    docRef.setData([
+                    //                        "phoneNumber": phone,
+                    //                        "name": name,
+                    //                        "dob": dob,
+                    //                        "gender": gender,
+                    //                        "profilePicture": "",
+                    //                        "qrCode": "\(phone)-\(UUID().uuidString)",
+                    //                        "password": hash
+                    //                    ]) { error in
+                    //                        guard error == nil else {
+                    //                            completion(false)
+                    //                            return
+                    //                        }
+                    //
+                    //                        completion(true)
+                    //                    }
                 }
                 
             } else {
@@ -88,34 +101,51 @@ class FirebaseAuthManagerImpl: AuthManager {
     func login(phone: String, password: String, completion: @escaping (Result<UserVO, LoginError>) -> Void) {
         let docRef = db.collection("users").document(phone)
         
-        docRef.getDocument { document, error in
-            guard error == nil else {
-                completion(.failure(.unexpected))
-                return
-            }
-            
-            if let document = document,
-               document.exists {
-                do {
-                    let jsonData = try JSONSerialization.data(withJSONObject: document.data()!)
-                    let userVO = try JSONDecoder().decode(UserVO.self, from: jsonData)
-                    
-                    if let result = BCryptSwift.verifyPassword(password, matchesHash: userVO.password) {
-                        if result {
-                            completion(.success(userVO))
-                        } else {
-                            completion(.failure(.invalid))
-                        }
+        docRef.getDocument(as: UserVO.self) { result in
+            switch result {
+            case .success(let userVO):
+                if let result = BCryptSwift.verifyPassword(password, matchesHash: userVO.password) {
+                    if result {
+                        completion(.success(userVO))
                     } else {
-                        completion(.failure(.unexpected))
+                        completion(.failure(.invalid))
                     }
-                } catch {
+                } else {
                     completion(.failure(.unexpected))
                 }
-                
-            } else {
-                completion(.failure(.invalid))
+            case .failure(_):
+                completion(.failure(.unexpected))
             }
         }
+        
+        //        docRef.getDocument { document, error in
+        //            guard error == nil else {
+        //                completion(.failure(.unexpected))
+        //                return
+        //            }
+        //
+        //            if let document = document,
+        //               document.exists {
+        //                do {
+        //                    let jsonData = try JSONSerialization.data(withJSONObject: document.data()!)
+        //                    let userVO = try JSONDecoder().decode(UserVO.self, from: jsonData)
+        //
+        //                    if let result = BCryptSwift.verifyPassword(password, matchesHash: userVO.password) {
+        //                        if result {
+        //                            completion(.success(userVO))
+        //                        } else {
+        //                            completion(.failure(.invalid))
+        //                        }
+        //                    } else {
+        //                        completion(.failure(.unexpected))
+        //                    }
+        //                } catch {
+        //                    completion(.failure(.unexpected))
+        //                }
+        //
+        //            } else {
+        //                completion(.failure(.invalid))
+        //            }
+        //        }
     }
 }

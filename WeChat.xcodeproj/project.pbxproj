@@ -65,6 +65,7 @@
 		4F3D47B0289E4728000155EE /* SelectableContactSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D47AF289E4728000155EE /* SelectableContactSectionView.swift */; };
 		4F3D47B2289E4748000155EE /* SelectableContactItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D47B1289E4748000155EE /* SelectableContactItemView.swift */; };
 		4F3D47B6289E4826000155EE /* ScannerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D47B5289E4826000155EE /* ScannerPreview.swift */; };
+		4F4E986F28AB6494007434C2 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4F4E986E28AB6494007434C2 /* FirebaseFirestoreSwift */; };
 		4F5A3B322887E2D400110D82 /* ChatThreadScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5A3B312887E2D400110D82 /* ChatThreadScreen.swift */; };
 		4F5A3B3A288CE05500110D82 /* MessageVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5A3B39288CE05500110D82 /* MessageVO.swift */; };
 		4F5A3B3C288CE5AE00110D82 /* messages.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F5A3B3B288CE5AE00110D82 /* messages.json */; };
@@ -206,6 +207,7 @@
 				4F79DBB728AA15CA002B9924 /* FirebaseStorage in Frameworks */,
 				4FAC6CDB288CFACB00EAA161 /* CachedAsyncImage in Frameworks */,
 				4F79DBB528AA15CA002B9924 /* FirebaseFirestore in Frameworks */,
+				4F4E986F28AB6494007434C2 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +511,7 @@
 				4F79DBB228AA15CA002B9924 /* FirebaseDatabase */,
 				4F79DBB428AA15CA002B9924 /* FirebaseFirestore */,
 				4F79DBB628AA15CA002B9924 /* FirebaseStorage */,
+				4F4E986E28AB6494007434C2 /* FirebaseFirestoreSwift */,
 			);
 			productName = WeChat;
 			productReference = 4F33E2672884F81800E15B12 /* WeChat.app */;
@@ -931,6 +934,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4F4E986E28AB6494007434C2 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F79DBAF28AA15CA002B9924 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
 		4F79DBB028AA15CA002B9924 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4F79DBAF28AA15CA002B9924 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

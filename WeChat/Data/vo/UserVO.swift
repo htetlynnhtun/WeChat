@@ -6,13 +6,23 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
-struct UserVO: Codable {
-    var phoneNumber: String
+struct UserVO: Codable, Identifiable {
+    @DocumentID var id: String?
     var name: String
     var dob: String
     var gender: String
     var profilePicture: String
     var qrCode: String
     var password: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case name
+        case dob
+        case gender
+        case profilePicture
+        case qrCode
+        case password
+    }
 }
