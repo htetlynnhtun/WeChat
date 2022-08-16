@@ -11,69 +11,79 @@ struct ContentView: View {
     @State private var currentTab = Tab.moment
     @StateObject var mockData = MockDataViewModel()
     
+    @StateObject var authVM = AuthViewModel()
+    
     var body: some View {
-//        WCCameraScreen()
+        //        WCCameraScreen()
         //        SplashScreen()
-//                LoginScreen()
-//                OTPScreen()
-//                RegisterScreen()
-        TabView(selection: $currentTab) {
-            MomentScreen()
-                .tabItem {
-                    Label {
-                        Text("Moment")
-                    } icon: {
-                        Image("moment-icon")
-                            .renderingMode(.template)
-                    }
+        //                LoginScreen()
+        //                OTPScreen()
+        //                RegisterScreen()
+        Group {
+            if authVM.currentUser == nil {
+                SplashScreen()
+            } else {
+                TabView(selection: $currentTab) {
+                    MomentScreen()
+                        .tabItem {
+                            Label {
+                                Text("Moment")
+                            } icon: {
+                                Image("moment-icon")
+                                    .renderingMode(.template)
+                            }
+                        }
+                        .tag(Tab.moment)
+                    
+                    ChatScreen()
+                        .tabItem {
+                            Label {
+                                Text("Chat")
+                            } icon: {
+                                Image("chat-icon")
+                                    .renderingMode(.template)
+                            }
+                        }
+                        .tag(Tab.chat)
+                    
+                    ContactsScreen(vm: ContactsViewModel(currentUser: mockData.currentUser))
+                        .tabItem {
+                            Label {
+                                Text("Contacts")
+                            } icon: {
+                                Image("contacts-icon")
+                                    .renderingMode(.template)
+                            }
+                        }
+                        .tag(Tab.contacts)
+                    
+                    MeScreen()
+                        .tabItem {
+                            Label {
+                                Text("Me")
+                            } icon: {
+                                Image("me-icon")
+                                    .renderingMode(.template)
+                            }
+                        }
+                        .tag(Tab.me)
+                    
+                    SettingScreen()
+                        .tabItem {
+                            Label {
+                                Text("Setting")
+                            } icon: {
+                                Image("setting-icon")
+                                    .renderingMode(.template)
+                            }
+                        }
                 }
-                .tag(Tab.moment)
+                .accentColor(.colorPrimary)
+                .environmentObject(mockData)
+            }
 
-            ChatScreen()
-                .tabItem {
-                    Label {
-                        Text("Chat")
-                    } icon: {
-                        Image("chat-icon")
-                            .renderingMode(.template)
-                    }
-                }
-                .tag(Tab.chat)
-
-            ContactsScreen(vm: ContactsViewModel(currentUser: mockData.currentUser))
-                .tabItem {
-                    Label {
-                        Text("Contacts")
-                    } icon: {
-                        Image("contacts-icon")
-                            .renderingMode(.template)
-                    }
-                }
-                .tag(Tab.contacts)
-
-            MeScreen()
-                .tabItem {
-                    Label {
-                        Text("Me")
-                    } icon: {
-                        Image("me-icon")
-                            .renderingMode(.template)
-                    }
-                }
-                .tag(Tab.me)
-
-            SettingScreen()
-                .tabItem {
-                    Label {
-                        Text("Setting")
-                    } icon: {
-                        Image("setting-icon")
-                            .renderingMode(.template)
-                    }
-                }
         }
-        .accentColor(.colorPrimary)
-        .environmentObject(mockData)
+        .environmentObject(authVM)
         
     }
 }
@@ -97,16 +107,16 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 // Swipe back gesture - even back bar button is hidden
-extension UINavigationController: UIGestureRecognizerDelegate {
-    override open func viewDidLoad() {
-        super.viewDidLoad()
-        interactivePopGestureRecognizer?.delegate = self
-    }
-    
-    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        return viewControllers.count > 1
-    }
-}
+//extension UINavigationController: UIGestureRecognizerDelegate {
+//    override open func viewDidLoad() {
+//        super.viewDidLoad()
+//        interactivePopGestureRecognizer?.delegate = self
+//    }
+//
+//    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+//        return viewControllers.count > 1
+//    }
+//}
 
 extension UINavigationController {
     // Remove back button text

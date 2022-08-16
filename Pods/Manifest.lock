@@ -1,16 +1,20 @@
 PODS:
+  - BCryptSwift (1.1)
   - Introspect (0.1.4)
 
 DEPENDENCIES:
+  - BCryptSwift
   - Introspect
 
 SPEC REPOS:
   trunk:
+    - BCryptSwift
     - Introspect
 
 SPEC CHECKSUMS:
+  BCryptSwift: f69992ea5685f6714260842c2770688043b89ab2
   Introspect: b62c4dd2063072327c21d618ef2bedc3c87bc366
 
-PODFILE CHECKSUM: 0591b905983340b0f95fa4202963015476d9da96
+PODFILE CHECKSUM: 9dbea9392e6640f1996d8510e9b8b02a729a6892
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

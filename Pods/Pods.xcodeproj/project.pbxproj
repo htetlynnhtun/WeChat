@@ -7,21 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		548387A15133D9C63B42DC43FB5E6E1D /* UIKitIntrospectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD39E502C826E5A7C5BAF30974FAEBB /* UIKitIntrospectionView.swift */; };
-		570CC90B331AF79D04F17BEC10D4B403 /* Introspect-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B6C185AFAF683A8F8152324DD89EEDF /* Introspect-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		58F40A774EA711CA0B1DD9EAC11F1923 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		05CEF57AA53A5043A91ECCD89C093283 /* BCryptSwiftRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6774F009C55B41EFF283A6D24415638 /* BCryptSwiftRandom.swift */; };
+		48969AB69DAD730DD07872E7F0127CDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		548387A15133D9C63B42DC43FB5E6E1D /* UIKitIntrospectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C181449D6A49436741750BAA43FC72 /* UIKitIntrospectionView.swift */; };
+		570CC90B331AF79D04F17BEC10D4B403 /* Introspect-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F0C0A2D4BF3455808B6C181B5AD354C /* Introspect-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5DFDDF6BC35A9F212CCEEA7D3597819C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		60657CB22A2A3B89CA91DBAC4B34A609 /* Pods-WeChat-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3720F591742330708509BEF15063AA90 /* Pods-WeChat-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6A10452C7C1949F05ECA4C7AC8B4936E /* UIKitIntrospectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8642AA28CFA4B0B137E3325D9FC24B36 /* UIKitIntrospectionViewController.swift */; };
-		76B3648900CCBD35599E0D6C131E8FED /* Introspect.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9F97B7DBE7B5E51378241115EFD843 /* Introspect.swift */; };
-		7EBB7B8790D97A7F1D036A0058E4F56A /* Introspect-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A7133B45DB27B49E3F6A06E50B650D08 /* Introspect-dummy.m */; };
-		864F9DEB1F1B8C92F62917A3B1884561 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6519D1DDA6EB4B5EE3D38A3A0A7649DC /* ViewExtensions.swift */; };
-		E7F4D02997FB23558D4EB355A9468399 /* AppKitIntrospectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB0B7659B3CBF3514D1FC9567D4F80 /* AppKitIntrospectionView.swift */; };
-		FE3A99E1DBAFAD97B1F0CF5BF9F20507 /* Pods-WeChat-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6AA14CA05077E56A51AB325B2FDDCE /* Pods-WeChat-dummy.m */; };
+		6A10452C7C1949F05ECA4C7AC8B4936E /* UIKitIntrospectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA1383E962C6C28379DD62CFBA22F0F /* UIKitIntrospectionViewController.swift */; };
+		7312BE0435477E925D34F98D8E52A0E9 /* BCryptSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F16003E7E3645E6BA13ED2ED86AB73 /* BCryptSwift.swift */; };
+		76B3648900CCBD35599E0D6C131E8FED /* Introspect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604D2ECC4135DF98BC42DEAA4FEAC7F4 /* Introspect.swift */; };
+		7EBB7B8790D97A7F1D036A0058E4F56A /* Introspect-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A5B980183D13367AA9AF863A01D60E /* Introspect-dummy.m */; };
+		864F9DEB1F1B8C92F62917A3B1884561 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CF3130F1F440D146934306FE9D39A8 /* ViewExtensions.swift */; };
+		960E13D53AF27FEA80A580D9E81A0B17 /* BCryptSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 560DD9521EA0F2195BE0A03B37420804 /* BCryptSwift-dummy.m */; };
+		A7ED1465B5062C607FED96DA5E2C47B3 /* BCryptSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 10463DEE287ABD6AF48E5D901873641B /* BCryptSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E6790F0513BFD4139DC5E0C05BF91EED /* Pods-WeChat-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3720F591742330708509BEF15063AA90 /* Pods-WeChat-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7F4D02997FB23558D4EB355A9468399 /* AppKitIntrospectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1834756A7B2234D1A3C1B6643839A04 /* AppKitIntrospectionView.swift */; };
+		F947527A7F909B878D8B30FC21F3B887 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		FB17587EA6E1B2B1561B84498C1E41C3 /* Pods-WeChat-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6AA14CA05077E56A51AB325B2FDDCE /* Pods-WeChat-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		746593C7105D4D20DA0B5265ABEB0254 /* PBXContainerItemProxy */ = {
+		71AE089651AEC737097BB3C6DA279854 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C2D34CEB96B2618A6EC90E1A7D12D6F2;
+			remoteInfo = BCryptSwift;
+		};
+		FCA6D7ADCB40D7013FEF2525D4F54A6C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -31,30 +43,40 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B6C185AFAF683A8F8152324DD89EEDF /* Introspect-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Introspect-umbrella.h"; sourceTree = "<group>"; };
-		1FEB0B7659B3CBF3514D1FC9567D4F80 /* AppKitIntrospectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppKitIntrospectionView.swift; path = Introspect/AppKitIntrospectionView.swift; sourceTree = "<group>"; };
-		2FD39E502C826E5A7C5BAF30974FAEBB /* UIKitIntrospectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIKitIntrospectionView.swift; path = Introspect/UIKitIntrospectionView.swift; sourceTree = "<group>"; };
+		10463DEE287ABD6AF48E5D901873641B /* BCryptSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BCryptSwift-umbrella.h"; sourceTree = "<group>"; };
+		27C181449D6A49436741750BAA43FC72 /* UIKitIntrospectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIKitIntrospectionView.swift; path = Introspect/UIKitIntrospectionView.swift; sourceTree = "<group>"; };
+		2F0C0A2D4BF3455808B6C181B5AD354C /* Introspect-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Introspect-umbrella.h"; sourceTree = "<group>"; };
+		2FB12B5699850CCC45C9A7F5524E8B5A /* Introspect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Introspect.release.xcconfig; sourceTree = "<group>"; };
 		3720F591742330708509BEF15063AA90 /* Pods-WeChat-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeChat-umbrella.h"; sourceTree = "<group>"; };
-		3DF18865B218BCE5D62D0C436F575AFE /* Introspect-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Introspect-prefix.pch"; sourceTree = "<group>"; };
+		3D8D1EC2A18E56D20798275642CD7EC6 /* BCryptSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BCryptSwift.release.xcconfig; sourceTree = "<group>"; };
 		44585DF86CD6CCC4A2EFA463C3A47023 /* Pods-WeChat-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WeChat-acknowledgements.markdown"; sourceTree = "<group>"; };
-		6519D1DDA6EB4B5EE3D38A3A0A7649DC /* ViewExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewExtensions.swift; path = Introspect/ViewExtensions.swift; sourceTree = "<group>"; };
+		50749AF3F2D383719B010A2275A204EE /* BCryptSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BCryptSwift-prefix.pch"; sourceTree = "<group>"; };
+		560DD9521EA0F2195BE0A03B37420804 /* BCryptSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BCryptSwift-dummy.m"; sourceTree = "<group>"; };
+		604D2ECC4135DF98BC42DEAA4FEAC7F4 /* Introspect.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Introspect.swift; path = Introspect/Introspect.swift; sourceTree = "<group>"; };
+		69CF3130F1F440D146934306FE9D39A8 /* ViewExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewExtensions.swift; path = Introspect/ViewExtensions.swift; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7FA8350B21394CC67B4C811628A647AB /* Introspect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Introspect.release.xcconfig; sourceTree = "<group>"; };
+		78A5B980183D13367AA9AF863A01D60E /* Introspect-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Introspect-dummy.m"; sourceTree = "<group>"; };
 		8508573CE64DCC677D139C4AD47F26DD /* Pods-WeChat-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeChat-Info.plist"; sourceTree = "<group>"; };
-		8642AA28CFA4B0B137E3325D9FC24B36 /* UIKitIntrospectionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIKitIntrospectionViewController.swift; path = Introspect/UIKitIntrospectionViewController.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A7133B45DB27B49E3F6A06E50B650D08 /* Introspect-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Introspect-dummy.m"; sourceTree = "<group>"; };
-		C16A57B7BAC12B839B47B64EA86CB745 /* Introspect-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Introspect-Info.plist"; sourceTree = "<group>"; };
+		8E360CE1A5D6B0C8C35750A8436EBA2B /* BCryptSwift */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BCryptSwift; path = BCryptSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		933AF41CEFA366567353BC16833220DC /* BCryptSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "BCryptSwift-Info.plist"; sourceTree = "<group>"; };
+		9AE36AD5521C005E6CD11AF2F69AE122 /* BCryptSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BCryptSwift.modulemap; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9E9E5B6F0661B6AEB5AC5D2F6612BCEF /* Introspect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Introspect.debug.xcconfig; sourceTree = "<group>"; };
+		C30DF0BEC2BE21C0B1F61A68ECF6985F /* Introspect-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Introspect-prefix.pch"; sourceTree = "<group>"; };
 		C65243A33C4D97CB943E5511F858E164 /* Pods-WeChat.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WeChat.modulemap"; sourceTree = "<group>"; };
 		C67555810A780060931DF14051696D40 /* Pods-WeChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeChat.release.xcconfig"; sourceTree = "<group>"; };
-		C6935A6B76A1F3ACA7781AE41385A149 /* Introspect.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Introspect.modulemap; sourceTree = "<group>"; };
 		C6AAC6818A909BCB4BB6DAB176E746E1 /* Pods-WeChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeChat.debug.xcconfig"; sourceTree = "<group>"; };
 		CE782C39D7D879D29C44527C177F1B83 /* Pods-WeChat-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeChat-acknowledgements.plist"; sourceTree = "<group>"; };
-		D0A70003FD5E49B30CA83DAAFE03116B /* Introspect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Introspect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D1119A951EC43052081C7A9A0544F754 /* Introspect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Introspect.debug.xcconfig; sourceTree = "<group>"; };
-		EE9F97B7DBE7B5E51378241115EFD843 /* Introspect.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Introspect.swift; path = Introspect/Introspect.swift; sourceTree = "<group>"; };
+		CF7869E4620941FC828CA88D2E2B3491 /* BCryptSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BCryptSwift.debug.xcconfig; sourceTree = "<group>"; };
+		D0A70003FD5E49B30CA83DAAFE03116B /* Introspect */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Introspect; path = Introspect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1834756A7B2234D1A3C1B6643839A04 /* AppKitIntrospectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppKitIntrospectionView.swift; path = Introspect/AppKitIntrospectionView.swift; sourceTree = "<group>"; };
+		D3A49272FC693A7E54CF244EC2B8D694 /* Introspect-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Introspect-Info.plist"; sourceTree = "<group>"; };
+		D56711D98239FC9EDEC2B32E1004E6DC /* Introspect.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Introspect.modulemap; sourceTree = "<group>"; };
+		DEA1383E962C6C28379DD62CFBA22F0F /* UIKitIntrospectionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIKitIntrospectionViewController.swift; path = Introspect/UIKitIntrospectionViewController.swift; sourceTree = "<group>"; };
+		E6774F009C55B41EFF283A6D24415638 /* BCryptSwiftRandom.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BCryptSwiftRandom.swift; path = BCryptSwift/Classes/BCryptSwiftRandom.swift; sourceTree = "<group>"; };
 		EF6AA14CA05077E56A51AB325B2FDDCE /* Pods-WeChat-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeChat-dummy.m"; sourceTree = "<group>"; };
 		F382329D506C7013E08B7B16AD7BECC0 /* Pods-WeChat */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-WeChat"; path = Pods_WeChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3F16003E7E3645E6BA13ED2ED86AB73 /* BCryptSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BCryptSwift.swift; path = BCryptSwift/Classes/BCryptSwift.swift; sourceTree = "<group>"; };
 		F61AD54757D33D88CAEDF522DC30A07A /* Pods-WeChat-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WeChat-frameworks.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,23 +89,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F6F7DEED6296EE8E12BD5806D04421FE /* Frameworks */ = {
+		9420D5DCA2C84BF1FFABC133B7F90336 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58F40A774EA711CA0B1DD9EAC11F1923 /* Foundation.framework in Frameworks */,
+				48969AB69DAD730DD07872E7F0127CDE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9374C4A7435CEA526A2C9F2FC7FD54F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F947527A7F909B878D8B30FC21F3B887 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		20C24BE28A8BC1948F8DA34D666339A7 /* Pods */ = {
+		18F707A46EBA52194CF84A73C0AC54CB /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				51CA0CEB90A680AD71900D5AB951F5AE /* Introspect */,
+				D56711D98239FC9EDEC2B32E1004E6DC /* Introspect.modulemap */,
+				78A5B980183D13367AA9AF863A01D60E /* Introspect-dummy.m */,
+				D3A49272FC693A7E54CF244EC2B8D694 /* Introspect-Info.plist */,
+				C30DF0BEC2BE21C0B1F61A68ECF6985F /* Introspect-prefix.pch */,
+				2F0C0A2D4BF3455808B6C181B5AD354C /* Introspect-umbrella.h */,
+				9E9E5B6F0661B6AEB5AC5D2F6612BCEF /* Introspect.debug.xcconfig */,
+				2FB12B5699850CCC45C9A7F5524E8B5A /* Introspect.release.xcconfig */,
 			);
-			name = Pods;
+			name = "Support Files";
+			path = "../Target Support Files/Introspect";
 			sourceTree = "<group>";
 		};
 		454D6BD0D2EBE2A4BB77E647EA27F8FC /* Targets Support Files */ = {
@@ -94,16 +131,17 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		51CA0CEB90A680AD71900D5AB951F5AE /* Introspect */ = {
+		4F263913F534879E090926DC62861C8A /* Introspect */ = {
 			isa = PBXGroup;
 			children = (
-				1FEB0B7659B3CBF3514D1FC9567D4F80 /* AppKitIntrospectionView.swift */,
-				EE9F97B7DBE7B5E51378241115EFD843 /* Introspect.swift */,
-				2FD39E502C826E5A7C5BAF30974FAEBB /* UIKitIntrospectionView.swift */,
-				8642AA28CFA4B0B137E3325D9FC24B36 /* UIKitIntrospectionViewController.swift */,
-				6519D1DDA6EB4B5EE3D38A3A0A7649DC /* ViewExtensions.swift */,
-				E74A7A19A59A269AF211D6D7D445E878 /* Support Files */,
+				D1834756A7B2234D1A3C1B6643839A04 /* AppKitIntrospectionView.swift */,
+				604D2ECC4135DF98BC42DEAA4FEAC7F4 /* Introspect.swift */,
+				27C181449D6A49436741750BAA43FC72 /* UIKitIntrospectionView.swift */,
+				DEA1383E962C6C28379DD62CFBA22F0F /* UIKitIntrospectionViewController.swift */,
+				69CF3130F1F440D146934306FE9D39A8 /* ViewExtensions.swift */,
+				18F707A46EBA52194CF84A73C0AC54CB /* Support Files */,
 			);
+			name = Introspect;
 			path = Introspect;
 			sourceTree = "<group>";
 		};
@@ -115,13 +153,37 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		5C8755FBD594FA447E622E1EC18EB6E4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EF82EF12C79480694148CC80E02E6948 /* BCryptSwift */,
+				4F263913F534879E090926DC62861C8A /* Introspect */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5F2D06ADB6A94BC272F0DB1589739CB4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9AE36AD5521C005E6CD11AF2F69AE122 /* BCryptSwift.modulemap */,
+				560DD9521EA0F2195BE0A03B37420804 /* BCryptSwift-dummy.m */,
+				933AF41CEFA366567353BC16833220DC /* BCryptSwift-Info.plist */,
+				50749AF3F2D383719B010A2275A204EE /* BCryptSwift-prefix.pch */,
+				10463DEE287ABD6AF48E5D901873641B /* BCryptSwift-umbrella.h */,
+				CF7869E4620941FC828CA88D2E2B3491 /* BCryptSwift.debug.xcconfig */,
+				3D8D1EC2A18E56D20798275642CD7EC6 /* BCryptSwift.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/BCryptSwift";
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				20C24BE28A8BC1948F8DA34D666339A7 /* Pods */,
-				DFFF2822C3303B58C17863D2E42A66D1 /* Products */,
+				5C8755FBD594FA447E622E1EC18EB6E4 /* Pods */,
+				DA1E95B756C0C405787DBD13C741A4C8 /* Products */,
 				454D6BD0D2EBE2A4BB77E647EA27F8FC /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -134,28 +196,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DFFF2822C3303B58C17863D2E42A66D1 /* Products */ = {
+		DA1E95B756C0C405787DBD13C741A4C8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D0A70003FD5E49B30CA83DAAFE03116B /* Introspect.framework */,
+				8E360CE1A5D6B0C8C35750A8436EBA2B /* BCryptSwift */,
+				D0A70003FD5E49B30CA83DAAFE03116B /* Introspect */,
 				F382329D506C7013E08B7B16AD7BECC0 /* Pods-WeChat */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E74A7A19A59A269AF211D6D7D445E878 /* Support Files */ = {
+		EF82EF12C79480694148CC80E02E6948 /* BCryptSwift */ = {
 			isa = PBXGroup;
 			children = (
-				C6935A6B76A1F3ACA7781AE41385A149 /* Introspect.modulemap */,
-				A7133B45DB27B49E3F6A06E50B650D08 /* Introspect-dummy.m */,
-				C16A57B7BAC12B839B47B64EA86CB745 /* Introspect-Info.plist */,
-				3DF18865B218BCE5D62D0C436F575AFE /* Introspect-prefix.pch */,
-				1B6C185AFAF683A8F8152324DD89EEDF /* Introspect-umbrella.h */,
-				D1119A951EC43052081C7A9A0544F754 /* Introspect.debug.xcconfig */,
-				7FA8350B21394CC67B4C811628A647AB /* Introspect.release.xcconfig */,
+				F3F16003E7E3645E6BA13ED2ED86AB73 /* BCryptSwift.swift */,
+				E6774F009C55B41EFF283A6D24415638 /* BCryptSwiftRandom.swift */,
+				5F2D06ADB6A94BC272F0DB1589739CB4 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/Introspect";
+			name = BCryptSwift;
+			path = BCryptSwift;
 			sourceTree = "<group>";
 		};
 		FBDD3469744A7D5862B7831C20667C98 /* Pods-WeChat */ = {
@@ -178,11 +237,19 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		92F1915047D1B2B3E9900AE8610FF15A /* Headers */ = {
+		46D051C80D8D3B0111F817EA82465EF2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60657CB22A2A3B89CA91DBAC4B34A609 /* Pods-WeChat-umbrella.h in Headers */,
+				E6790F0513BFD4139DC5E0C05BF91EED /* Pods-WeChat-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C15B4846088B9BBDC458DD8FCD2097CD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7ED1465B5062C607FED96DA5E2C47B3 /* BCryptSwift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,17 +266,18 @@
 /* Begin PBXNativeTarget section */
 		4708E720ECC4D97CD458AC7C6F74F253 /* Pods-WeChat */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8C42A8C10FEC9DFF8814587C94BF54B3 /* Build configuration list for PBXNativeTarget "Pods-WeChat" */;
+			buildConfigurationList = C75E884DD19B5F996803A6E6C98FA425 /* Build configuration list for PBXNativeTarget "Pods-WeChat" */;
 			buildPhases = (
-				92F1915047D1B2B3E9900AE8610FF15A /* Headers */,
-				1715E2B1D8E6E9E549631B99AE37D530 /* Sources */,
-				F6F7DEED6296EE8E12BD5806D04421FE /* Frameworks */,
-				B1D63FFFBF6734CDC44F3F9C57C85419 /* Resources */,
+				46D051C80D8D3B0111F817EA82465EF2 /* Headers */,
+				8ABC6B8DD837EAE6080B277D2C796104 /* Sources */,
+				C9374C4A7435CEA526A2C9F2FC7FD54F /* Frameworks */,
+				2A83437C5306CF6166B61B499E0E33F0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				294B82A9A28E6C3C4FF2A5D682A8479F /* PBXTargetDependency */,
+				E632D672D196C6036E2EB2C6F74871BA /* PBXTargetDependency */,
+				4579D83B403E14E136B608ED554D29D1 /* PBXTargetDependency */,
 			);
 			name = "Pods-WeChat";
 			productName = Pods_WeChat;
@@ -231,7 +299,25 @@
 			);
 			name = Introspect;
 			productName = Introspect;
-			productReference = D0A70003FD5E49B30CA83DAAFE03116B /* Introspect.framework */;
+			productReference = D0A70003FD5E49B30CA83DAAFE03116B /* Introspect */;
+			productType = "com.apple.product-type.framework";
+		};
+		C2D34CEB96B2618A6EC90E1A7D12D6F2 /* BCryptSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5583B79D2D2EA3664B56A9597573EBDC /* Build configuration list for PBXNativeTarget "BCryptSwift" */;
+			buildPhases = (
+				C15B4846088B9BBDC458DD8FCD2097CD /* Headers */,
+				9C516AED9EFD8DCF2EA7120B646CBF25 /* Sources */,
+				9420D5DCA2C84BF1FFABC133B7F90336 /* Frameworks */,
+				51CD7ADD4DDF93928C71BB333A1C8E1F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BCryptSwift;
+			productName = BCryptSwift;
+			productReference = 8E360CE1A5D6B0C8C35750A8436EBA2B /* BCryptSwift */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -241,7 +327,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -252,10 +338,11 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = DFFF2822C3303B58C17863D2E42A66D1 /* Products */;
+			productRefGroup = DA1E95B756C0C405787DBD13C741A4C8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				C2D34CEB96B2618A6EC90E1A7D12D6F2 /* BCryptSwift */,
 				97E3685499568DCCBA6C15905F707BDC /* Introspect */,
 				4708E720ECC4D97CD458AC7C6F74F253 /* Pods-WeChat */,
 			);
@@ -263,7 +350,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B1D63FFFBF6734CDC44F3F9C57C85419 /* Resources */ = {
+		2A83437C5306CF6166B61B499E0E33F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51CD7ADD4DDF93928C71BB333A1C8E1F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -280,11 +374,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1715E2B1D8E6E9E549631B99AE37D530 /* Sources */ = {
+		8ABC6B8DD837EAE6080B277D2C796104 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE3A99E1DBAFAD97B1F0CF5BF9F20507 /* Pods-WeChat-dummy.m in Sources */,
+				FB17587EA6E1B2B1561B84498C1E41C3 /* Pods-WeChat-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C516AED9EFD8DCF2EA7120B646CBF25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7312BE0435477E925D34F98D8E52A0E9 /* BCryptSwift.swift in Sources */,
+				960E13D53AF27FEA80A580D9E81A0B17 /* BCryptSwift-dummy.m in Sources */,
+				05CEF57AA53A5043A91ECCD89C093283 /* BCryptSwiftRandom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,18 +408,24 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		294B82A9A28E6C3C4FF2A5D682A8479F /* PBXTargetDependency */ = {
+		4579D83B403E14E136B608ED554D29D1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Introspect;
 			target = 97E3685499568DCCBA6C15905F707BDC /* Introspect */;
-			targetProxy = 746593C7105D4D20DA0B5265ABEB0254 /* PBXContainerItemProxy */;
+			targetProxy = FCA6D7ADCB40D7013FEF2525D4F54A6C /* PBXContainerItemProxy */;
+		};
+		E632D672D196C6036E2EB2C6F74871BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BCryptSwift;
+			target = C2D34CEB96B2618A6EC90E1A7D12D6F2 /* BCryptSwift */;
+			targetProxy = 71AE089651AEC737097BB3C6DA279854 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		004EB582ADE887F0060D7D44E5FB1B8E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7FA8350B21394CC67B4C811628A647AB /* Introspect.release.xcconfig */;
+			baseConfigurationReference = 2FB12B5699850CCC45C9A7F5524E8B5A /* Introspect.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -329,7 +439,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Introspect/Introspect-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Introspect/Introspect-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -477,12 +587,10 @@
 			};
 			name = Release;
 		};
-		5B1FF28D8DD694DB8111BD20BF7E6032 /* Debug */ = {
+		3A087B0586C0A7F08DCD68DADABAF695 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6AAC6818A909BCB4BB6DAB176E746E1 /* Pods-WeChat.debug.xcconfig */;
+			baseConfigurationReference = 3D8D1EC2A18E56D20798275642CD7EC6 /* BCryptSwift.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -491,30 +599,64 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-WeChat/Pods-WeChat-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/BCryptSwift/BCryptSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BCryptSwift/BCryptSwift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-WeChat/Pods-WeChat.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/BCryptSwift/BCryptSwift.modulemap";
+				PRODUCT_MODULE_NAME = BCryptSwift;
+				PRODUCT_NAME = BCryptSwift;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6E906BC0F127AAD11030BE5E71B985F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF7869E4620941FC828CA88D2E2B3491 /* BCryptSwift.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BCryptSwift/BCryptSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BCryptSwift/BCryptSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/BCryptSwift/BCryptSwift.modulemap";
+				PRODUCT_MODULE_NAME = BCryptSwift;
+				PRODUCT_NAME = BCryptSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		6DD3BF853B32FD462DDFF9E8062D2B2E /* Release */ = {
+		9290E1A8511FA65385E90050A9F56BED /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C67555810A780060931DF14051696D40 /* Pods-WeChat.release.xcconfig */;
 			buildSettings = {
@@ -552,9 +694,46 @@
 			};
 			name = Release;
 		};
+		981BFD26AC14AA4E53ED1B26969DCB5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6AAC6818A909BCB4BB6DAB176E746E1 /* Pods-WeChat.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-WeChat/Pods-WeChat-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WeChat/Pods-WeChat.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		ACB2C331B367FD90DC4853C6C6760CA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D1119A951EC43052081C7A9A0544F754 /* Introspect.debug.xcconfig */;
+			baseConfigurationReference = 9E9E5B6F0661B6AEB5AC5D2F6612BCEF /* Introspect.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -568,7 +747,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Introspect/Introspect-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Introspect/Introspect-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -608,11 +787,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8C42A8C10FEC9DFF8814587C94BF54B3 /* Build configuration list for PBXNativeTarget "Pods-WeChat" */ = {
+		5583B79D2D2EA3664B56A9597573EBDC /* Build configuration list for PBXNativeTarget "BCryptSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5B1FF28D8DD694DB8111BD20BF7E6032 /* Debug */,
-				6DD3BF853B32FD462DDFF9E8062D2B2E /* Release */,
+				6E906BC0F127AAD11030BE5E71B985F3 /* Debug */,
+				3A087B0586C0A7F08DCD68DADABAF695 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C75E884DD19B5F996803A6E6C98FA425 /* Build configuration list for PBXNativeTarget "Pods-WeChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				981BFD26AC14AA4E53ED1B26969DCB5A /* Debug */,
+				9290E1A8511FA65385E90050A9F56BED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

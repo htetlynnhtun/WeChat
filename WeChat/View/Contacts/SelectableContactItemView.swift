@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SelectableContactItemView: View {
     @State private var selected = false
-    var user: UserVO
+    var user: UserVOD
     
     var body: some View {
         HStack {

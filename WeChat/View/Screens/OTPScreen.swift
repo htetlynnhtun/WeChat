@@ -8,156 +8,79 @@
 import SwiftUI
 
 struct OTPScreen: View {
-    @State private var phoneNumberValue = ""
-    @State private var code1 = ""
-    @State private var code2 = ""
-    @State private var code3 = ""
-    @State private var code4 = ""
-    @State private var otpCode = ""
+    @EnvironmentObject var authVM: AuthViewModel
+    @FocusState private var isFocused
     
     var body: some View {
-        VStack {
-            HStack {
-                VStack(alignment: .leading, spacing: 5) {
-                    Text("Hi!")
-                        .font(.system(size: 30))
-                        .fontWeight(.bold)
-                        .foregroundColor(.colorPrimary)
+        ProgressWrapperView(showActivityIndicator: authVM.showActivityIndicator) {
+            VStack {
+                HStack {
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text("Hi!")
+                            .font(.system(size: 30))
+                            .fontWeight(.bold)
+                            .foregroundColor(.colorPrimary)
+                        
+                        Text("Create a new account.")
+                            .font(.system(size: 16))
+                            .foregroundColor(.colorPrimaryVariant)
+                    }
                     
-                    Text("Create a new account.")
-                        .font(.system(size: 16))
-                        .foregroundColor(.colorPrimaryVariant)
+                    Spacer()
                 }
                 
                 Spacer()
-            }
-            
-            Spacer()
-            
-            Image("Otp")
-            
-            Spacer()
-            
-            VStack(spacing: 35) {
-                HStack {
-                    MaterialTextField(placeholder: "Enter Your Phone Number", text: $phoneNumberValue)
-                        .keyboardType(.phonePad)
-                    
-                    Button("Get OTP") {
-                        print("ontap get otp")
+                
+                Image("Otp")
+                
+                Spacer()
+                
+                VStack(spacing: 35) {
+                    HStack {
+                        MaterialTextField(placeholder: "Enter Your Phone Number", text: $authVM.phoneNumberValue)
+                            .focused($isFocused)
+                            .keyboardType(.phonePad)
+                        
+                        Button("Get OTP") {
+                            isFocused = false
+                            authVM.onTapGetOTP()
+                        }
+                        .frame(width: 90, height: 40)
+                        .wcPrimaryButton()
                     }
-                    .frame(width: 90, height: 40)
-                    .wcPrimaryButton()
-                }
-                
-                // TODO: Refactor me
-//                HStack(spacing: 20) {
-//                    ZStack {
-//                        Rectangle()
-//
-//                            .foregroundColor(.white)
-//                            .shadow(color: .colorOTPShadow, radius: 2, x: 0, y: 5)
-//
-//                        VStack {
-//                            TextField("", text: $code1)
-//                                .multilineTextAlignment(.center)
-//                                .keyboardType(.decimalPad)
-//
-//                            Divider()
-//                                .frame(height: 1)
-//                                .background(Color.colorPrimary)
-//                                .padding(.horizontal, 8)
-//                        }
-//
-//                    }
-//                    .frame(width: 41, height: 45)
-//
-//                    ZStack {
-//                        Rectangle()
-//
-//                            .foregroundColor(.white)
-//                            .shadow(color: .colorOTPShadow, radius: 2, x: 0, y: 5)
-//
-//                        VStack {
-//                            TextField("", text: $code2)
-//                                .multilineTextAlignment(.center)
-//                                .keyboardType(.decimalPad)
-//
-//                            Divider()
-//                                .frame(height: 1)
-//                                .background(Color.colorPrimary)
-//                                .padding(.horizontal, 8)
-//                        }
-//
-//                    }
-//                    .frame(width: 41, height: 45)
-//
-//                    ZStack {
-//                        Rectangle()
-//
-//                            .foregroundColor(.white)
-//                            .shadow(color: .colorOTPShadow, radius: 2, x: 0, y: 5)
-//
-//                        VStack {
-//                            TextField("", text: $code3)
-//                                .multilineTextAlignment(.center)
-//                                .keyboardType(.decimalPad)
-//
-//                            Divider()
-//                                .frame(height: 1)
-//                                .background(Color.colorPrimary)
-//                                .padding(.horizontal, 8)
-//                        }
-//
-//                    }
-//                    .frame(width: 41, height: 45)
-//
-//                    ZStack {
-//                        Rectangle()
-//
-//                            .foregroundColor(.white)
-//                            .shadow(color: .colorOTPShadow, radius: 2, x: 0, y: 5)
-//
-//                        VStack {
-//                            TextField("", text: $code4)
-//                                .multilineTextAlignment(.center)
-//                                .keyboardType(.decimalPad)
-//
-//                            Divider()
-//                                .frame(height: 1)
-//                                .background(Color.colorPrimary)
-//                                .padding(.horizontal, 8)
-//                        }
-//
-//                    }
-//                    .frame(width: 41, height: 45)
-//                }
-                
-                OTPInputView(otpCode: $otpCode)
-                
-                HStack {
-                    Text("Dont receive the OTP?")
-                        .foregroundColor(.colorGray)
                     
-                    Text("Resend code")
-                        .fontWeight(.bold)
-                        .foregroundColor(.colorPrimary)
+                    OTPInputView(otpCode: $authVM.userSubmittedOTP)
+                    
+                    HStack {
+                        Text("Dont receive the OTP?")
+                            .foregroundColor(.colorGray)
+                        
+                        Text("Resend code")
+                            .fontWeight(.bold)
+                            .foregroundColor(.colorPrimary)
+                    }
+                    .font(.system(size: 14))
                 }
-                .font(.system(size: 14))
-            }
-            
-            Spacer()
-            
-            Button("Verify") {
+                
+                Spacer()
+                
+                Button("Verify") {
+                    authVM.onTapVerifyOTP()
+                }
+                .frame(width: 132, height: 48)
+                .wcPrimaryButton()
+                
+                // MARK: - Naviagation
+                NavigationLink(isActive: $authVM.shouldNavigateToRegisterScreen) {
+                    RegisterScreen()
+                } label: {
+                    EmptyView()
+                }
                 
             }
-            .frame(width: 132, height: 48)
-            .wcPrimaryButton()
-        }
-        .padding([.horizontal, .top], 32)
-        .padding(.bottom, 8)
-        .onChange(of: otpCode) { newValue in
-            print(newValue)
+            .padding([.horizontal, .top], 32)
+            .padding(.bottom, 8)
+            .toast(message: authVM.toastMessage, isShowing: $authVM.isShowingToast, duration: Toast.short)
         }
     }
 }

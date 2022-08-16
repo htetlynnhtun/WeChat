@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct SettingScreen: View {
+    @EnvironmentObject var authVM: AuthViewModel
+    
     var body: some View {
-        Text("Setting")
+        Button("Logout") {
+            authVM.onTapLogout()
+        }
+        .frame(width: 132, height: 48)
+        .wcPrimaryButton()
+
     }
 }
 

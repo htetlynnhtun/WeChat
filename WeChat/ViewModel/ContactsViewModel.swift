@@ -9,10 +9,10 @@ import Foundation
 import Combine
 
 class ContactsViewModel: ObservableObject {
-    var currentUser: UserVO
+    var currentUser: UserVOD
     var searchValueSubject = PassthroughSubject<String, Never>()
     
-    required init(currentUser: UserVO) {
+    required init(currentUser: UserVOD) {
         self.currentUser = currentUser
     }
     
@@ -20,7 +20,7 @@ class ContactsViewModel: ObservableObject {
         return self.init(currentUser: MockDataViewModel().currentUser)
     }
     
-    var favorites: [UserVO] {
+    var favorites: [UserVOD] {
         get {
             return MockDataViewModel().users.filter { value in
                 return currentUser.favorites.contains { value.id == $0 }
@@ -28,8 +28,8 @@ class ContactsViewModel: ObservableObject {
         }
     }
     
-    var contacts: [String: [UserVO]] {
-        var results: [String: [UserVO]] = .init()
+    var contacts: [String: [UserVOD]] {
+        var results: [String: [UserVOD]] = .init()
         let sorted = MockDataViewModel().users
             .sorted { a, b in
                 a.name.compare(b.name) == .orderedAscending

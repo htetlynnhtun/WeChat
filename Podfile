@@ -7,5 +7,6 @@ target 'WeChat' do
 
   # Pods for WeChat
   pod 'Introspect'
+  pod "BCryptSwift"
 
 end

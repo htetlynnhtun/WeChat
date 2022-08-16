@@ -9,60 +9,62 @@ import SwiftUI
 
 struct LoginScreen: View {
     
-    @State private var phoneNumberValue = ""
-    @State private var passwordValue = ""
+    @EnvironmentObject var authVM: AuthViewModel
     
     var body: some View {
-        VStack {
-            HStack {
-                VStack(alignment: .leading, spacing: 5) {
-                    Text("Welcome!")
-                        .font(.system(size: 30))
-                        .fontWeight(.bold)
-                        .foregroundColor(.colorPrimary)
+        ProgressWrapperView(showActivityIndicator: authVM.showActivityIndicator) {
+            VStack {
+                HStack {
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text("Welcome!")
+                            .font(.system(size: 30))
+                            .fontWeight(.bold)
+                            .foregroundColor(.colorPrimary)
+                        
+                        Text("Login to continue")
+                            .font(.system(size: 16))
+                            .foregroundColor(.colorPrimaryVariant)
+                    }
                     
-                    Text("Login to continue")
-                        .font(.system(size: 16))
-                        .foregroundColor(.colorPrimaryVariant)
+                    Spacer()
                 }
                 
                 Spacer()
-            }
-            
-            Spacer()
-            
-            Image("Mobile-login-1")
-                .resizable()
-                .frame(width: 268.38, height: 200)
-            
-            Spacer()
-            
-            VStack(spacing: 40) {
-                MaterialTextField(placeholder: "Enter Your Phone Number", text: $phoneNumberValue)
-                    .keyboardType(.phonePad)
                 
-                MaterialTextField(placeholder: "Enter Your Password", isSecured: true, text: $passwordValue)
-            }
-            .padding(.bottom)
-            
-            HStack {
+                Image("Mobile-login-1")
+                    .resizable()
+                    .frame(width: 268.38, height: 200)
+                
                 Spacer()
-                Text("Forgot Password?")
-                    .font(.system(size: 14))
-                .foregroundColor(.colorPrimary)
+                
+                VStack(spacing: 40) {
+                    MaterialTextField(placeholder: "Enter Your Phone Number", text: $authVM.phoneNumberValue)
+                        .keyboardType(.phonePad)
+                    
+                    MaterialTextField(placeholder: "Enter Your Password", isSecured: true, text: $authVM.passwordValue)
+                }
+                .padding(.bottom)
+                
+                HStack {
+                    Spacer()
+                    Text("Forgot Password?")
+                        .font(.system(size: 14))
+                        .foregroundColor(.colorPrimary)
+                }
+                
+                Spacer()
+                
+                Button("Login") {
+                    authVM.onTapLogin()
+                }
+                .frame(width: 132, height: 48)
+                .wcPrimaryButton()
+                
             }
-            
-            Spacer()
-            
-            Button("Login") {
-                print("Login is tapped")
-            }
-            .frame(width: 132, height: 48)
-            .wcPrimaryButton()
-            
+            .padding([.horizontal, .top], 32)
+            .padding(.bottom, 8)
+            .toast(message: authVM.toastMessage, isShowing: $authVM.isShowingToast, duration: Toast.short)
         }
-        .padding([.horizontal, .top], 32)
-        .padding(.bottom, 8)
     }
 }
 

@@ -11,7 +11,7 @@ struct AddNewGroupScreen: View {
     @ObservedObject var vm = ContactsViewModel(currentUser: MockDataViewModel().currentUser)
     @State private var groupName = ""
     @State private var searchValue = ""
-    @State private var selected = [UserVO]()
+    @State private var selected = [UserVOD]()
     
     init() {
         UINavigationBar.appearance().titleTextAttributes = [

@@ -8,41 +8,59 @@
 import SwiftUI
 
 struct SplashScreen: View {
+    @State private var shouldNavigateToLoginScreen = false
+    @State private var shouldNavigateToOTPScreen = false
+    
     var body: some View {
-        VStack {
-            Spacer()
-            
-            Image("Logo")
-            
-            Spacer()
-            
-            VStack(spacing: 32) {
-                VStack {
-                    Text("Text your friends and share moments")
-                        .font(.system(size: 18))
-                        .fontWeight(.medium)
-                    
-                    Text("End-to-end secured messaging app with Social Elements")
-                        .font(.system(size: 12))
-                }
-                .foregroundColor(.colorDarkBlue)
+        NavigationView {
+            VStack {
+                Spacer()
                 
-                HStack(spacing: 16) {
-                    Button("Sign Up") {
-                        print("Sign Up is tapped")
+                Image("Logo")
+                
+                Spacer()
+                
+                VStack(spacing: 32) {
+                    VStack {
+                        Text("Text your friends and share moments")
+                            .font(.system(size: 18))
+                            .fontWeight(.medium)
+                        
+                        Text("End-to-end secured messaging app with Social Elements")
+                            .font(.system(size: 12))
                     }
-                    .frame(width: 132, height: 48)
-                    .wcSecondaryButton()
+                    .foregroundColor(.colorDarkBlue)
                     
-                    Button("Login") {
-                        print("Login is tapped")
+                    HStack(spacing: 16) {
+                        Button("Sign Up") {
+                            shouldNavigateToOTPScreen = true
+                        }
+                        .frame(width: 132, height: 48)
+                        .wcSecondaryButton()
+                        
+                        Button("Login") {
+                            shouldNavigateToLoginScreen = true
+                        }
+                        .frame(width: 132, height: 48)
+                        .wcPrimaryButton()
                     }
-                    .frame(width: 132, height: 48)
-                    .wcPrimaryButton()
                 }
+                
+                // MARK: - Navigation
+                NavigationLink(isActive: $shouldNavigateToLoginScreen) {
+                    LoginScreen()
+                } label: {
+                    EmptyView()
+                }
+                
+                NavigationLink(isActive: $shouldNavigateToOTPScreen) {
+                    OTPScreen()
+                } label: {
+                    EmptyView()
+                }
+
+
             }
-            
-            
         }
         
     }
