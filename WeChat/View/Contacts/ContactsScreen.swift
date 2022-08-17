@@ -8,44 +8,45 @@
 import SwiftUI
 
 struct ContactsScreen: View {
-    @State private var searchValue = ""
     @EnvironmentObject private var mockData: MockDataViewModel
-    @ObservedObject private var vm: ContactsViewModel
     
-    init(vm: ContactsViewModel) {
-        self.vm = vm
-    }
+    @EnvironmentObject var contactVM: ContactViewModel
     
     var body: some View {
         NavigationView {
             VStack {
-                SearchContactView(searchValue: $searchValue)
+                SearchContactView(searchValue: $contactVM.searchKeyword)
                     .padding(.top, 8)
                     .padding(.horizontal)
                 
                 ContactGroupView()
                 
-                //                    VStack {
-                //                        Image("no-contacts-background")
-                //                            .resizable()
-                //                            .aspectRatio(contentMode: .fit)
-                //                            .frame(height: 166)
-                //
-                //                        Text("No contact or group with name")
-                //                        Text(" “Aung Naing” exits")
-                //                    }
-                //                    .frame(maxWidth: .infinity)
+                if (contactVM.searchKeyword.isNotEmpty && contactVM.contacts.isEmpty) {
+                    VStack {
+                        Image("no-contacts-background")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(height: 166)
+                        
+                        Text("No contact or group with name")
+                        Text(" “\(contactVM.searchKeyword)” exits")
+                        
+                        Spacer()
+                    }
+                    .frame(maxWidth: .infinity)
+                }
+              
                 
-                
-                ScrollViewReader { reader in
+                if (!contactVM.contacts.isEmpty) {
+                    ScrollViewReader { reader in
                     ZStack(alignment: .trailing) {
                         ScrollView(showsIndicators: false) {
-                            ContactSectionView(sectionTitle: "Favorites(\(vm.favorites.count))", users: vm.favorites)
-                                .id("fav")
-                                .padding(4)
-                            
-                            ForEach(Array(vm.contacts.keys.sorted()), id: \.self) { value in
-                                ContactSectionView(sectionTitle: value, users: vm.contacts[value]!)
+//                            ContactSectionView(sectionTitle: "Favorites(\(vm.favorites.count))", users: vm.favorites)
+//                                .id("fav")
+//                                .padding(4)
+//
+                            ForEach(Array(contactVM.contacts.keys.sorted()), id: \.self) { value in
+                                ContactSectionView(sectionTitle: value, users: contactVM.contacts[value]!)
                                     .id(value)
                                 .padding(4)
                             }
@@ -62,7 +63,7 @@ struct ContactsScreen: View {
                                     .foregroundColor(.green)
                             }
                             
-                            ForEach(vm.alphabets, id: \.self) { value in
+                            ForEach(contactVM.alphabets, id: \.self) { value in
                                 Button {
                                     withAnimation {
                                         reader.scrollTo(value)
@@ -83,6 +84,7 @@ struct ContactsScreen: View {
                     }
                     .padding(.horizontal)
                 }
+                }
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -100,6 +102,7 @@ struct ContactsScreen: View {
                 }
             }
             .listStyle(.inset)
+            .toast(message: contactVM.toastMessage, isShowing: $contactVM.showToastMessage, duration: Toast.short)
             
         }
     }
@@ -107,7 +110,7 @@ struct ContactsScreen: View {
 
 struct ContactsScreen_Previews: PreviewProvider {
     static var previews: some View {
-        ContactsScreen(vm: .forPreivew())
+        ContactsScreen()
     }
 }
 

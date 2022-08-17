@@ -80,6 +80,10 @@
 		4F4E988828ABEE4E007434C2 /* MeAPIImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E988728ABEE4E007434C2 /* MeAPIImpl.swift */; };
 		4F4E988E28ACC06A007434C2 /* MeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E988D28ACC06A007434C2 /* MeModel.swift */; };
 		4F4E989128ACC676007434C2 /* QRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E989028ACC676007434C2 /* QRCodeGenerator.swift */; };
+		4F4E989328ACD4AE007434C2 /* ContactAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E989228ACD4AE007434C2 /* ContactAPI.swift */; };
+		4F4E989528ACD4C3007434C2 /* ContactAPIImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E989428ACD4C3007434C2 /* ContactAPIImpl.swift */; };
+		4F4E989728ACD639007434C2 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E989628ACD639007434C2 /* ContactModel.swift */; };
+		4F4E989928ACD6A3007434C2 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E989828ACD6A3007434C2 /* ContactViewModel.swift */; };
 		4F5A3B322887E2D400110D82 /* ChatThreadScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5A3B312887E2D400110D82 /* ChatThreadScreen.swift */; };
 		4F5A3B3A288CE05500110D82 /* MessageVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5A3B39288CE05500110D82 /* MessageVO.swift */; };
 		4F5A3B3C288CE5AE00110D82 /* messages.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F5A3B3B288CE5AE00110D82 /* messages.json */; };
@@ -190,6 +194,10 @@
 		4F4E988728ABEE4E007434C2 /* MeAPIImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeAPIImpl.swift; sourceTree = "<group>"; };
 		4F4E988D28ACC06A007434C2 /* MeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeModel.swift; sourceTree = "<group>"; };
 		4F4E989028ACC676007434C2 /* QRCodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGenerator.swift; sourceTree = "<group>"; };
+		4F4E989228ACD4AE007434C2 /* ContactAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAPI.swift; sourceTree = "<group>"; };
+		4F4E989428ACD4C3007434C2 /* ContactAPIImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAPIImpl.swift; sourceTree = "<group>"; };
+		4F4E989628ACD639007434C2 /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
+		4F4E989828ACD6A3007434C2 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		4F5A3B312887E2D400110D82 /* ChatThreadScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatThreadScreen.swift; sourceTree = "<group>"; };
 		4F5A3B39288CE05500110D82 /* MessageVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVO.swift; sourceTree = "<group>"; };
 		4F5A3B3B288CE5AE00110D82 /* messages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = messages.json; sourceTree = "<group>"; };
@@ -291,6 +299,7 @@
 				4F4E987628AB7D79007434C2 /* MomentModel.swift */,
 				4F4E987C28AB8A50007434C2 /* StorageModel.swift */,
 				4F4E988D28ACC06A007434C2 /* MeModel.swift */,
+				4F4E989628ACD639007434C2 /* ContactModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -325,6 +334,7 @@
 				4F79DBBD28AA3457002B9924 /* AuthViewModel.swift */,
 				4F4E988128ABB656007434C2 /* MomentItemViewModel.swift */,
 				4F4E988328ABE5D0007434C2 /* MeViewModel.swift */,
+				4F4E989828ACD6A3007434C2 /* ContactViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -505,6 +515,8 @@
 				4F4E987A28AB87D0007434C2 /* StorageAPIImpl.swift */,
 				4F4E988528ABEE3B007434C2 /* MeAPI.swift */,
 				4F4E988728ABEE4E007434C2 /* MeAPIImpl.swift */,
+				4F4E989228ACD4AE007434C2 /* ContactAPI.swift */,
+				4F4E989428ACD4C3007434C2 /* ContactAPIImpl.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -689,8 +701,10 @@
 				4F2B18B62885A448007BCB85 /* MomentViewModel.swift in Sources */,
 				4F4E987928AB87C2007434C2 /* StorageAPI.swift in Sources */,
 				4F2B18C228867517007BCB85 /* WCViewModifiers.swift in Sources */,
+				4F4E989328ACD4AE007434C2 /* ContactAPI.swift in Sources */,
 				4F2B18C4288687AB007BCB85 /* ChatHeadItemView.swift in Sources */,
 				4F2B18B028859D86007BCB85 /* MomentVOD.swift in Sources */,
+				4F4E989528ACD4C3007434C2 /* ContactAPIImpl.swift in Sources */,
 				4F33E27A2885000600E15B12 /* SplashScreen.swift in Sources */,
 				4F2B188428858C4C007BCB85 /* ContactsScreen.swift in Sources */,
 				4F93335328965274008A41F5 /* MomentImagePickingView.swift in Sources */,
@@ -740,6 +754,7 @@
 				4F3D47AA289E4697000155EE /* ContactGroupView.swift in Sources */,
 				4F3D47B2289E4748000155EE /* SelectableContactItemView.swift in Sources */,
 				4FAC6CE3288D338900EAA161 /* TextMessageView.swift in Sources */,
+				4F4E989928ACD6A3007434C2 /* ContactViewModel.swift in Sources */,
 				4FD9A0AD28AA57400002713A /* ProgressWrapperView.swift in Sources */,
 				4F2D1B7C288D8CE500F06083 /* ContactsViewModel.swift in Sources */,
 				4F33E26B2884F81800E15B12 /* WeChatApp.swift in Sources */,
@@ -750,6 +765,7 @@
 				4F93335128963D33008A41F5 /* MomentImageGridView.swift in Sources */,
 				4F4E987728AB7D79007434C2 /* MomentModel.swift in Sources */,
 				4F2B18B82885A45F007BCB85 /* MockDataViewModel.swift in Sources */,
+				4F4E989728ACD639007434C2 /* ContactModel.swift in Sources */,
 				4F3D47B0289E4728000155EE /* SelectableContactSectionView.swift in Sources */,
 				4F2B188228858C37007BCB85 /* ChatScreen.swift in Sources */,
 				4F2B18C6288696A9007BCB85 /* ChatItemView.swift in Sources */,

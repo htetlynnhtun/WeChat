@@ -47,7 +47,7 @@ struct ContentView: View {
                         }
                         .tag(Tab.chat)
                     
-                    ContactsScreen(vm: ContactsViewModel(currentUser: mockData.currentUser))
+                    ContactsScreen()
                         .tabItem {
                             Label {
                                 Text("Contacts")
@@ -57,6 +57,7 @@ struct ContentView: View {
                             }
                         }
                         .tag(Tab.contacts)
+                        .environmentObject(ContactViewModel(user: authVM.currentUser!))
                     
                     MeScreen()
                         .tabItem {

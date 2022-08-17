@@ -6,23 +6,22 @@
 //
 
 import SwiftUI
-import CachedAsyncImage
+import SDWebImageSwiftUI
 
 struct ChatHeadItemView: View {
     var shouldShowIndicator = true
     var isActive: Bool
     var size: Double = 50
-    var avatar = "https://i.pravatar.cc/150?u=a042581f4e29026704d"
+    var avatar = URL(string: "https://i.pravatar.cc/150?u=a042581f4e29026704d")
     
     var body: some View {
         ZStack {
-            CachedAsyncImage(url: URL(string: avatar)) { image in
-                image.resizable()
-            } placeholder: {
-                ProgressView()
-            }
-            .frame(width: size, height: size)
-            .clipShape(Circle())
+            WebImage(url: avatar)
+                .resizable()
+                .indicator(.progress)
+                .aspectRatio(contentMode: .fill)
+                .frame(width: size, height: size)
+                .clipShape(Circle())
             
             Group {
                 if shouldShowIndicator {

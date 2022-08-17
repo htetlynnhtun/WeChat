@@ -15,6 +15,8 @@ struct AddNewContactScreen: View {
     @State private var isShowingPhotoPicker = false
     @State private var selectedUIImages = [UIImage]()
 
+    @EnvironmentObject var contactVM: ContactViewModel
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {
         ZStack {
@@ -80,11 +82,10 @@ struct AddNewContactScreen: View {
             }
         }
         .onChange(of: scannerModel.scanResult, perform: { newValue in
-            /*
-             onChange run only once...
-             
-             */
             print("scan result: \(newValue)")
+            contactVM.addContact(qrCode: newValue) {
+                presentationMode.wrappedValue.dismiss()
+            }
         })
         .onAppear {
             scannerModel.check()

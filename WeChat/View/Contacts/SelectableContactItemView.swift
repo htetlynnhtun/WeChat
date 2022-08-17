@@ -13,7 +13,7 @@ struct SelectableContactItemView: View {
     
     var body: some View {
         HStack {
-            ContactItemView(user: user)
+//            ContactItemView(user: user)
             
             Button {
                 selected.toggle()
