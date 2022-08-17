@@ -68,6 +68,7 @@ struct ContentView: View {
                             }
                         }
                         .tag(Tab.me)
+                        .environmentObject(MeViewModel(user: authVM.currentUser!))
                     
                     SettingScreen()
                         .tabItem {

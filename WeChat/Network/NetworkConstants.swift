@@ -8,3 +8,4 @@
 import Foundation
 
 let momentsCollection = "moments"
+let usersCollection = "users"
