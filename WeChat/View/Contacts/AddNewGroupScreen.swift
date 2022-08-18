@@ -8,10 +8,8 @@
 import SwiftUI
 
 struct AddNewGroupScreen: View {
-    @ObservedObject var vm = ContactsViewModel(currentUser: MockDataViewModel().currentUser)
-    @State private var groupName = ""
-    @State private var searchValue = ""
-    @State private var selected = [UserVOD]()
+    
+    @EnvironmentObject var contactVM: ContactViewModel
     
     init() {
         UINavigationBar.appearance().titleTextAttributes = [
@@ -21,51 +19,86 @@ struct AddNewGroupScreen: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            Text("Group Name")
-                .font(.system(size: 16))
-                .foregroundColor(.colorPrimary)
-                .padding(.horizontal)
-            
-            TextField("", text: $groupName)
-                .textFieldStyle(.plain)
-                .overlay(alignment: .bottom) {
-                    Rectangle()
-                        .frame(height: 1)
-                        .foregroundColor(.colorPrimary)
-                }
-                .frame(height: 30)
-                .padding(.horizontal)
-            
-            SearchContactView(searchValue: $searchValue)
-                .padding([.horizontal, .top], 16)
-                .padding(.bottom, 8)
-            
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 13) {
-                    SelectedMemberItemView()
-                    SelectedMemberItemView()
-                    SelectedMemberItemView()
-                    SelectedMemberItemView()
-                    SelectedMemberItemView()
-                    SelectedMemberItemView()
-                    SelectedMemberItemView()
-                }
-                .padding(.horizontal)
-                .padding(.top, 16)
-                .padding(.bottom, 2)
-            }
-            
-            ScrollView(showsIndicators: false) {
-                SelectableContactSectionView(sectionTitle: "Favorites(\(vm.favorites.count))", users: vm.favorites)
-                    .padding(4)
+        ProgressWrapperView(showActivityIndicator: contactVM.showActivityIndicator) {
+            VStack(alignment: .leading, spacing: 0) {
+                Text("Group Name")
+                    .font(.system(size: 16))
+                    .foregroundColor(.colorPrimary)
+                    .padding(.horizontal)
                 
-                ForEach(Array(vm.contacts.keys.sorted()), id: \.self) { value in
-                    SelectableContactSectionView(sectionTitle: value, users: vm.contacts[value]!)
+                TextField("", text: $contactVM.groupName)
+                    .textFieldStyle(.plain)
+                    .overlay(alignment: .bottom) {
+                        Rectangle()
+                            .frame(height: 1)
+                            .foregroundColor(.colorPrimary)
+                    }
+                    .frame(height: 30)
+                    .padding(.horizontal)
+                
+                SearchContactView(searchValue: $contactVM.searchKeyword)
+                    .padding([.horizontal, .top], 16)
+                    .padding(.bottom, 8)
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 13) {
+                        ForEach(contactVM.selectedUsers, id: \.self) { user in
+                            SelectedMemberItemView(user: user)
+                        }
+                    }
+                    .padding(.horizontal)
+                    .padding(.top, 16)
+                    .padding(.bottom, 2)
                 }
-                .padding(4)
+                
+                if (!contactVM.contacts.isEmpty) {
+                    ScrollViewReader { reader in
+                        ZStack(alignment: .trailing) {
+                            ScrollView(showsIndicators: false) {
+                                //                    SelectableContactSectionView(sectionTitle: "Favorites(\(vm.favorites.count))", users: vm.favorites)
+                                //                        .padding(4)
+                                
+                                ForEach(Array(contactVM.contacts.keys.sorted()), id: \.self) { value in
+                                    SelectableContactSectionView(sectionTitle: value, users: contactVM.contacts[value]!)
+                                }
+                                .padding(4)
+                            }
+                            .padding([.horizontal, .top], 16)
+                            
+                            VStack(spacing: 6) {
+                                Button {
+                                    withAnimation {
+                                        reader.scrollTo("fav")
+                                    }
+                                } label: {
+                                    Image(systemName: "star.fill")
+                                        .font(.system(size: 10))
+                                        .foregroundColor(.green)
+                                }
+                                
+                                ForEach(contactVM.alphabets, id: \.self) { value in
+                                    Button {
+                                        withAnimation {
+                                            reader.scrollTo(value)
+                                        }
+                                    } label: {
+                                        Text(value)
+                                            .font(.system(size: 10))
+                                    }
+                                }
+                            }
+                            .padding(4)
+                            .background {
+                                Rectangle()
+                                    .foregroundColor(.white)
+                                    .cornerRadius(4)
+                                    .shadow(color: Color.gray.opacity(0.5), radius: 1, x: 1, y: 0)
+                            }
+                            
+                        }
+                    }
+                }
             }
-            .padding([.horizontal, .top], 16)
         }
     }
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseDatabase
 
 class ContactAPIImpl: ContactAPI {
     
@@ -14,6 +15,7 @@ class ContactAPIImpl: ContactAPI {
     private init() { }
     
     private let db = Firestore.firestore()
+    private let ref = Database.database().reference();
     
     func addContact(qrCode: String, to user: UserVO, onSuccess: @escaping () -> Void, onFailure: @escaping (String) -> Void) {
         let userDocRef = db.collection(usersCollection).document(user.qrCode)
@@ -87,5 +89,60 @@ class ContactAPIImpl: ContactAPI {
             
             onDataArrived(contacts)
         }
+    }
+    
+    func getGroups(for user: UserVO, onDataArrived: @escaping ([GroupVO]) -> Void) {
+        let groupsCollectionRef = db.collection(usersCollection).document(user.qrCode).collection(groupsSubCollection)
+        
+        groupsCollectionRef.addSnapshotListener { querySnapshot, error in
+            guard let documents = querySnapshot?.documents else {
+                print("Failed to fetch groups")
+                return
+            }
+            
+            let groups: [GroupVO] = documents.compactMap { documentSnapshot in
+                let result = Result { try documentSnapshot.data(as: GroupVO.self) }
+                
+                switch result {
+                case .success(let group):
+                    return group
+                case .failure(_):
+                    return nil
+                }
+            }
+            
+            onDataArrived(groups)
+        }
+    }
+    
+    func createGroup(with users: [UserVO], name: String, onSuccess: @escaping () -> Void) {
+        // create a group node in realtimedb
+        let groupID = UUID().uuidString
+        ref
+            .child(groupsNode)
+            .child(groupID)
+            .setValue([
+                "name": name
+            ])
+        
+        let group = DispatchGroup()
+        // put the created group under each user's groups sub-collection in firestore
+        users.forEach { user in
+            group.enter()
+            let groupDocRef = db.collection(usersCollection).document(user.qrCode).collection(groupsSubCollection).document(groupID)
+            
+            try? groupDocRef.setData(from: GroupVO(id: groupID, name: name)) { error in
+                if let error = error {
+                    print("Failed to add the created group to user: \(user.qrCode), error: \(error.localizedDescription)")
+                }
+                group.leave()
+            }
+        }
+        
+        group.notify(queue: .main) {
+            onSuccess()
+        }
+        
+        
     }
 }

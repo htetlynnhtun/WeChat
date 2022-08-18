@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct SelectedMemberItemView: View {
+    var user: UserVO
+    
     var body: some View {
         ZStack {
             VStack {
-                ChatHeadItemView(isActive: true, size: 50)
-                Text("Moe Naing Aung")
+                ChatHeadItemView(isActive: true, size: 50, avatar: user.profilePicture)
+                Text(user.name)
                     .font(.system(size: 8))
                     .foregroundColor(.colorPrimary)
             }

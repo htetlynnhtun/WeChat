@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		33E27A7418E2670CBE8AA6C9 /* Pods_WeChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FF820A0F8297C78F9A0254 /* Pods_WeChat.framework */; };
 		4F100B2F289A70BC0041C11F /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F100B2E289A70BC0041C11F /* PhotoPicker.swift */; };
+		4F269C6128ADF500008A6DFF /* GroupVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F269C6028ADF500008A6DFF /* GroupVO.swift */; };
 		4F2B188028858BC9007BCB85 /* MomentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B187F28858BC9007BCB85 /* MomentScreen.swift */; };
 		4F2B188228858C37007BCB85 /* ChatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B188128858C37007BCB85 /* ChatScreen.swift */; };
 		4F2B188428858C4C007BCB85 /* ContactsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B188328858C4C007BCB85 /* ContactsScreen.swift */; };
@@ -129,6 +130,7 @@
 /* Begin PBXFileReference section */
 		274AF923DA50B57D9626AD65 /* Pods-WeChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChat.release.xcconfig"; path = "Target Support Files/Pods-WeChat/Pods-WeChat.release.xcconfig"; sourceTree = "<group>"; };
 		4F100B2E289A70BC0041C11F /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		4F269C6028ADF500008A6DFF /* GroupVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupVO.swift; sourceTree = "<group>"; };
 		4F2B187F28858BC9007BCB85 /* MomentScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentScreen.swift; sourceTree = "<group>"; };
 		4F2B188128858C37007BCB85 /* ChatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreen.swift; sourceTree = "<group>"; };
 		4F2B188328858C4C007BCB85 /* ContactsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsScreen.swift; sourceTree = "<group>"; };
@@ -514,6 +516,7 @@
 				4F79DBA428AA08D1002B9924 /* UserVO.swift */,
 				4F4E987028AB730F007434C2 /* MomentVO.swift */,
 				4F4E989E28AD2754007434C2 /* MessageVO.swift */,
+				4F269C6028ADF500008A6DFF /* GroupVO.swift */,
 			);
 			path = vo;
 			sourceTree = "<group>";
@@ -715,6 +718,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F269C6128ADF500008A6DFF /* GroupVO.swift in Sources */,
 				4F2B188028858BC9007BCB85 /* MomentScreen.swift in Sources */,
 				4F2B18B62885A448007BCB85 /* MomentViewModel.swift in Sources */,
 				4F4E987928AB87C2007434C2 /* StorageAPI.swift in Sources */,

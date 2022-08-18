@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContactGroupItemView: View {
+    var group: GroupVO
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 5)
@@ -21,7 +23,7 @@ struct ContactGroupItemView: View {
                     .frame(width: 50, height: 50)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                 
-                Text("Jack")
+                Text(group.name)
                     .font(.system(size: 14))
             }
             .frame(width: 90, height: 90)
@@ -30,8 +32,8 @@ struct ContactGroupItemView: View {
     }
 }
 
-struct ContactGroupItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContactGroupItemView()
-    }
-}
+//struct ContactGroupItemView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContactGroupItemView()
+//    }
+//}

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SelectableContactSectionView: View {
     var sectionTitle: String
-    var users: [UserVOD]
+    var users: [UserVO]
     
     var body: some View {
         ZStack {

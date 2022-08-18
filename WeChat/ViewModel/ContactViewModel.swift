@@ -12,9 +12,20 @@ class ContactViewModel: ObservableObject {
     
     @Published var toastMessage = ""
     @Published var showToastMessage = false
+    @Published var showActivityIndicator = false
+    
+    /// Total contacts
     @Published var contacts = [String: [UserVO]]()
-    @Published private var originalContacts = [UserVO]()
     @Published var searchKeyword = ""
+    
+    /// For creating a new group
+    @Published var groupName = ""
+    /// For creating a new group
+    @Published var selectedUsers = [UserVO]()
+    @Published var showAddNewGroup = false
+    @Published var groups = [GroupVO]()
+    
+    @Published private var originalContacts = [UserVO]()
     
     private let currentUser: UserVO
     private var cancellables = [AnyCancellable]()
@@ -22,8 +33,6 @@ class ContactViewModel: ObservableObject {
     
     init(user: UserVO) {
         currentUser = user
-        
-        fetchContacts()
         
         $originalContacts.sink { [weak self] contacts in
             guard let self = self else { return }
@@ -50,11 +59,19 @@ class ContactViewModel: ObservableObject {
         .store(in: &cancellables)
     }
     
-    private func fetchContacts() {
+    func fetchContacts() {
         contactModel.getContacts(for: self.currentUser) { [weak self] contacts in
             guard let self = self else { return }
             
             self.originalContacts = contacts
+        }
+    }
+    
+    func fetchGroups() {
+        contactModel.getGroups(for: self.currentUser) { [weak self] groups in
+            guard let self = self else { return }
+            
+            self.groups = groups
         }
     }
     
@@ -73,6 +90,7 @@ class ContactViewModel: ObservableObject {
         return results
     }
     
+    // MARK: - UI Events
     
     func addContact(qrCode: String, onDone: @escaping () -> Void) {
         contactModel.addContact(qrCode: qrCode, to: currentUser) {
@@ -83,6 +101,52 @@ class ContactViewModel: ObservableObject {
             onDone()
         }
     }
+    
+    func createNewGroup() {
+        guard groupName.isNotEmpty,
+              !selectedUsers.isEmpty else {
+            return
+        }
+        
+        var totalUsers = [currentUser]
+        totalUsers.append(contentsOf: selectedUsers)
+        
+        showActivityIndicator = true
+        contactModel.createGroup(with: totalUsers, name: groupName) { [weak self] in
+            guard let self = self else { return }
+            
+            self.showActivityIndicator = false
+            self.selectedUsers = []
+            self.groupName = ""
+            self.showAddNewGroup = false
+        }
+    }
+    
+    func onTapSelect(_ user: UserVO) {
+        if let i = selectedUsers.firstIndex(of: user) {
+            // user is already selected, so remove it
+            selectedUsers.remove(at: i)
+        } else {
+            // user is not selected, so add it
+            selectedUsers.append(user)
+        }
+    }
+    
+    func onTapAddNewGroup() {
+        showAddNewGroup = true
+    }
+    
+    func onDismissAddNewGroup() {
+        showAddNewGroup = false
+        selectedUsers = []
+    }
+    
+    // MARK: - Helpers
+    
+    func isSelected(_ user: UserVO) -> Bool {
+        return selectedUsers.contains(user)
+    }
+    
     
     let alphabets = [
         "A",

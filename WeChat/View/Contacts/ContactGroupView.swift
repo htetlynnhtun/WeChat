@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct ContactGroupView: View {
-    @State private var showAddNewGroup = false
+    
+    @EnvironmentObject var contactVM: ContactViewModel
+    
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Groups(5)")
+            Text("Groups(\(contactVM.groups.count))")
                 .font(.system(size: 14))
                 .fontWeight(.semibold)
                 .foregroundColor(.colorPrimary)
@@ -21,7 +23,7 @@ struct ContactGroupView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 12) {
                     Button {
-                        showAddNewGroup = true
+                        contactVM.onTapAddNewGroup()
                     } label: {
                         VStack {
                             Image("add-people-icon")
@@ -36,14 +38,14 @@ struct ContactGroupView: View {
                     .cornerRadius(5)
                     .padding(.leading)
                     
-                    ForEach(0..<5) { i in
-                        ContactGroupItemView()
+                    ForEach(contactVM.groups, id: \.id) { group in
+                        ContactGroupItemView(group: group)
                     }
                 }
                 .padding(.bottom)
             }
         }
-        .fullScreenCover(isPresented: $showAddNewGroup) {
+        .fullScreenCover(isPresented: $contactVM.showAddNewGroup) {
             NavigationView {
                 AddNewGroupScreen()
                     .navigationTitle("New Group")
@@ -51,7 +53,7 @@ struct ContactGroupView: View {
                     .toolbar {
                         ToolbarItem(placement: .navigationBarLeading) {
                             Button {
-                                showAddNewGroup = false
+                                contactVM.onDismissAddNewGroup()
                             } label: {
                                 Image(systemName: "multiply")
                                     .foregroundColor(.colorPrimary)
@@ -60,7 +62,7 @@ struct ContactGroupView: View {
                         
                         ToolbarItem(placement: .navigationBarTrailing) {
                             Button {
-                                print("Create")
+                                contactVM.createNewGroup()
                             } label: {
                                 Text("Create")
                             }

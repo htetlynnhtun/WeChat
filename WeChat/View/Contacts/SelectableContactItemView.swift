@@ -8,18 +8,19 @@
 import SwiftUI
 
 struct SelectableContactItemView: View {
-    @State private var selected = false
-    var user: UserVOD
+    
+    @EnvironmentObject var contactVM: ContactViewModel
+    
+    var user: UserVO
     
     var body: some View {
         HStack {
-//            ContactItemView(user: user)
+            ContactItemView(user: user)
             
             Button {
-                selected.toggle()
-                print("Selected: \(selected)")
+                contactVM.onTapSelect(user)
             } label: {
-                Image(systemName: selected ? "checkmark.circle.fill" : "circle")
+                Image(systemName: contactVM.isSelected(user) ? "checkmark.circle.fill" : "circle")
                     .foregroundColor(.colorPrimary)
             }
         }

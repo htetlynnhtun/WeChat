@@ -105,6 +105,10 @@ struct ContactsScreen: View {
             .toast(message: contactVM.toastMessage, isShowing: $contactVM.showToastMessage, duration: Toast.short)
             
         }
+        .onAppear {
+            contactVM.fetchContacts()
+            contactVM.fetchGroups()
+        }
     }
 }
 
