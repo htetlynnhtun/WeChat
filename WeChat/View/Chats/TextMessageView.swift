@@ -8,28 +8,27 @@
 import SwiftUI
 
 struct TextMessageView: View {
-    var currentUser = "John"
+    
+    @EnvironmentObject var authVM: AuthViewModel
+    @EnvironmentObject var chatVM: ChatViewModel
+    
     var message: MessageVO
     
-    private var isIncoming: Bool {
-        return currentUser != message.sender
-    }
-    
     var body: some View {
-        VStack(alignment: isIncoming ? .leading : .trailing, spacing: 8) {
+        VStack(alignment: chatVM.isInComing(message) ? .leading : .trailing, spacing: 8) {
             Text(message.payload)
                 .font(.system(size: 16))
-                .foregroundColor(isIncoming ? .colorPrimary : .white)
+                .foregroundColor(chatVM.isInComing(message) ? .colorPrimary : .white)
             
-            Text(message.date)
+            Text(message.timestamp.toReadable())
                 .font(.system(size: 8))
-                .foregroundColor(isIncoming ? .colorGray: .white)
+                .foregroundColor(chatVM.isInComing(message) ? .colorGray: .white)
         }
     }
 }
 
-struct TextMessageView_Previews: PreviewProvider {
-    static var previews: some View {
-        TextMessageView(message: MockDataViewModel().messages[0])
-    }
-}
+//struct TextMessageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TextMessageView(message: MockDataViewModel().messages[0])
+//    }
+//}

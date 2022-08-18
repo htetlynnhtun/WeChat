@@ -19,6 +19,7 @@ struct ContactItemView: View {
                 .font(.system(size: 16))
                 .foregroundColor(.colorPrimary)
             
-            Spacer()        }
+            Spacer()
+        }
     }
 }

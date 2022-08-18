@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MessageVO: Codable, Hashable, Identifiable {
+struct MessageVOD: Codable, Hashable, Identifiable {
     var id: Int
     var type: MessagePayloadType
     var payload: String

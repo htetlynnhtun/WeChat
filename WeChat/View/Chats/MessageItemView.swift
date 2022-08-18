@@ -9,22 +9,18 @@ import SwiftUI
 import CachedAsyncImage
 
 struct MessageItemView: View {
+    
+    @EnvironmentObject var authVM: AuthViewModel
+    @EnvironmentObject var chatVM: ChatViewModel
+    
     var message: MessageVO
-    var currentUser = "John"
     
-    private var isInComing: Bool {
-        message.sender != currentUser
-    }
-    
-    private var backgroundColor: Color {
-        isInComing ? Color.colorGray2.opacity(0.5): .colorPrimary
-    }
     
     var body: some View {
         HStack {
-            if (isInComing) {
+            if (chatVM.isInComing(message)) {
                 VStack {
-                    ChatHeadItemView(isActive: true, size: 30)
+                    ChatHeadItemView(isActive: true, size: 30, avatar: chatVM.receiver.profilePicture)
                         .frame(width: 30, height: 40)
                     Spacer()
                 }
@@ -38,10 +34,12 @@ struct MessageItemView: View {
                     TextMessageView(message: message)
                     
                 case .image:
-                    ImageMessageView(message: message)
+//                    ImageMessageView(message: message)
+                    EmptyView()
                     
                 case .audio:
-                    VoiceMessageView(vm: VoiceMessageViewModel(message: message))
+//                    VoiceMessageView(vm: VoiceMessageViewModel(message: message))
+                    EmptyView()
                 default:
                     EmptyView()
                 }
@@ -50,14 +48,15 @@ struct MessageItemView: View {
             .padding(.vertical, 4)
             .background {
                 if (message.type == .text || message.type == .audio) {
-                    backgroundColor
+                    chatVM.backgroundColor(for: message)
                 } else {
                     EmptyView()
                 }
             }
             .cornerRadius(5)
+            .environmentObject(chatVM)
             
-            if (isInComing) {
+            if (chatVM.isInComing(message)) {
                 Spacer()
             }
         }
@@ -65,12 +64,12 @@ struct MessageItemView: View {
     }
 }
 
-struct MessageItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack {
-            MessageItemView(message: MockDataViewModel().messages[0])
-            MessageItemView(message: MockDataViewModel().messages[1])
-            MessageItemView(message: MockDataViewModel().messages[2])
-        }
-    }
-}
+//struct MessageItemView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        VStack {
+//            MessageItemView(message: MockDataViewModel().messages[0])
+//            MessageItemView(message: MockDataViewModel().messages[1])
+//            MessageItemView(message: MockDataViewModel().messages[2])
+//        }
+//    }
+//}

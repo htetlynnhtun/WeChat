@@ -10,7 +10,7 @@ import CachedAsyncImage
 
 struct ImageMessageView: View {
     var currentUser = "John"
-    var message: MessageVO
+    var message: MessageVOD
     
     private var isIncoming: Bool {
         return currentUser != message.sender

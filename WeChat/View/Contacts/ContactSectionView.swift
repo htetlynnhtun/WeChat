@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContactSectionView: View {
+    
+    @EnvironmentObject var authVM: AuthViewModel
+    
     var sectionTitle: String
     var users: [UserVO]
     
@@ -26,8 +29,12 @@ struct ContactSectionView: View {
                 Spacer()
                     .frame(height: 16)
                 
-                ForEach(users, id: \.self) { value in
-                    ContactItemView(user: value)
+                ForEach(users, id: \.self) { user in
+                    NavigationLink {
+                        ChatThreadScreen(chatVM: ChatViewModel(sender: authVM.currentUser!, receiver: user))
+                    } label: {
+                        ContactItemView(user: user)
+                    }
                 }
             }
             .padding(8)

@@ -8,13 +8,13 @@
 import Foundation
 
 class VoiceMessageViewModel: ObservableObject {
-    let message: MessageVO
+    let message: MessageVOD
     private var audioManager: AudioManager = AudioManagerImpl.shared
     
     @Published var isPlaying = false
     @Published var audioFileURL: URL?
     
-    init(message: MessageVO) {
+    init(message: MessageVOD) {
         self.message = message
         
         let cachesFolderURL = try? FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)

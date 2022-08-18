@@ -21,7 +21,7 @@ struct ChatScreen: View {
                     
                     ForEach(0..<20) { i in
                         NavigationLink {
-                            ChatThreadScreen()
+//                            ChatThreadScreen()
                         } label: {
                             ChatItemView(username: "User \(i)", indicator: .allCases.randomElement()!)
                                 .padding(.bottom, 6)

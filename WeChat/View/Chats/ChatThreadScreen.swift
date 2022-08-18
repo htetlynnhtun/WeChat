@@ -10,18 +10,19 @@ import Introspect
 import Photos
 
 struct ChatThreadScreen: View {
-    @EnvironmentObject var mockData: MockDataViewModel
     @State private var anyTabBarController: UITabBarController?
-    @State private var textFieldValue = ""
     @State private var isShowingPhotoPicker = false
     @State private var isShowingCamera = false
+    
+    @ObservedObject var chatVM: ChatViewModel
     
     var body: some View {
         VStack {
             ScrollView(showsIndicators: false) {
-                ForEach(mockData.messages, id: \.self) { value in
+                ForEach(chatVM.messages, id: \.self) { value in
                     MessageItemView(message: value)
                         .listRowSeparator(.hidden)
+                        .environmentObject(chatVM)
                 }
                 .upsideDown()
             }
@@ -29,8 +30,8 @@ struct ChatThreadScreen: View {
             .upsideDown()
             
             HStack {
-                TextField("", text: $textFieldValue)
-                    .placeholder(when: textFieldValue.isEmpty) {
+                TextField("", text: $chatVM.textFieldValue)
+                    .placeholder(when: chatVM.textFieldValue.isEmpty) {
                         Text("Type a message...")
                             .font(.system(size: 16))
                             .foregroundColor(.gray)
@@ -47,7 +48,7 @@ struct ChatThreadScreen: View {
                         - location
                         - voice message
                      */
-                    print("sending message")
+                    chatVM.sendMessage()
                 } label: {
                     Image(systemName: "paperplane")
                         .rotationEffect(Angle(degrees: 45))
@@ -131,11 +132,12 @@ struct ChatThreadScreen: View {
                 HStack {
                     ChatHeadItemView(
                         isActive: true,
-                        size: 40
+                        size: 40,
+                        avatar: chatVM.receiver.profilePicture
                     )
                     
                     VStack(alignment: .leading) {
-                        Text("Ace")
+                        Text(chatVM.receiver.name)
                             .font(.system(size: 16))
                             .fontWeight(.medium)
                         
@@ -162,6 +164,9 @@ struct ChatThreadScreen: View {
             tabBarController.tabBar.isHidden = true
             anyTabBarController = tabBarController
         }
+        .onAppear {
+            chatVM.fetchMessages()
+        }
         .onDisappear {
             anyTabBarController?.tabBar.isHidden = false
         }
@@ -169,15 +174,15 @@ struct ChatThreadScreen: View {
     }
 }
 
-struct ChatThreadScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            ChatThreadScreen()
-                .environmentObject(MockDataViewModel())
-        }
-        .previewInterfaceOrientation(.portrait)
-    }
-}
+//struct ChatThreadScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NavigationView {
+//            ChatThreadScreen()
+//                .environmentObject(MockDataViewModel())
+//        }
+//        .previewInterfaceOrientation(.portrait)
+//    }
+//}
 
 
 

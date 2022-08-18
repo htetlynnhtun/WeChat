@@ -11,7 +11,7 @@ final class MockDataViewModel: ObservableObject {
     @Published var images = ["moment-pic-3"]
 //    @Published var images = ["moment-pic-3", "moment-pic-2", "moment-pic-1"]
     @Published var moments: [MomentVOD] = load("moments.json")
-    @Published var messages: [MessageVO] = load("messages.json")
+    @Published var messages: [MessageVOD] = load("messages.json")
     @Published var users: [UserVOD] = load("users.json")
     @Published var currentUser = UserVOD(
         id: 777,

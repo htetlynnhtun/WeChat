@@ -84,8 +84,14 @@
 		4F4E989528ACD4C3007434C2 /* ContactAPIImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E989428ACD4C3007434C2 /* ContactAPIImpl.swift */; };
 		4F4E989728ACD639007434C2 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E989628ACD639007434C2 /* ContactModel.swift */; };
 		4F4E989928ACD6A3007434C2 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E989828ACD6A3007434C2 /* ContactViewModel.swift */; };
+		4F4E989B28AD2632007434C2 /* ChatAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E989A28AD2632007434C2 /* ChatAPI.swift */; };
+		4F4E989D28AD2646007434C2 /* ChatAPIImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E989C28AD2646007434C2 /* ChatAPIImpl.swift */; };
+		4F4E989F28AD2754007434C2 /* MessageVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E989E28AD2754007434C2 /* MessageVO.swift */; };
+		4F4E98A128AD39A9007434C2 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4F4E98A028AD39A9007434C2 /* FirebaseDatabaseSwift */; };
+		4F4E98A328AD4C40007434C2 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E98A228AD4C40007434C2 /* ChatModel.swift */; };
+		4F4E98A528AD4CB2007434C2 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E98A428AD4CB2007434C2 /* ChatViewModel.swift */; };
 		4F5A3B322887E2D400110D82 /* ChatThreadScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5A3B312887E2D400110D82 /* ChatThreadScreen.swift */; };
-		4F5A3B3A288CE05500110D82 /* MessageVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5A3B39288CE05500110D82 /* MessageVO.swift */; };
+		4F5A3B3A288CE05500110D82 /* MessageVOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5A3B39288CE05500110D82 /* MessageVOD.swift */; };
 		4F5A3B3C288CE5AE00110D82 /* messages.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F5A3B3B288CE5AE00110D82 /* messages.json */; };
 		4F5A3B40288CEF6700110D82 /* MessageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5A3B3F288CEF6700110D82 /* MessageItemView.swift */; };
 		4F6120452887AACA00B56051 /* ContactGroupItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6120442887AACA00B56051 /* ContactGroupItemView.swift */; };
@@ -198,8 +204,13 @@
 		4F4E989428ACD4C3007434C2 /* ContactAPIImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAPIImpl.swift; sourceTree = "<group>"; };
 		4F4E989628ACD639007434C2 /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
 		4F4E989828ACD6A3007434C2 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
+		4F4E989A28AD2632007434C2 /* ChatAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAPI.swift; sourceTree = "<group>"; };
+		4F4E989C28AD2646007434C2 /* ChatAPIImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAPIImpl.swift; sourceTree = "<group>"; };
+		4F4E989E28AD2754007434C2 /* MessageVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVO.swift; sourceTree = "<group>"; };
+		4F4E98A228AD4C40007434C2 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
+		4F4E98A428AD4CB2007434C2 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		4F5A3B312887E2D400110D82 /* ChatThreadScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatThreadScreen.swift; sourceTree = "<group>"; };
-		4F5A3B39288CE05500110D82 /* MessageVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVO.swift; sourceTree = "<group>"; };
+		4F5A3B39288CE05500110D82 /* MessageVOD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVOD.swift; sourceTree = "<group>"; };
 		4F5A3B3B288CE5AE00110D82 /* messages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = messages.json; sourceTree = "<group>"; };
 		4F5A3B3F288CEF6700110D82 /* MessageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItemView.swift; sourceTree = "<group>"; };
 		4F6120442887AACA00B56051 /* ContactGroupItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactGroupItemView.swift; sourceTree = "<group>"; };
@@ -235,6 +246,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F4E98A128AD39A9007434C2 /* FirebaseDatabaseSwift in Frameworks */,
 				4F79DBB328AA15CA002B9924 /* FirebaseDatabase in Frameworks */,
 				33E27A7418E2670CBE8AA6C9 /* Pods_WeChat.framework in Frameworks */,
 				4F89DE4228952BB700B23008 /* DSWaveformImage in Frameworks */,
@@ -300,6 +312,7 @@
 				4F4E987C28AB8A50007434C2 /* StorageModel.swift */,
 				4F4E988D28ACC06A007434C2 /* MeModel.swift */,
 				4F4E989628ACD639007434C2 /* ContactModel.swift */,
+				4F4E98A228AD4C40007434C2 /* ChatModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -308,7 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				4F2B18AF28859D86007BCB85 /* MomentVOD.swift */,
-				4F5A3B39288CE05500110D82 /* MessageVO.swift */,
+				4F5A3B39288CE05500110D82 /* MessageVOD.swift */,
 				4F2D1B77288D86E500F06083 /* UserVOD.swift */,
 			);
 			path = vod;
@@ -335,6 +348,7 @@
 				4F4E988128ABB656007434C2 /* MomentItemViewModel.swift */,
 				4F4E988328ABE5D0007434C2 /* MeViewModel.swift */,
 				4F4E989828ACD6A3007434C2 /* ContactViewModel.swift */,
+				4F4E98A428AD4CB2007434C2 /* ChatViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -499,6 +513,7 @@
 			children = (
 				4F79DBA428AA08D1002B9924 /* UserVO.swift */,
 				4F4E987028AB730F007434C2 /* MomentVO.swift */,
+				4F4E989E28AD2754007434C2 /* MessageVO.swift */,
 			);
 			path = vo;
 			sourceTree = "<group>";
@@ -517,6 +532,8 @@
 				4F4E988728ABEE4E007434C2 /* MeAPIImpl.swift */,
 				4F4E989228ACD4AE007434C2 /* ContactAPI.swift */,
 				4F4E989428ACD4C3007434C2 /* ContactAPIImpl.swift */,
+				4F4E989A28AD2632007434C2 /* ChatAPI.swift */,
+				4F4E989C28AD2646007434C2 /* ChatAPIImpl.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -574,6 +591,7 @@
 				4F79DBB628AA15CA002B9924 /* FirebaseStorage */,
 				4F4E986E28AB6494007434C2 /* FirebaseFirestoreSwift */,
 				4F4E987F28ABB402007434C2 /* SDWebImageSwiftUI */,
+				4F4E98A028AD39A9007434C2 /* FirebaseDatabaseSwift */,
 			);
 			productName = WeChat;
 			productReference = 4F33E2672884F81800E15B12 /* WeChat.app */;
@@ -714,22 +732,25 @@
 				4FD9A0AB28AA439E0002713A /* ToastViewModifier.swift in Sources */,
 				4F33E2822885225400E15B12 /* Colors.swift in Sources */,
 				4F100B2F289A70BC0041C11F /* PhotoPicker.swift in Sources */,
+				4F4E989B28AD2632007434C2 /* ChatAPI.swift in Sources */,
 				4F4E987528AB7A6B007434C2 /* MomentAPIFirestoreImpl.swift in Sources */,
 				4F2D1B78288D86E500F06083 /* UserVOD.swift in Sources */,
 				4F79DBAE28AA14FE002B9924 /* NetworkConstants.swift in Sources */,
 				4F2B18BA2885A535007BCB85 /* MomentItemView.swift in Sources */,
 				4F33E2842885277300E15B12 /* VIewExtensions.swift in Sources */,
+				4F4E98A528AD4CB2007434C2 /* ChatViewModel.swift in Sources */,
 				4F79DBAC28AA147D002B9924 /* FirebaseAuthManagerImpl.swift in Sources */,
 				4F3D47B6289E4826000155EE /* ScannerPreview.swift in Sources */,
 				4F4E988828ABEE4E007434C2 /* MeAPIImpl.swift in Sources */,
 				4F4E988628ABEE3B007434C2 /* MeAPI.swift in Sources */,
+				4F4E989F28AD2754007434C2 /* MessageVO.swift in Sources */,
 				4FAC6CE5288D37FF00EAA161 /* ImageMessageView.swift in Sources */,
 				4F2B18BC288657E9007BCB85 /* AddNewMomentScreen.swift in Sources */,
 				4F9333B12898D879008A41F5 /* WCCameraScreen.swift in Sources */,
 				4F33E28E288558C500E15B12 /* CheckBoxView.swift in Sources */,
 				4F79DBA528AA08D1002B9924 /* UserVO.swift in Sources */,
 				4F33E28C28854B6E00E15B12 /* RegisterScreen.swift in Sources */,
-				4F5A3B3A288CE05500110D82 /* MessageVO.swift in Sources */,
+				4F5A3B3A288CE05500110D82 /* MessageVOD.swift in Sources */,
 				4FAC6CDF288D279900EAA161 /* VoiceMessageView.swift in Sources */,
 				4F4E987328AB7A46007434C2 /* MomentAPI.swift in Sources */,
 				4FCCA638289E53DC00C27DA2 /* SelectedMemberItemView.swift in Sources */,
@@ -754,6 +775,7 @@
 				4F3D47AA289E4697000155EE /* ContactGroupView.swift in Sources */,
 				4F3D47B2289E4748000155EE /* SelectableContactItemView.swift in Sources */,
 				4FAC6CE3288D338900EAA161 /* TextMessageView.swift in Sources */,
+				4F4E98A328AD4C40007434C2 /* ChatModel.swift in Sources */,
 				4F4E989928ACD6A3007434C2 /* ContactViewModel.swift in Sources */,
 				4FD9A0AD28AA57400002713A /* ProgressWrapperView.swift in Sources */,
 				4F2D1B7C288D8CE500F06083 /* ContactsViewModel.swift in Sources */,
@@ -766,6 +788,7 @@
 				4F4E987728AB7D79007434C2 /* MomentModel.swift in Sources */,
 				4F2B18B82885A45F007BCB85 /* MockDataViewModel.swift in Sources */,
 				4F4E989728ACD639007434C2 /* ContactModel.swift in Sources */,
+				4F4E989D28AD2646007434C2 /* ChatAPIImpl.swift in Sources */,
 				4F3D47B0289E4728000155EE /* SelectableContactSectionView.swift in Sources */,
 				4F2B188228858C37007BCB85 /* ChatScreen.swift in Sources */,
 				4F2B18C6288696A9007BCB85 /* ChatItemView.swift in Sources */,
@@ -1031,6 +1054,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4F4E987E28ABB402007434C2 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		4F4E98A028AD39A9007434C2 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F79DBAF28AA15CA002B9924 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
 		};
 		4F79DBB028AA15CA002B9924 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
