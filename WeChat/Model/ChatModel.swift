@@ -8,8 +8,8 @@
 import Foundation
 
 protocol ChatModel {
-    func sendP2PMessage(from sender: UserVO, to receiver: UserVO, message: MessageVO)
-    func getMessagesBetween(_ user: UserVO, and other: UserVO, onDataArrived: @escaping ([MessageVO]) -> Void)
+    func sendP2PMessage(from sender: String, to receiver: String, message: MessageVO)
+    func getMessagesBetween(_ user: String, and other: String, onDataArrived: @escaping ([MessageVO]) -> Void)
 }
 
 class ChatModelImpl: ChatModel {
@@ -19,11 +19,11 @@ class ChatModelImpl: ChatModel {
     
     private let api: ChatAPI = ChatAPIImpl.shared
     
-    func sendP2PMessage(from sender: UserVO, to receiver: UserVO, message: MessageVO) {
+    func sendP2PMessage(from sender: String, to receiver: String, message: MessageVO) {
         api.sendP2PMessage(from: sender, to: receiver, message: message)
     }
     
-    func getMessagesBetween(_ user: UserVO, and other: UserVO, onDataArrived: @escaping ([MessageVO]) -> Void) {
+    func getMessagesBetween(_ user: String, and other: String, onDataArrived: @escaping ([MessageVO]) -> Void) {
         api.getMessagesBetween(user, and: other, onDataArrived: onDataArrived)
     }
 }

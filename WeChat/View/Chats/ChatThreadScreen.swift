@@ -133,11 +133,11 @@ struct ChatThreadScreen: View {
                     ChatHeadItemView(
                         isActive: true,
                         size: 40,
-                        avatar: chatVM.receiver.profilePicture
+                        avatar: chatVM.receiverProfilePicture
                     )
                     
                     VStack(alignment: .leading) {
-                        Text(chatVM.receiver.name)
+                        Text(chatVM.receiverName)
                             .font(.system(size: 16))
                             .fontWeight(.medium)
                         

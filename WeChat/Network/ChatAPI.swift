@@ -8,6 +8,6 @@
 import Foundation
 
 protocol ChatAPI {
-    func sendP2PMessage(from sender: UserVO, to receiver: UserVO, message: MessageVO)
-    func getMessagesBetween(_ user: UserVO, and other: UserVO, onDataArrived: @escaping ([MessageVO]) -> Void)
+    func sendP2PMessage(from sender: String, to receiver: String, message: MessageVO)
+    func getMessagesBetween(_ user: String, and other: String, onDataArrived: @escaping ([MessageVO]) -> Void)
 }

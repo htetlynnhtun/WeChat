@@ -8,30 +8,41 @@
 import Foundation
 import SwiftUI
 
+/// If the chat is for group, isGroupChat must be true.
 class ChatViewModel: ObservableObject {
     
     let sender: UserVO
-    let receiver: UserVO
+    let receiver: String
+    let receiverName: String
+    let receiverProfilePicture: URL
+    let isGroupChat: Bool
     
     private let model: ChatModel = ChatModelImpl.shared
     
     @Published var messages = [MessageVO]()
     @Published var textFieldValue = ""
     
-    init(sender: UserVO, receiver: UserVO) {
+    init(sender: UserVO, receiver: String, receiverName: String, receiverProfilePicture: URL, isGroupChat: Bool = false) {
         self.sender = sender
         self.receiver = receiver
+        self.receiverName = receiverName
+        self.receiverProfilePicture = receiverProfilePicture
+        self.isGroupChat = isGroupChat
     }
     
     func fetchMessages() {
-        model.getMessagesBetween(sender, and: receiver) { [weak self] messages in
-            guard let self = self else {return}
-            
-            let sorted = messages.sorted { a, b in
-                a.timestamp.compare(b.timestamp) == .orderedAscending
+        if (isGroupChat) {
+            // fetchGroupMessages
+        } else {
+            model.getMessagesBetween(sender.qrCode, and: receiver) { [weak self] messages in
+                guard let self = self else {return}
+                
+                let sorted = messages.sorted { a, b in
+                    a.timestamp.compare(b.timestamp) == .orderedAscending
+                }
+                
+                self.messages = sorted
             }
-            
-            self.messages = sorted
         }
     }
     
@@ -46,7 +57,11 @@ class ChatViewModel: ObservableObject {
                                 profilePicture: sender.profilePicture,
                                 timestamp: Date.now)
         
-        model.sendP2PMessage(from: sender, to: receiver, message: message)
+        if (isGroupChat) {
+            // sendGroupMessage
+        } else {
+            model.sendP2PMessage(from: sender.qrCode, to: receiver, message: message)
+        }
         
         textFieldValue = ""
     }

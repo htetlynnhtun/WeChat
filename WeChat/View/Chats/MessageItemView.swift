@@ -20,7 +20,7 @@ struct MessageItemView: View {
         HStack {
             if (chatVM.isInComing(message)) {
                 VStack {
-                    ChatHeadItemView(isActive: true, size: 30, avatar: chatVM.receiver.profilePicture)
+                    ChatHeadItemView(isActive: true, size: 30, avatar: chatVM.receiverProfilePicture)
                         .frame(width: 30, height: 40)
                     Spacer()
                 }

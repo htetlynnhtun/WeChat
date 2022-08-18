@@ -15,30 +15,30 @@ class ChatAPIImpl: ChatAPI {
     
     private let ref = Database.database().reference()
     
-    func sendP2PMessage(from sender: UserVO, to receiver: UserVO, message: MessageVO) {
+    func sendP2PMessage(from sender: String, to receiver: String, message: MessageVO) {
         // for sender
         ref
             .child(messagesNode)
-            .child(sender.qrCode)
-            .child(receiver.qrCode)
+            .child(sender)
+            .child(receiver)
             .child(message.id)
             .setValue(message.toAny())
         
         // for receiver
         ref
             .child(messagesNode)
-            .child(receiver.qrCode)
-            .child(sender.qrCode)
+            .child(receiver)
+            .child(sender)
             .child(message.id)
             .setValue(message.toAny())
         
     }
     
-    func getMessagesBetween(_ user: UserVO, and other: UserVO, onDataArrived: @escaping ([MessageVO]) -> Void) {
+    func getMessagesBetween(_ user: String, and other: String, onDataArrived: @escaping ([MessageVO]) -> Void) {
         ref
             .child(messagesNode)
-            .child(user.qrCode)
-            .child(other.qrCode)
+            .child(user)
+            .child(other)
             .observe(.value) { snapshot in
                 var messages = [MessageVO]()
                 

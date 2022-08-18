@@ -31,7 +31,10 @@ struct ContactSectionView: View {
                 
                 ForEach(users, id: \.self) { user in
                     NavigationLink {
-                        ChatThreadScreen(chatVM: ChatViewModel(sender: authVM.currentUser!, receiver: user))
+                        ChatThreadScreen(chatVM: ChatViewModel(sender: authVM.currentUser!,
+                                                               receiver: user.qrCode,
+                                                               receiverName: user.name,
+                                                               receiverProfilePicture: user.profilePicture))
                     } label: {
                         ContactItemView(user: user)
                     }
