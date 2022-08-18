@@ -32,7 +32,15 @@ class ChatViewModel: ObservableObject {
     
     func fetchMessages() {
         if (isGroupChat) {
-            // fetchGroupMessages
+            model.getGroupMessages(for: receiver) { [weak self] messages in
+                guard let self = self else { return }
+                
+                let sorted = messages.sorted { a, b in
+                    a.timestamp.compare(b.timestamp) == .orderedAscending
+                }
+                
+                self.messages = sorted
+            }
         } else {
             model.getMessagesBetween(sender.qrCode, and: receiver) { [weak self] messages in
                 guard let self = self else {return}
@@ -58,7 +66,7 @@ class ChatViewModel: ObservableObject {
                                 timestamp: Date.now)
         
         if (isGroupChat) {
-            // sendGroupMessage
+            model.sendGroupMessage(to: receiver, message: message)
         } else {
             model.sendP2PMessage(from: sender.qrCode, to: receiver, message: message)
         }

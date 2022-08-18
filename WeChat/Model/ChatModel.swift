@@ -10,6 +10,8 @@ import Foundation
 protocol ChatModel {
     func sendP2PMessage(from sender: String, to receiver: String, message: MessageVO)
     func getMessagesBetween(_ user: String, and other: String, onDataArrived: @escaping ([MessageVO]) -> Void)
+    func sendGroupMessage(to groupID: String, message: MessageVO)
+    func getGroupMessages(for groupID: String, onDataArrived: @escaping ([MessageVO]) -> Void)
 }
 
 class ChatModelImpl: ChatModel {
@@ -25,5 +27,13 @@ class ChatModelImpl: ChatModel {
     
     func getMessagesBetween(_ user: String, and other: String, onDataArrived: @escaping ([MessageVO]) -> Void) {
         api.getMessagesBetween(user, and: other, onDataArrived: onDataArrived)
+    }
+    
+    func sendGroupMessage(to groupID: String, message: MessageVO) {
+        api.sendGroupMessage(to: groupID, message: message)
+    }
+    
+    func getGroupMessages(for groupID: String, onDataArrived: @escaping ([MessageVO]) -> Void) {
+        api.getGroupMessages(for: groupID, onDataArrived: onDataArrived)
     }
 }

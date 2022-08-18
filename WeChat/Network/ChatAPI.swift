@@ -10,4 +10,6 @@ import Foundation
 protocol ChatAPI {
     func sendP2PMessage(from sender: String, to receiver: String, message: MessageVO)
     func getMessagesBetween(_ user: String, and other: String, onDataArrived: @escaping ([MessageVO]) -> Void)
+    func sendGroupMessage(to groupID: String, message: MessageVO)
+    func getGroupMessages(for groupID: String, onDataArrived: @escaping ([MessageVO]) -> Void)
 }

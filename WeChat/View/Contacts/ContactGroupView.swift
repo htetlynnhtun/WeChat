@@ -10,6 +10,7 @@ import SwiftUI
 struct ContactGroupView: View {
     
     @EnvironmentObject var contactVM: ContactViewModel
+    @EnvironmentObject var authVM: AuthViewModel
     
     
     var body: some View {
@@ -39,7 +40,15 @@ struct ContactGroupView: View {
                     .padding(.leading)
                     
                     ForEach(contactVM.groups, id: \.id) { group in
-                        ContactGroupItemView(group: group)
+                        NavigationLink {
+                            ChatThreadScreen(chatVM: ChatViewModel(sender: authVM.currentUser!,
+                                                                   receiver: group.id,
+                                                                   receiverName: group.name,
+                                                                   receiverProfilePicture: URL(string: "https://firebasestorage.googleapis.com/v0/b/wechat-c30de.appspot.com/o/userImages%2Fgroup-chat.png?alt=media&token=10a841f9-f9e5-4d3e-8972-557d318f0ecf")!,
+                                                                   isGroupChat: true))
+                        } label: {
+                            ContactGroupItemView(group: group)
+                        }
                     }
                 }
                 .padding(.bottom)

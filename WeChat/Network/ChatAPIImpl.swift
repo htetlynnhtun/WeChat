@@ -50,4 +50,30 @@ class ChatAPIImpl: ChatAPI {
                 onDataArrived(messages)
             }
     }
+    
+    func sendGroupMessage(to groupID: String, message: MessageVO) {
+        ref
+            .child(groupsNode)
+            .child(groupID)
+            .child(groupMessages)
+            .child(message.id)
+            .setValue(message.toAny())
+    }
+    
+    func getGroupMessages(for groupID: String, onDataArrived: @escaping ([MessageVO]) -> Void) {
+        ref
+            .child(groupsNode)
+            .child(groupID)
+            .child(groupMessages)
+            .observe(.value) { snapshot in
+                var messages = [MessageVO]()
+                
+                snapshot.children.forEach { value in
+                    let singleSnapshot = value as! DataSnapshot
+                    messages.append(.init(from: singleSnapshot))
+                }
+                
+                onDataArrived(messages)
+            }
+    }
 }
