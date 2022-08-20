@@ -74,8 +74,6 @@ class AuthViewModel: ObservableObject {
             return
         }
         
-        let components = dobValue.get(.year, .month, .day)
-        let dobString = "\(components.year!)-\(components.month!)-\(components.day!)"
         var genderString = ""
         switch genderValue {
         case .male:
@@ -87,7 +85,7 @@ class AuthViewModel: ObservableObject {
         }
         
         showActivityIndicator = true
-        authModel.signUp(phone: phoneNumberValue, name: nameValue, dob: dobString, gender: genderString, password: passwordValue) { [weak self] status in
+        authModel.signUp(phone: phoneNumberValue, name: nameValue, dob: dobValue, gender: genderString, password: passwordValue) { [weak self] status in
             self?.showActivityIndicator = false
             
             if (status) {

@@ -9,4 +9,5 @@ import Foundation
 
 protocol MeAPI {
     func changeProfilePicture(url: URL, user: UserVO, onSuccess: @escaping () -> Void)
+    func updateInfo(with newInfo: UserVO, onSuccess: @escaping () -> Void)
 }

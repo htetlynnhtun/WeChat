@@ -30,4 +30,17 @@ class MeAPIImpl: MeAPI {
             }
         }
     }
+    
+    func updateInfo(with newInfo: UserVO, onSuccess: @escaping () -> Void) {
+        let docRef = db.collection(usersCollection).document(newInfo.qrCode)
+        
+        try? docRef.setData(from: newInfo) { error in
+            if let error = error {
+                print("Failed to update info: \(error)")
+                return
+            } else {
+                onSuccess()
+            }
+        }
+    }
 }

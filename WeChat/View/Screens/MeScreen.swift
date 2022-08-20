@@ -20,7 +20,7 @@ struct MeScreen: View {
                     ScrollView(showsIndicators: false) {
                         HStack {
                             ZStack {
-                                WebImage(url: authVM.currentUser?.profilePicture)
+                                WebImage(url: meVM.profilePicture)
                                     .resizable()
                                     .indicator(.activity)
                                     .aspectRatio(contentMode: .fill)
@@ -52,7 +52,7 @@ struct MeScreen: View {
                             .padding()
                             
                             VStack(alignment: .leading, spacing: 12) {
-                                Text(authVM.currentUser?.name ?? "")
+                                Text(meVM.name)
                                     .font(.system(size: 20))
                                 
                                 HStack {
@@ -65,14 +65,14 @@ struct MeScreen: View {
                                 HStack {
                                     Image(systemName: "calendar")
                                     
-                                    Text(authVM.currentUser?.dob ?? "")
+                                    Text(meVM.dob.toDobFormat())
                                         .font(.system(size: 14))
                                 }
                                 
                                 HStack {
                                     Image(systemName: "arrow.triangle.branch")
                                     
-                                    Text(authVM.currentUser?.gender ?? "")
+                                    Text(meVM.gender)
                                         .font(.system(size: 14))
                                 }
                             }
@@ -141,8 +141,6 @@ struct MeScreen: View {
                         ScrollView {
                             VStack(spacing: 32) {
                                 MaterialTextField(placeholder: "Name", text: $meVM.nameValue)
-                                
-                                MaterialTextField(placeholder: "Phone", text: $meVM.phoneValue)
                                 
                                 DatePicker("Date of Birth", selection: $meVM.dobValue, displayedComponents: .date)
                                     .font(.system(size: 15))

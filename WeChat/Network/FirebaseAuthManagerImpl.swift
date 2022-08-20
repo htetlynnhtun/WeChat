@@ -50,7 +50,7 @@ class FirebaseAuthManagerImpl: AuthManager {
         }
     }
     
-    func signUp(phone: String, name: String, dob: String, gender: String, password: String, completion: @escaping (Bool) -> Void) {
+    func signUp(phone: String, name: String, dob: Date, gender: String, password: String, completion: @escaping (Bool) -> Void) {
         let docRef = db.collection("users").document(phone)
         
         DispatchQueue.global(qos: .background).async {

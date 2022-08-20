@@ -11,7 +11,7 @@ import FirebaseFirestoreSwift
 struct UserVO: Codable, Identifiable, Hashable {
     @DocumentID var id: String?
     var name: String
-    var dob: String
+    var dob: Date
     var gender: String
     var profilePicture: URL
     var qrCode: String
