@@ -50,7 +50,7 @@ class MeViewModel: ObservableObject {
                let data = image.pngData() {
                 
                 self?.showActivityIndicator = true
-                self?.storageModel.uploadImage(imageData: data) { [weak self] url in
+                self?.storageModel.uploadImage(imageData: data, to: profileImagesDir) { [weak self] url in
                     self?.meModel.changeProfilePicture(url: url, user: user) {
                         self?.profilePicture = url
                         self?.showActivityIndicator = false

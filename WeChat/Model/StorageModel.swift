@@ -8,7 +8,7 @@
 import Foundation
 
 protocol StorageModel {
-    func uploadImage(imageData: Data, completion: @escaping (URL) -> Void)
+    func uploadImage(imageData: Data, to dir: String, completion: @escaping (URL) -> Void)
 }
 
 class StorageModelImpl: StorageModel {
@@ -18,7 +18,7 @@ class StorageModelImpl: StorageModel {
     
     private let api: StorageAPI = StorageAPIImpl.shared
     
-    func uploadImage(imageData: Data, completion: @escaping (URL) -> Void) {
-        api.uploadImage(imageData: imageData, completion: completion)
+    func uploadImage(imageData: Data, to dir: String, completion: @escaping (URL) -> Void) {
+        api.uploadImage(imageData: imageData, to: dir, completion: completion)
     }
 }

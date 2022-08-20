@@ -42,7 +42,7 @@ class MomentViewModel: ObservableObject {
         
         showActivityIndicator = true
         if let data = selectedUIImages.first!.pngData() {
-            storageModel.uploadImage(imageData: data) { [weak self] url in
+            storageModel.uploadImage(imageData: data, to: momentImagesDir) { [weak self] url in
                 guard let self = self else {
                     return
                 }

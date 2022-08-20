@@ -63,6 +63,9 @@ class ChatViewModel: ObservableObject {
                                 userID: sender.qrCode,
                                 userName: sender.name,
                                 profilePicture: sender.profilePicture,
+                                rUserID: receiver,
+                                rUserName: receiverName,
+                                rProfilePicture: receiverProfilePicture,
                                 timestamp: Date.now)
         
         if (isGroupChat) {

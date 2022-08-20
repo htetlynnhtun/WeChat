@@ -15,9 +15,9 @@ class StorageAPIImpl: StorageAPI {
     
     private let storage = Storage.storage()
     
-    func uploadImage(imageData: Data, completion: @escaping (URL) -> Void) {
+    func uploadImage(imageData: Data, to dir: String, completion: @escaping (URL) -> Void) {
         let ref = storage.reference()
-        let imageRef = ref.child("momentImages/\(UUID().uuidString).jpg")
+        let imageRef = ref.child("\(dir)/\(UUID().uuidString).jpg")
         
         imageRef.putData(imageData) { result in
             switch result {

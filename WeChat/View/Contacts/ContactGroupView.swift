@@ -44,7 +44,7 @@ struct ContactGroupView: View {
                             ChatThreadScreen(chatVM: ChatViewModel(sender: authVM.currentUser!,
                                                                    receiver: group.id,
                                                                    receiverName: group.name,
-                                                                   receiverProfilePicture: URL(string: "https://firebasestorage.googleapis.com/v0/b/wechat-c30de.appspot.com/o/userImages%2Fgroup-chat.png?alt=media&token=10a841f9-f9e5-4d3e-8972-557d318f0ecf")!,
+                                                                   receiverProfilePicture: URL(string: "https://firebasestorage.googleapis.com/v0/b/wechat-c30de.appspot.com/o/profileImages%2Fgroup-chat.png?alt=media&token=35f1f567-81b6-4e55-b24f-1d3ceec4c98a")!,
                                                                    isGroupChat: true))
                         } label: {
                             ContactGroupItemView(group: group)

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol StorageAPI {
-    func uploadImage(imageData: Data, completion: @escaping (URL) -> Void)
+    func uploadImage(imageData: Data, to dir: String, completion: @escaping (URL) -> Void)
 }

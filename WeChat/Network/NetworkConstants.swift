@@ -15,3 +15,6 @@ let groupsSubCollection = "groups"
 let messagesNode = "contactsAndMessages"
 let groupsNode = "groups"
 let groupMessages = "messages"
+
+let momentImagesDir = "momentImages"
+let profileImagesDir = "profileImages"
