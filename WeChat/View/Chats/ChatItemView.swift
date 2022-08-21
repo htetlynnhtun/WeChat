@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct ChatItemView: View {
-    var username: String
+    
+    @EnvironmentObject var chatHistoryVM: ChatHistoryViewModel
+    
+    var message: MessageVO
     var indicator: ChatItemIndicator = .none
     
     var body: some View {
@@ -20,17 +23,17 @@ struct ChatItemView: View {
                 .shadow(color: .colorChatItemShadow, radius: 1, x: 0, y: 1)
             
             HStack {
-                ChatHeadItemView(isActive: true)
+                ChatHeadItemView(isActive: true, avatar: chatHistoryVM.profileLink(for: message))
                 
                 VStack(alignment: .leading) {
-                    Text(username)
+                    Text(chatHistoryVM.username(for: message))
                         .font(.system(size: 15))
                         .fontWeight(.medium)
                         .foregroundColor(.colorPrimary)
                     
                     Spacer()
                     
-                    Text("You sent a video")
+                    Text(chatHistoryVM.previewMessage(for: message))
                         .font(.system(size: 14))
                         .foregroundColor(.colorGray)
                 }
@@ -38,7 +41,7 @@ struct ChatItemView: View {
                 Spacer()
                 
                 VStack {
-                    Text("5min")
+                    Text(chatHistoryVM.dateTime(for: message))
                         .font(.system(size: 12))
                         .foregroundColor(.colorPrimary)
                     
@@ -75,25 +78,25 @@ enum ChatItemIndicator: CaseIterable {
 }
 
 
-struct ChatItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack {
-            ChatItemView(
-                username: "Min Thant Kyaw",
-                indicator: .seen
-            )
-            ChatItemView(
-                username: "ATF and Brothers",
-                indicator: .none
-            )
-            ChatItemView(
-                username: "Mary",
-                indicator: .sent
-            )
-            ChatItemView(
-                username: "James",
-                indicator: .notiOff
-            )
-        }
-    }
-}
+//struct ChatItemView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        VStack {
+//            ChatItemView(
+//                username: "Min Thant Kyaw",
+//                indicator: .seen
+//            )
+//            ChatItemView(
+//                username: "ATF and Brothers",
+//                indicator: .none
+//            )
+//            ChatItemView(
+//                username: "Mary",
+//                indicator: .sent
+//            )
+//            ChatItemView(
+//                username: "James",
+//                indicator: .notiOff
+//            )
+//        }
+//    }
+//}

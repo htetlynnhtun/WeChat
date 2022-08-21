@@ -12,6 +12,8 @@ protocol ChatModel {
     func getMessagesBetween(_ user: String, and other: String, onDataArrived: @escaping ([MessageVO]) -> Void)
     func sendGroupMessage(to groupID: String, message: MessageVO)
     func getGroupMessages(for groupID: String, onDataArrived: @escaping ([MessageVO]) -> Void)
+    func getLatestMessages(for user: String, onDataArrived: @escaping ([MessageVO]) -> Void)
+    func getLatestGroupMessages(for user: String, onDataArrived: @escaping ([MessageVO]) -> Void)
 }
 
 class ChatModelImpl: ChatModel {
@@ -35,5 +37,13 @@ class ChatModelImpl: ChatModel {
     
     func getGroupMessages(for groupID: String, onDataArrived: @escaping ([MessageVO]) -> Void) {
         api.getGroupMessages(for: groupID, onDataArrived: onDataArrived)
+    }
+    
+    func getLatestMessages(for user: String, onDataArrived: @escaping ([MessageVO]) -> Void) {
+        api.getLatestMessages(for: user, onDataArrived: onDataArrived)
+    }
+    
+    func getLatestGroupMessages(for user: String, onDataArrived: @escaping ([MessageVO]) -> Void) {
+        api.getLatestGroupMessages(for: user, onDataArrived: onDataArrived)
     }
 }

@@ -12,4 +12,6 @@ protocol ChatAPI {
     func getMessagesBetween(_ user: String, and other: String, onDataArrived: @escaping ([MessageVO]) -> Void)
     func sendGroupMessage(to groupID: String, message: MessageVO)
     func getGroupMessages(for groupID: String, onDataArrived: @escaping ([MessageVO]) -> Void)
+    func getLatestMessages(for user: String, onDataArrived: @escaping ([MessageVO]) -> Void)
+    func getLatestGroupMessages(for user: String, onDataArrived: @escaping ([MessageVO]) -> Void)
 }

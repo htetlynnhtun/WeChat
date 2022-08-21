@@ -125,6 +125,8 @@
 		4FCCA638289E53DC00C27DA2 /* SelectedMemberItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCCA637289E53DC00C27DA2 /* SelectedMemberItemView.swift */; };
 		4FD9A0AB28AA439E0002713A /* ToastViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD9A0AA28AA439E0002713A /* ToastViewModifier.swift */; };
 		4FD9A0AD28AA57400002713A /* ProgressWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD9A0AC28AA57400002713A /* ProgressWrapperView.swift */; };
+		4FDAE5BC28B1123A00CEB8BD /* ChatHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDAE5BB28B1123A00CEB8BD /* ChatHistoryViewModel.swift */; };
+		4FDAE5BE28B116C200CEB8BD /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDAE5BD28B116C200CEB8BD /* DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -239,6 +241,8 @@
 		4FCCA637289E53DC00C27DA2 /* SelectedMemberItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedMemberItemView.swift; sourceTree = "<group>"; };
 		4FD9A0AA28AA439E0002713A /* ToastViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastViewModifier.swift; sourceTree = "<group>"; };
 		4FD9A0AC28AA57400002713A /* ProgressWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressWrapperView.swift; sourceTree = "<group>"; };
+		4FDAE5BB28B1123A00CEB8BD /* ChatHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHistoryViewModel.swift; sourceTree = "<group>"; };
+		4FDAE5BD28B116C200CEB8BD /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		96FF820A0F8297C78F9A0254 /* Pods_WeChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE59151C3CEE70DEE84E381C /* Pods-WeChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChat.debug.xcconfig"; path = "Target Support Files/Pods-WeChat/Pods-WeChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -351,6 +355,7 @@
 				4F4E988328ABE5D0007434C2 /* MeViewModel.swift */,
 				4F4E989828ACD6A3007434C2 /* ContactViewModel.swift */,
 				4F4E98A428AD4CB2007434C2 /* ChatViewModel.swift */,
+				4FDAE5BB28B1123A00CEB8BD /* ChatHistoryViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -497,6 +502,7 @@
 			isa = PBXGroup;
 			children = (
 				4F4E989028ACC676007434C2 /* QRCodeGenerator.swift */,
+				4FDAE5BD28B116C200CEB8BD /* DateExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -735,6 +741,7 @@
 				4F3D47A5289E4519000155EE /* LoadedImageItemView.swift in Sources */,
 				4FD9A0AB28AA439E0002713A /* ToastViewModifier.swift in Sources */,
 				4F33E2822885225400E15B12 /* Colors.swift in Sources */,
+				4FDAE5BE28B116C200CEB8BD /* DateExtension.swift in Sources */,
 				4F100B2F289A70BC0041C11F /* PhotoPicker.swift in Sources */,
 				4F4E989B28AD2632007434C2 /* ChatAPI.swift in Sources */,
 				4F4E987528AB7A6B007434C2 /* MomentAPIFirestoreImpl.swift in Sources */,
@@ -778,6 +785,7 @@
 				4F79DBBE28AA3457002B9924 /* AuthViewModel.swift in Sources */,
 				4F3D47AA289E4697000155EE /* ContactGroupView.swift in Sources */,
 				4F3D47B2289E4748000155EE /* SelectableContactItemView.swift in Sources */,
+				4FDAE5BC28B1123A00CEB8BD /* ChatHistoryViewModel.swift in Sources */,
 				4FAC6CE3288D338900EAA161 /* TextMessageView.swift in Sources */,
 				4F4E98A328AD4C40007434C2 /* ChatModel.swift in Sources */,
 				4F4E989928ACD6A3007434C2 /* ContactViewModel.swift in Sources */,

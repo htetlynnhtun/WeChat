@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ChatScreen: View {
+    @EnvironmentObject var chatHistoryVM: ChatHistoryViewModel
+    
     var body: some View {
         NavigationView {
             ScrollView(showsIndicators: false) {
@@ -19,11 +21,11 @@ struct ChatScreen: View {
                     
                     ActivePeopleView()
                     
-                    ForEach(0..<20) { i in
+                    ForEach(chatHistoryVM.messages, id: \.id) { message in
                         NavigationLink {
 //                            ChatThreadScreen()
                         } label: {
-                            ChatItemView(username: "User \(i)", indicator: .allCases.randomElement()!)
+                            ChatItemView(message: message, indicator: .allCases.randomElement()!)
                                 .padding(.bottom, 6)
                                 .padding(.horizontal, 8)
                         }
@@ -41,6 +43,9 @@ struct ChatScreen: View {
                     Image("search-icon")
                 }
             }
+        }
+        .onAppear {
+            chatHistoryVM.fetchLatestMessages()
         }
     }
 }
