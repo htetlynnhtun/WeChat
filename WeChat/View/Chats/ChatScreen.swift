@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ChatScreen: View {
     @EnvironmentObject var chatHistoryVM: ChatHistoryViewModel
+    @EnvironmentObject var authVM: AuthViewModel
     
     var body: some View {
         NavigationView {
@@ -23,7 +24,10 @@ struct ChatScreen: View {
                     
                     ForEach(chatHistoryVM.messages, id: \.id) { message in
                         NavigationLink {
-//                            ChatThreadScreen()
+                            ChatThreadScreen(chatVM: ChatViewModel(sender: authVM.currentUser!,
+                                                                   receiver: chatHistoryVM.receiver(for: message),
+                                                                   receiverName: chatHistoryVM.username(for: message),
+                                                                   receiverProfilePicture: chatHistoryVM.profileLink(for: message)))
                         } label: {
                             ChatItemView(message: message, indicator: .allCases.randomElement()!)
                                 .padding(.bottom, 6)

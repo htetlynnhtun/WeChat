@@ -43,11 +43,11 @@ class ChatHistoryViewModel: ObservableObject {
             self.latestMessages = messages
         }
         
-        chatModel.getLatestGroupMessages(for: qrCode) { [weak self] messages in
-            guard let self = self else { return }
-
-            self.latestGroupMessages = messages
-        }
+//        chatModel.getLatestGroupMessages(for: qrCode) { [weak self] messages in
+//            guard let self = self else { return }
+//
+//            self.latestGroupMessages = messages
+//        }
     }
     
     func previewMessage(for message: MessageVO) -> String {
@@ -67,4 +67,9 @@ class ChatHistoryViewModel: ObservableObject {
     func username(for message: MessageVO) -> String {
         message.userID == qrCode ? message.rUserName : message.userName
     }
+    
+    func receiver(for message: MessageVO) -> String {
+        message.userID == qrCode ? message.rUserID : message.userID
+    }
+    
 }
