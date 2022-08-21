@@ -16,7 +16,7 @@ struct MomentScreen: View {
             ScrollView(showsIndicators: false) {
                 ForEach(vm.moments) { moment in
                     VStack {
-                        MomentItemView(vm: MomentItemViewModel(moment: moment, user: authVM.currentUser!), moment: moment)
+                        MomentItemView(vm: MomentItemViewModel(moment: moment, user: authVM.currentUser), moment: moment)
                             .frame(height: 350)
                             .padding(.horizontal, 15)
                             .padding(.vertical, 20)

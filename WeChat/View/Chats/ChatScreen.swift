@@ -24,7 +24,7 @@ struct ChatScreen: View {
                     
                     ForEach(chatHistoryVM.messages, id: \.id) { message in
                         NavigationLink {
-                            ChatThreadScreen(chatVM: ChatViewModel(sender: authVM.currentUser!,
+                            ChatThreadScreen(chatVM: ChatViewModel(sender: authVM.currentUser,
                                                                    receiver: chatHistoryVM.receiver(for: message),
                                                                    receiverName: chatHistoryVM.username(for: message),
                                                                    receiverProfilePicture: chatHistoryVM.profileLink(for: message)))

@@ -97,6 +97,7 @@
 		4F5A3B40288CEF6700110D82 /* MessageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5A3B3F288CEF6700110D82 /* MessageItemView.swift */; };
 		4F6120452887AACA00B56051 /* ContactGroupItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6120442887AACA00B56051 /* ContactGroupItemView.swift */; };
 		4F6120472887CC9F00B56051 /* AddNewContactScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6120462887CC9F00B56051 /* AddNewContactScreen.swift */; };
+		4F6D5CC528B1EF30004BD77F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6D5CC428B1EF30004BD77F /* HomeView.swift */; };
 		4F79DBA228AA0825002B9924 /* CredntialsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F79DBA128AA0825002B9924 /* CredntialsRepository.swift */; };
 		4F79DBA528AA08D1002B9924 /* UserVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F79DBA428AA08D1002B9924 /* UserVO.swift */; };
 		4F79DBA728AA0A48002B9924 /* CredentialsRepositoryJSONImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F79DBA628AA0A48002B9924 /* CredentialsRepositoryJSONImpl.swift */; };
@@ -219,6 +220,7 @@
 		4F5A3B3F288CEF6700110D82 /* MessageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItemView.swift; sourceTree = "<group>"; };
 		4F6120442887AACA00B56051 /* ContactGroupItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactGroupItemView.swift; sourceTree = "<group>"; };
 		4F6120462887CC9F00B56051 /* AddNewContactScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewContactScreen.swift; sourceTree = "<group>"; };
+		4F6D5CC428B1EF30004BD77F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4F79DBA128AA0825002B9924 /* CredntialsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredntialsRepository.swift; sourceTree = "<group>"; };
 		4F79DBA428AA08D1002B9924 /* UserVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVO.swift; sourceTree = "<group>"; };
 		4F79DBA628AA0A48002B9924 /* CredentialsRepositoryJSONImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsRepositoryJSONImpl.swift; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 				4F33E2832885277300E15B12 /* VIewExtensions.swift */,
 				4F2B18C128867517007BCB85 /* WCViewModifiers.swift */,
 				4F33E26C2884F81800E15B12 /* ContentView.swift */,
+				4F6D5CC428B1EF30004BD77F /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -767,6 +770,7 @@
 				4FCCA638289E53DC00C27DA2 /* SelectedMemberItemView.swift in Sources */,
 				4F5A3B322887E2D400110D82 /* ChatThreadScreen.swift in Sources */,
 				4F4E988228ABB657007434C2 /* MomentItemViewModel.swift in Sources */,
+				4F6D5CC528B1EF30004BD77F /* HomeView.swift in Sources */,
 				4F4E988428ABE5D0007434C2 /* MeViewModel.swift in Sources */,
 				4F79DBBC28AA33B4002B9924 /* AuthModel.swift in Sources */,
 				4F3D47A1289E4485000155EE /* MessageActionView.swift in Sources */,

@@ -58,7 +58,7 @@ struct MeScreen: View {
                                 HStack {
                                     Image(systemName: "iphone.homebutton")
                                     
-                                    Text(authVM.currentUser?.qrCode ?? "")
+                                    Text(authVM.currentUser.qrCode )
                                         .font(.system(size: 14))
                                 }
                                 
@@ -101,7 +101,7 @@ struct MeScreen: View {
                         } else {
                             ForEach(momentVM.bookmarkedMoments) { moment in
                                 VStack {
-                                    MomentItemView(vm: MomentItemViewModel(moment: moment, user: authVM.currentUser!), moment: moment)
+                                    MomentItemView(vm: MomentItemViewModel(moment: moment, user: authVM.currentUser), moment: moment)
                                         .frame(height: 350)
                                         .padding(.horizontal, 15)
                                         .padding(.bottom, 20)

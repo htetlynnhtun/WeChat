@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var currentTab = Tab.moment
     @StateObject var mockData = MockDataViewModel()
     
     @StateObject var authVM = AuthViewModel()
@@ -20,72 +19,17 @@ struct ContentView: View {
         //                OTPScreen()
         //                RegisterScreen()
         Group {
-            if authVM.currentUser == nil {
+            if authVM.currentUser.qrCode.isEmpty  {
                 SplashScreen()
             } else {
-                TabView(selection: $currentTab) {
-                    MomentScreen()
-                        .tabItem {
-                            Label {
-                                Text("Moment")
-                            } icon: {
-                                Image("moment-icon")
-                                    .renderingMode(.template)
-                            }
-                        }
-                        .tag(Tab.moment)
-                    
-                    ChatScreen()
-                        .tabItem {
-                            Label {
-                                Text("Chat")
-                            } icon: {
-                                Image("chat-icon")
-                                    .renderingMode(.template)
-                            }
-                        }
-                        .tag(Tab.chat)
-                        .environmentObject(ChatHistoryViewModel(qrCode: authVM.currentUser!.qrCode))
-                    
-                    ContactsScreen()
-                        .tabItem {
-                            Label {
-                                Text("Contacts")
-                            } icon: {
-                                Image("contacts-icon")
-                                    .renderingMode(.template)
-                            }
-                        }
-                        .tag(Tab.contacts)
-                    
-                    MeScreen()
-                        .tabItem {
-                            Label {
-                                Text("Me")
-                            } icon: {
-                                Image("me-icon")
-                                    .renderingMode(.template)
-                            }
-                        }
-                        .tag(Tab.me)
-                        .environmentObject(MeViewModel(user: authVM.currentUser!))
-                    
-                    SettingScreen()
-                        .tabItem {
-                            Label {
-                                Text("Setting")
-                            } icon: {
-                                Image("setting-icon")
-                                    .renderingMode(.template)
-                            }
-                        }
-                }
-                .accentColor(.colorPrimary)
-                .environmentObject(mockData)
-                .environmentObject(MomentViewModel(currentUser: authVM.currentUser!))
-                .environmentObject(ContactViewModel(user: authVM.currentUser!))
+                HomeView()
+                    .accentColor(.colorPrimary)
+                    .environmentObject(mockData)
+                    .environmentObject(authVM)
+                    .environmentObject(MomentViewModel(currentUser: authVM.currentUser))
+                    .environmentObject(ContactViewModel(user: authVM.currentUser))
             }
-
+            
         }
         .environmentObject(authVM)
         

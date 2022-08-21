@@ -12,7 +12,7 @@ class AuthViewModel: ObservableObject {
     private let authModel: AuthModel = AuthModelImpl.shared
     private let credentialsRepo: CredentialsRepository = CredentialsRepositoryJSONImpl.shared
     
-    @Published var currentUser: UserVO? = nil
+    @Published var currentUser: UserVO = .dummy()
     @Published var phoneNumberValue = ""
     @Published var userSubmittedOTP = ""
     @Published var nameValue = ""
@@ -30,7 +30,7 @@ class AuthViewModel: ObservableObject {
     
     init() {
         credentialsRepo.getCredentials { [weak self] userVO in
-            self?.currentUser = userVO
+            self?.currentUser = userVO ?? .dummy()
         }
     }
     
@@ -130,7 +130,7 @@ class AuthViewModel: ObservableObject {
     }
     
     private func resetAllState() {
-        currentUser = nil
+        currentUser = .dummy()
         phoneNumberValue = ""
         userSubmittedOTP = ""
         nameValue = ""

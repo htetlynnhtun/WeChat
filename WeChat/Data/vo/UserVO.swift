@@ -25,4 +25,8 @@ struct UserVO: Codable, Identifiable, Hashable {
         case qrCode
         case password
     }
+    
+    static func dummy() -> UserVO {
+        return UserVO(name: "", dob: Date.now, gender: "", profilePicture: URL(string: "http://dummy.com")!, qrCode: "", password: "")
+    }
 }

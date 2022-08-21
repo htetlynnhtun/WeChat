@@ -41,7 +41,7 @@ struct ContactGroupView: View {
                     
                     ForEach(contactVM.groups, id: \.id) { group in
                         NavigationLink {
-                            ChatThreadScreen(chatVM: ChatViewModel(sender: authVM.currentUser!,
+                            ChatThreadScreen(chatVM: ChatViewModel(sender: authVM.currentUser,
                                                                    receiver: group.id,
                                                                    receiverName: group.name,
                                                                    receiverProfilePicture: URL(string: "https://firebasestorage.googleapis.com/v0/b/wechat-c30de.appspot.com/o/profileImages%2Fgroup-chat.png?alt=media&token=35f1f567-81b6-4e55-b24f-1d3ceec4c98a")!,
