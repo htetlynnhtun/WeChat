@@ -18,3 +18,4 @@ let groupMessages = "messages"
 
 let momentImagesDir = "momentImages"
 let profileImagesDir = "profileImages"
+let messageImagesDir = "messageImages"

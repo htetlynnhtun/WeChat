@@ -31,6 +31,14 @@ struct LoadedImageItemView: View {
         }
         .onTapGesture {
             loadedImage.selected.toggle()
+            
+            if (loadedImage.selected) {
+                selectedImages.append(SelectedImage(image: loadedImage.image, asset: loadedImage.asset))
+            } else {
+                selectedImages.removeAll { selectedImage in
+                    selectedImage.image == loadedImage.image
+                }
+            }
         }
     }
 }

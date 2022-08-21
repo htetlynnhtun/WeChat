@@ -9,15 +9,12 @@ import SwiftUI
 import CachedAsyncImage
 
 struct ImageMessageView: View {
-    var currentUser = "John"
-    var message: MessageVOD
+    @EnvironmentObject var chatVM: ChatViewModel
     
-    private var isIncoming: Bool {
-        return currentUser != message.sender
-    }
+    var message: MessageVO
     
     var body: some View {
-        VStack(alignment: isIncoming ? .leading : .trailing, spacing: 8) {
+        VStack(alignment: chatVM.isInComing(message) ? .leading : .trailing, spacing: 8) {
             CachedAsyncImage(url: URL(string: message.payload)) { image in
                 image.resizable()
             } placeholder: {
@@ -27,15 +24,15 @@ struct ImageMessageView: View {
             .frame(height: 128)
             .cornerRadius(5)
             
-            Text(message.date)
+            Text(message.timestamp.toReadable())
                 .font(.system(size: 8))
                 .foregroundColor(.colorPrimary)
         }
     }
 }
 
-struct ImageMessageView_Previews: PreviewProvider {
-    static var previews: some View {
-        ImageMessageView(message: MockDataViewModel().messages[0])
-    }
-}
+//struct ImageMessageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ImageMessageView(message: MockDataViewModel().messages[0])
+//    }
+//}

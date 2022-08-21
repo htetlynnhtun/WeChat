@@ -9,7 +9,6 @@ import SwiftUI
 
 struct TextMessageView: View {
     
-    @EnvironmentObject var authVM: AuthViewModel
     @EnvironmentObject var chatVM: ChatViewModel
     
     var message: MessageVO

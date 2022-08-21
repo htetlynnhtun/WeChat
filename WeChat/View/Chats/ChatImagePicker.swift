@@ -10,8 +10,9 @@ import PhotosUI
 
 struct ChatImagePicker: View {
     
+    @EnvironmentObject var chatVM: ChatViewModel
+    
     @State private var loadedImages = [LoadedImage]()
-    @State private var selectedImages = [SelectedImage]()
     @State private var isAuthorized = true
     
     private let gridItems = Array(repeating: GridItem(.flexible(), spacing: 8), count: 3)
@@ -21,7 +22,7 @@ struct ChatImagePicker: View {
         ScrollView(.vertical, showsIndicators: false) {
             LazyVGrid(columns: gridItems) {
                 ForEach(loadedImages, id: \.self) { loadedImage in
-                    LoadedImageItemView(loadedImage: loadedImage, selectedImages: $selectedImages)
+                    LoadedImageItemView(loadedImage: loadedImage, selectedImages: $chatVM.selectedImages)
                         .frame(width: imageItemWidth, height: imageItemWidth)
                 }
             }

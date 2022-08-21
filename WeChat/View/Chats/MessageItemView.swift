@@ -34,8 +34,7 @@ struct MessageItemView: View {
                     TextMessageView(message: message)
                     
                 case .image:
-//                    ImageMessageView(message: message)
-                    EmptyView()
+                    ImageMessageView(message: message)
                     
                 case .audio:
 //                    VoiceMessageView(vm: VoiceMessageViewModel(message: message))

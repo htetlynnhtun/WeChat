@@ -11,7 +11,6 @@ import Photos
 
 struct ChatThreadScreen: View {
     @State private var anyTabBarController: UITabBarController?
-    @State private var isShowingPhotoPicker = false
     @State private var isShowingCamera = false
     
     @ObservedObject var chatVM: ChatViewModel
@@ -69,8 +68,7 @@ struct ChatThreadScreen: View {
                         .font(.system(size: 24))
                         .padding(8)
                 } action: {
-                    print("Choosing photo")
-                    isShowingPhotoPicker.toggle()
+                    chatVM.onTapChoosePhoto()
                 }
                 
                 MessageActionView {
@@ -120,10 +118,11 @@ struct ChatThreadScreen: View {
                     .shadow(color: .gray.opacity(0.5), radius: 6, x: 0, y: 2)
             }
             
-            if (isShowingPhotoPicker) {
+            if (chatVM.isShowingPhotoPicker) {
                 ChatImagePicker()
                     .frame(height: 300)
                     .padding(.horizontal, 16)
+                    .environmentObject(chatVM)
             }
         }
         .ignoresSafeArea(.container, edges: [.bottom])
