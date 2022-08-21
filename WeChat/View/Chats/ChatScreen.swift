@@ -61,14 +61,16 @@ struct ChatScreen_Previews: PreviewProvider {
 }
 
 struct ActivePeopleView: View {
+    @EnvironmentObject var contactVM: ContactViewModel
+    
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 20) {
-                ForEach(0..<10) { _ in
+                ForEach(contactVM.originalContacts, id: \.qrCode) { user in
                     VStack {
-                        ChatHeadItemView(isActive: true)
+                        ChatHeadItemView(isActive: true, avatar: user.profilePicture)
                         
-                        Text("George")
+                        Text(user.name)
                             .lineLimit(2)
                             .fixedSize(horizontal: false, vertical: true)
                             .multilineTextAlignment(.center)
@@ -78,6 +80,11 @@ struct ActivePeopleView: View {
                     .frame(width: 60)
                 }
             }.padding(.horizontal)
+        }
+        .onAppear {
+            if (contactVM.originalContacts.isEmpty) {
+                contactVM.fetchContacts()
+            }
         }
     }
 }

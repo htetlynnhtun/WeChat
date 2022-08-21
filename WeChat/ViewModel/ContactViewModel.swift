@@ -25,7 +25,7 @@ class ContactViewModel: ObservableObject {
     @Published var showAddNewGroup = false
     @Published var groups = [GroupVO]()
     
-    @Published private var originalContacts = [UserVO]()
+    @Published var originalContacts = [UserVO]()
     
     private let currentUser: UserVO
     private var cancellables = [AnyCancellable]()

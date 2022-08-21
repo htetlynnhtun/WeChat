@@ -106,7 +106,9 @@ struct ContactsScreen: View {
             
         }
         .onAppear {
-            contactVM.fetchContacts()
+            if (contactVM.contacts.isEmpty) {
+                contactVM.fetchContacts()
+            }
             contactVM.fetchGroups()
         }
     }

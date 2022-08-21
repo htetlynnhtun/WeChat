@@ -58,7 +58,6 @@ struct ContentView: View {
                             }
                         }
                         .tag(Tab.contacts)
-                        .environmentObject(ContactViewModel(user: authVM.currentUser!))
                     
                     MeScreen()
                         .tabItem {
@@ -85,6 +84,7 @@ struct ContentView: View {
                 .accentColor(.colorPrimary)
                 .environmentObject(mockData)
                 .environmentObject(momentVM)
+                .environmentObject(ContactViewModel(user: authVM.currentUser!))
             }
 
         }
