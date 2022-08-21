@@ -50,7 +50,7 @@ class FirebaseAuthManagerImpl: AuthManager {
         }
     }
     
-    func signUp(phone: String, name: String, dob: Date, gender: String, password: String, completion: @escaping (Bool) -> Void) {
+    func signUp(phone: String, name: String, dob: Date, gender: String, password: String, completion: @escaping (UserVO?) -> Void) {
         let docRef = db.collection("users").document(phone)
         
         DispatchQueue.global(qos: .background).async {
@@ -62,14 +62,14 @@ class FirebaseAuthManagerImpl: AuthManager {
                     do {
                         try docRef.setData(from: userVO) { error in
                             guard error == nil else {
-                                completion(false)
+                                completion(nil)
                                 return
                             }
                             
-                            completion(true)
+                            completion(userVO)
                         }
                     } catch {
-                        completion(false)
+                        completion(nil)
                     }
                     //                    docRef.setData([
                     //                        "phoneNumber": phone,
@@ -91,7 +91,7 @@ class FirebaseAuthManagerImpl: AuthManager {
                 
             } else {
                 DispatchQueue.main.async {
-                    completion(false)
+                    completion(nil)
                 }
             }
         }

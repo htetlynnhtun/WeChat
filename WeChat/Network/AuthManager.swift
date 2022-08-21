@@ -13,7 +13,7 @@ protocol AuthManager {
     /// If a user not exist, return Result.true
     func getOTP(phone: String, completion: @escaping (Result<Bool, OTPError>) -> Void)
     func verifyOTP(otp: String, completion: @escaping (Bool) -> Void)
-    func signUp(phone: String, name: String, dob: Date, gender: String, password: String, completion: @escaping (Bool) -> Void)
+    func signUp(phone: String, name: String, dob: Date, gender: String, password: String, completion: @escaping (UserVO?) -> Void)
     func login(phone: String, password: String, completion: @escaping (Result<UserVO, LoginError>) -> Void)
 }
 

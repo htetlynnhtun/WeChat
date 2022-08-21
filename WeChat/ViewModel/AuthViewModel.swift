@@ -85,14 +85,17 @@ class AuthViewModel: ObservableObject {
         }
         
         showActivityIndicator = true
-        authModel.signUp(phone: phoneNumberValue, name: nameValue, dob: dobValue, gender: genderString, password: passwordValue) { [weak self] status in
+        authModel.signUp(phone: phoneNumberValue, name: nameValue, dob: dobValue, gender: genderString, password: passwordValue) { [weak self] user in
             self?.showActivityIndicator = false
             
-            if (status) {
+            if let user = user {
                 self?.shouldNavigateToLoginScreen = true
                 self?.nameValue = ""
                 self?.phoneNumberValue = ""
                 self?.passwordValue = ""
+                self?.credentialsRepo.saveCredentials(vo: user, completion: {
+                    self?.currentUser = user
+                })
             } else {
                 self?.toastMessage = "Failed to register"
                 self?.isShowingToast = true
