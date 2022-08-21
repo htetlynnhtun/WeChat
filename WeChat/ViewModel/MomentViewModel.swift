@@ -34,42 +34,49 @@ class MomentViewModel: ObservableObject {
     }
     
     func onTapCreateMoment(userVO: UserVO) {
-        // Currently only allow uploading one image
         guard textEditorValue.isNotEmpty,
-        selectedUIImages.count == 1 else {
+              !selectedUIImages.isEmpty else {
             return
         }
         
         showActivityIndicator = true
-        if let data = selectedUIImages.first!.pngData() {
-            storageModel.uploadImage(imageData: data, to: momentImagesDir) { [weak self] url in
-                guard let self = self else {
-                    return
-                }
-                
-                let momentVO = MomentVO(bookmarks: [],
-                                        createdAt: Date.now,
-                                        description: self.textEditorValue,
-                                        likes: [],
-                                        mediaFiles: [url],
-                                        profilePicture: userVO.profilePicture,
-                                        username: userVO.name)
-                
-                self.model.createMoment(payload: momentVO) { [weak self] result in
-                    self?.showActivityIndicator = false
-                    guard let self = self else {
-                        return
-                    }
+        let dispatchGroup = DispatchGroup()
+        var uploadedImages = [URL]()
+        
+        selectedUIImages.forEach { image in
+            dispatchGroup.enter()
+            
+            if let data = image.pngData() {
+                storageModel.uploadImage(imageData: data, to: momentImagesDir) { url in
+                    uploadedImages.append(url)
                     
-                    switch result {
-                    case .success(_):
-                        print("Create moment success")
-                        self.isPresentingNewMoment = false
-                        
-                    case .failure(let error):
-                        self.toastMessage = error.message
-                        self.isShowingToast = true
-                    }
+                    dispatchGroup.leave()
+                }
+            }
+        }
+        
+        dispatchGroup.notify(queue: .main) { [weak self] in
+            guard let self = self else { return }
+            
+            let momentVO = MomentVO(bookmarks: [],
+                                    createdAt: Date.now,
+                                    description: self.textEditorValue,
+                                    likes: [],
+                                    mediaFiles: uploadedImages,
+                                    profilePicture: userVO.profilePicture,
+                                    username: userVO.name)
+            
+            self.model.createMoment(payload: momentVO) { result in
+                self.showActivityIndicator = false
+                
+                switch result {
+                case .success(_):
+                    print("Create moment success")
+                    self.isPresentingNewMoment = false
+                    
+                case .failure(let error):
+                    self.toastMessage = error.message
+                    self.isShowingToast = true
                 }
             }
         }
