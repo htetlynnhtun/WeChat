@@ -7,25 +7,38 @@
 
 import Foundation
 import UIKit
+import Combine
 
 class MomentViewModel: ObservableObject {
     
     private let model: MomentModel = MomentModelImpl.shared
     private let storageModel: StorageModel = StorageModelImpl.shared
+    private var cancellables = [AnyCancellable]()
     
     @Published var isPresentingNewMoment = false
     @Published var textEditorValue = ""
     @Published var selectedUIImages = [UIImage]()
     @Published var moments = [MomentVO]()
+    @Published var bookmarkedMoments = [MomentVO]()
     
     @Published var showActivityIndicator = false
     @Published var toastMessage = ""
     @Published var isShowingToast = false
     
-    init() {
+    init(currentUser: UserVO) {
         model.getMoments { [weak self] moments in
             self?.moments = moments
         }
+        
+        $moments.sink { [weak self] newData in
+            self?.bookmarkedMoments = newData.filter({ moment in
+                moment.bookmarks.contains { user in
+                    user.qrCode == currentUser.qrCode
+                }
+            })
+            
+        }
+        .store(in: &cancellables)
     }
     
     func onViewAddNewMomentScreen() {

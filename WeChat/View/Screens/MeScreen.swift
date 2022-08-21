@@ -96,19 +96,20 @@ struct MeScreen: View {
                         }
                         .padding()
                         
-                        ForEach(momentVM.moments.filter({ moment in
-                            moment.bookmarks.contains { user in
-                                user.qrCode == authVM.currentUser!.qrCode
-                            }
-                        })) { moment in
-                            VStack {
-                                MomentItemView(vm: MomentItemViewModel(moment: moment, user: authVM.currentUser!), moment: moment)
-                                    .frame(height: 350)
-                                    .padding(.horizontal, 15)
-                                    .padding(.bottom, 20)
-                                Divider()
+                        if (momentVM.bookmarkedMoments.isEmpty) {
+                            Text("No bookmarked Moments...")
+                        } else {
+                            ForEach(momentVM.bookmarkedMoments) { moment in
+                                VStack {
+                                    MomentItemView(vm: MomentItemViewModel(moment: moment, user: authVM.currentUser!), moment: moment)
+                                        .frame(height: 350)
+                                        .padding(.horizontal, 15)
+                                        .padding(.bottom, 20)
+                                    Divider()
+                                }
                             }
                         }
+                        
                     }
                     .padding(.top)
                     .navigationBarTitleDisplayMode(.inline)
