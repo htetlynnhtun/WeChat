@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import AVFAudio
 
 /// If the chat is for group, isGroupChat must be true.
 class ChatViewModel: ObservableObject {
@@ -19,11 +20,13 @@ class ChatViewModel: ObservableObject {
     
     private let model: ChatModel = ChatModelImpl.shared
     private let storageModel: StorageModel = StorageModelImpl.shared
+    private var audioRecorder: AVAudioRecorder!
     
     @Published var messages = [MessageVO]()
     @Published var textFieldValue = ""
     @Published var selectedImages = [SelectedImage]()
     @Published var isShowingPhotoPicker = false
+    @Published var isShowingVoiceRecorder = false
     
     init(sender: UserVO, receiver: String, receiverName: String, receiverProfilePicture: URL, isGroupChat: Bool = false) {
         self.sender = sender
@@ -100,10 +103,66 @@ class ChatViewModel: ObservableObject {
         }
     }
     
+    func startRecording() {
+        let recordingSession = AVAudioSession.sharedInstance()
+        do {
+            try recordingSession.setCategory(.playAndRecord, mode: .default)
+            try recordingSession.setActive(true)
+        } catch {
+            print("Failed to setup recording session")
+        }
+        let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let audioFileName = documentPath.appendingPathComponent("temp.m4a")
+        
+        let settings = [
+                    AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+                    AVSampleRateKey: 12000,
+                    AVNumberOfChannelsKey: 1,
+                    AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+                ]
+        do {
+            audioRecorder = try AVAudioRecorder(url: audioFileName, settings: settings)
+            audioRecorder.prepareToRecord()
+            audioRecorder.record()
+        } catch {
+            print("Failed to record")
+        }
+    }
+    
+    func stopRecording() {
+        audioRecorder.stop()
+        let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let audioFileName = documentPath.appendingPathComponent("temp.m4a")
+        
+        if let data = try? Data(contentsOf: audioFileName) {
+            storageModel.uploadAudio(audioData: data) { [weak self] url in
+                guard let self = self else { return }
+                
+                let audioMessage = MessageVO(id: UUID().uuidString,
+                                             type: .audio,
+                                             payload: url.absoluteString,
+                                             userID: self.sender.qrCode,
+                                             userName: self.sender.name,
+                                             profilePicture: self.sender.profilePicture,
+                                             rUserID: self.receiver,
+                                             rUserName: self.receiverName,
+                                             rProfilePicture: self.receiverProfilePicture,
+                                             timestamp: .now)
+                self.sendItOut(message: audioMessage)
+                
+                try? FileManager.default.removeItem(at: audioFileName)
+            }
+        }
+        
+    }
+    
     func onTapChoosePhoto() {
         isShowingPhotoPicker.toggle()
     }
     
+    func onTapVoiceRecorder() {
+        isShowingVoiceRecorder.toggle()
+    }
     
     func isInComing(_ message: MessageVO) -> Bool {
         return sender.qrCode != message.userID

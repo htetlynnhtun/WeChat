@@ -8,14 +8,15 @@
 import Foundation
 
 class VoiceMessageViewModel: ObservableObject {
-    let message: MessageVOD
+    let message: MessageVO
     private var audioManager: AudioManager = AudioManagerImpl.shared
     
     @Published var isPlaying = false
     @Published var audioFileURL: URL?
     
-    init(message: MessageVOD) {
+    init(message: MessageVO) {
         self.message = message
+        audioManager.delegates.append(self)
         
         let cachesFolderURL = try? FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         let fileURL = cachesFolderURL!.appendingPathComponent("\(message.id).mp3")
@@ -63,3 +64,8 @@ class VoiceMessageViewModel: ObservableObject {
     }
 }
 
+extension VoiceMessageViewModel: AudioManagerDelegate {
+    func didFinishPlaying() {
+        isPlaying = false
+    }
+}

@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct VoiceMessageView: View {
-    var currentUser = "John"
+    
+    @EnvironmentObject var authVM: AuthViewModel
+    
     @ObservedObject var vm: VoiceMessageViewModel
 //    @StateObject private var vm: VoiceMessageViewModel
     
@@ -20,7 +22,7 @@ struct VoiceMessageView: View {
     
     
     private var isIncoming: Bool {
-        return currentUser != vm.message.sender
+        return authVM.currentUser.qrCode != vm.message.userID
     }
     
     private var waveformBarColor: UIColor {
@@ -68,7 +70,7 @@ struct VoiceMessageView: View {
                 Spacer()
                     .frame(maxWidth: 70)
                 
-                Text(vm.message.date)
+                Text(vm.message.timestamp.toReadable())
                     .font(.system(size: 8))
             }
             .foregroundColor(isIncoming ? .colorGray : .white)
@@ -79,10 +81,10 @@ struct VoiceMessageView: View {
     }
 }
 
-struct VoiceMessageView_Previews: PreviewProvider {
-    static var previews: some View {
-        VoiceMessageView(vm: VoiceMessageViewModel(message: MockDataViewModel().messages[0]))
-            .previewLayout(.sizeThatFits)
-            .previewInterfaceOrientation(.portraitUpsideDown)
-    }
-}
+//struct VoiceMessageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        VoiceMessageView(vm: VoiceMessageViewModel(message: MockDataViewModel().messages[0]))
+//            .previewLayout(.sizeThatFits)
+//            .previewInterfaceOrientation(.portraitUpsideDown)
+//    }
+//}

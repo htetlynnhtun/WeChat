@@ -108,7 +108,7 @@ struct ChatThreadScreen: View {
                         .font(.system(size: 24))
                         .padding(8)
                 } action: {
-                    print("Sending voice message")
+                    chatVM.onTapVoiceRecorder()
                 }
             }
             .frame(maxWidth: .infinity, minHeight: 70)
@@ -120,6 +120,13 @@ struct ChatThreadScreen: View {
             
             if (chatVM.isShowingPhotoPicker) {
                 ChatImagePicker()
+                    .frame(height: 300)
+                    .padding(.horizontal, 16)
+                    .environmentObject(chatVM)
+            }
+            
+            if (chatVM.isShowingVoiceRecorder) {
+                VoiceRecorderView()
                     .frame(height: 300)
                     .padding(.horizontal, 16)
                     .environmentObject(chatVM)

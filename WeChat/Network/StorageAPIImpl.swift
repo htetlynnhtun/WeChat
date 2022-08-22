@@ -35,4 +35,26 @@ class StorageAPIImpl: StorageAPI {
             }
         }
     }
+    
+    func uploadAudio(audioData: Data, completion: @escaping (URL) -> Void) {
+        let ref = storage.reference()
+        let audioRef = ref.child("audioFiles/\(UUID().uuidString).m4a")
+        
+        audioRef.putData(audioData) { result in
+            switch result {
+            case .success(_):
+                audioRef.downloadURL { result in
+                    switch result {
+                    case .success(let url):
+                        completion(url)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 }

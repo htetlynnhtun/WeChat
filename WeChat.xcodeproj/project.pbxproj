@@ -98,6 +98,7 @@
 		4F6120452887AACA00B56051 /* ContactGroupItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6120442887AACA00B56051 /* ContactGroupItemView.swift */; };
 		4F6120472887CC9F00B56051 /* AddNewContactScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6120462887CC9F00B56051 /* AddNewContactScreen.swift */; };
 		4F6D5CC528B1EF30004BD77F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6D5CC428B1EF30004BD77F /* HomeView.swift */; };
+		4F6D5CC728B3B1EF004BD77F /* VoiceRecorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6D5CC628B3B1EF004BD77F /* VoiceRecorderView.swift */; };
 		4F79DBA228AA0825002B9924 /* CredntialsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F79DBA128AA0825002B9924 /* CredntialsRepository.swift */; };
 		4F79DBA528AA08D1002B9924 /* UserVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F79DBA428AA08D1002B9924 /* UserVO.swift */; };
 		4F79DBA728AA0A48002B9924 /* CredentialsRepositoryJSONImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F79DBA628AA0A48002B9924 /* CredentialsRepositoryJSONImpl.swift */; };
@@ -221,6 +222,7 @@
 		4F6120442887AACA00B56051 /* ContactGroupItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactGroupItemView.swift; sourceTree = "<group>"; };
 		4F6120462887CC9F00B56051 /* AddNewContactScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewContactScreen.swift; sourceTree = "<group>"; };
 		4F6D5CC428B1EF30004BD77F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4F6D5CC628B3B1EF004BD77F /* VoiceRecorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecorderView.swift; sourceTree = "<group>"; };
 		4F79DBA128AA0825002B9924 /* CredntialsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredntialsRepository.swift; sourceTree = "<group>"; };
 		4F79DBA428AA08D1002B9924 /* UserVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVO.swift; sourceTree = "<group>"; };
 		4F79DBA628AA0A48002B9924 /* CredentialsRepositoryJSONImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsRepositoryJSONImpl.swift; sourceTree = "<group>"; };
@@ -478,6 +480,7 @@
 				4F3D47A2289E44C5000155EE /* ChatImagePicker.swift */,
 				4F3D47A4289E4519000155EE /* LoadedImageItemView.swift */,
 				4F9333B02898D879008A41F5 /* WCCameraScreen.swift */,
+				4F6D5CC628B3B1EF004BD77F /* VoiceRecorderView.swift */,
 			);
 			path = Chats;
 			sourceTree = "<group>";
@@ -810,6 +813,7 @@
 				4F2B18C6288696A9007BCB85 /* ChatItemView.swift in Sources */,
 				4F4E988E28ACC06A007434C2 /* MeModel.swift in Sources */,
 				4F79DBAA28AA0EE3002B9924 /* AuthManager.swift in Sources */,
+				4F6D5CC728B3B1EF004BD77F /* VoiceRecorderView.swift in Sources */,
 				4F89DE4428952BEE00B23008 /* WaveFormImageViewUI.swift in Sources */,
 				4F4E987D28AB8A50007434C2 /* StorageModel.swift in Sources */,
 				4F89DE4628954CEC00B23008 /* MaterialTextField.swift in Sources */,
