@@ -19,7 +19,7 @@ struct ContentView: View {
         //                OTPScreen()
         //                RegisterScreen()
         Group {
-            if authVM.currentUser.qrCode.isEmpty  {
+            if authVM.currentUser == nil  {
                 SplashScreen()
             } else {
                 HomeView()

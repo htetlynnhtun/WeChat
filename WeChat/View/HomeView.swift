@@ -35,7 +35,7 @@ struct HomeView: View {
                     }
                 }
                 .tag(Tab.chat)
-                .environmentObject(ChatHistoryViewModel(qrCode: authVM.currentUser.qrCode))
+                .environmentObject(ChatHistoryViewModel(qrCode: authVM.currentUser?.qrCode))
             
             ContactsScreen()
                 .tabItem {

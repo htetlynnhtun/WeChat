@@ -12,7 +12,7 @@ import AVFAudio
 /// If the chat is for group, isGroupChat must be true.
 class ChatViewModel: ObservableObject {
     
-    let sender: UserVO
+    let sender: UserVO?
     let receiver: String
     let receiverName: String
     let receiverProfilePicture: URL
@@ -33,7 +33,7 @@ class ChatViewModel: ObservableObject {
     @Published var isShowingVoiceRecorder = false
     @Published var isShowingGifPicker = false
     
-    init(sender: UserVO,
+    init(sender: UserVO?,
          receiver: String,
          receiverName: String,
          receiverProfilePicture: URL,
@@ -56,6 +56,10 @@ class ChatViewModel: ObservableObject {
     }
     
     func fetchMessages() {
+        guard let sender = sender else {
+            return
+        }
+
         if (isGroupChat) {
             model.getGroupMessages(for: groupID!) { [weak self] messages in
                 guard let self = self else { return }
@@ -80,6 +84,10 @@ class ChatViewModel: ObservableObject {
     }
     
     func sendMessage() {
+        guard let sender = sender else {
+            return
+        }
+
         // For text message
         if textFieldValue.isNotEmpty {
             let textMessage = MessageVO(id: UUID().uuidString,
@@ -102,13 +110,14 @@ class ChatViewModel: ObservableObject {
                 if let pngData = image.image.pngData() {
                     storageModel.uploadImage(imageData: pngData, to: messageImagesDir) { [weak self] url in
                         guard let self = self else { return }
+                        guard let sender = self.sender else { return }
                         
                         let imageMessage = MessageVO(id: UUID().uuidString,
                                                      type: .image,
                                                      payload: url.absoluteString,
-                                                     userID: self.sender.qrCode,
-                                                     userName: self.sender.name,
-                                                     profilePicture: self.sender.profilePicture,
+                                                     userID: sender.qrCode,
+                                                     userName: sender.name,
+                                                     profilePicture: sender.profilePicture,
                                                      rUserID: self.receiver,
                                                      rUserName: self.receiverName,
                                                      rProfilePicture: self.receiverProfilePicture,
@@ -126,13 +135,14 @@ class ChatViewModel: ObservableObject {
                 if let data = gif.data {
                     storageModel.uploadImage(imageData: data, to: messageImagesDir, fileExtension: "gif") { [weak self] url in
                         guard let self = self else { return }
+                        guard let sender = self.sender else { return }
                         
                         let imageMessage = MessageVO(id: UUID().uuidString,
                                                      type: .gif,
                                                      payload: url.absoluteString,
-                                                     userID: self.sender.qrCode,
-                                                     userName: self.sender.name,
-                                                     profilePicture: self.sender.profilePicture,
+                                                     userID: sender.qrCode,
+                                                     userName: sender.name,
+                                                     profilePicture: sender.profilePicture,
                                                      rUserID: self.receiver,
                                                      rUserName: self.receiverName,
                                                      rProfilePicture: self.receiverProfilePicture,
@@ -174,6 +184,10 @@ class ChatViewModel: ObservableObject {
     }
     
     func stopRecording() {
+        guard let sender = sender else {
+            return
+        }
+
         audioRecorder.stop()
         let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let audioFileName = documentPath.appendingPathComponent("temp.m4a")
@@ -181,13 +195,14 @@ class ChatViewModel: ObservableObject {
         if let data = try? Data(contentsOf: audioFileName) {
             storageModel.uploadAudio(audioData: data) { [weak self] url in
                 guard let self = self else { return }
+                guard let sender = self.sender else { return }
                 
                 let audioMessage = MessageVO(id: UUID().uuidString,
                                              type: .audio,
                                              payload: url.absoluteString,
-                                             userID: self.sender.qrCode,
-                                             userName: self.sender.name,
-                                             profilePicture: self.sender.profilePicture,
+                                             userID: sender.qrCode,
+                                             userName: sender.name,
+                                             profilePicture: sender.profilePicture,
                                              rUserID: self.receiver,
                                              rUserName: self.receiverName,
                                              rProfilePicture: self.receiverProfilePicture,
@@ -213,7 +228,7 @@ class ChatViewModel: ObservableObject {
     }
     
     func isInComing(_ message: MessageVO) -> Bool {
-        return sender.qrCode != message.userID
+        return sender?.qrCode ?? "" != message.userID
     }
     
     func backgroundColor(for message: MessageVO) -> Color {
@@ -221,6 +236,10 @@ class ChatViewModel: ObservableObject {
     }
     
     private func sendItOut(message: MessageVO) {
+        guard let sender = sender else {
+            return
+        }
+
         if (isGroupChat) {
             var m = message
             m.groupID = groupID

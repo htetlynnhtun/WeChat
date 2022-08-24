@@ -81,6 +81,8 @@ class ChatAPIImpl: ChatAPI {
     }
     
     func getLatestMessages(for user: String, onDataArrived: @escaping ([MessageVO]) -> Void) {
+        guard user.isNotEmpty else { return }
+        
         ref
             .child(messagesNode)
             .child(user)
@@ -114,6 +116,8 @@ class ChatAPIImpl: ChatAPI {
     }
     
     func getLatestGroupMessages(for user: String, onDataArrived: @escaping ([MessageVO]) -> Void) {
+        guard user.isNotEmpty else { return }
+        
         let groupsRef = db.collection(usersCollection).document(user).collection(groupsSubCollection)
         
         groupsRef.addSnapshotListener { [weak self] snapshot, error in

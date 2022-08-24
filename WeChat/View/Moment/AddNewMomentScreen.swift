@@ -17,14 +17,14 @@ struct AddNewMomentScreen: View {
         ProgressWrapperView(showActivityIndicator: momentVM.showActivityIndicator) {
             VStack {
                 HStack {
-                    WebImage(url: authVM.currentUser.profilePicture)
+                    WebImage(url: authVM.currentUser?.profilePicture)
                         .resizable()
                         .indicator(.activity)
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 60, height: 60)
                         .clipShape(Circle())
                     
-                    Text(authVM.currentUser.name)
+                    Text(authVM.currentUser?.name ?? "")
                         .font(.system(size: 18))
                         .foregroundColor(.colorPrimary)
                     

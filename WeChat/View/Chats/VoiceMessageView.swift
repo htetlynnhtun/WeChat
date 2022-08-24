@@ -22,7 +22,7 @@ struct VoiceMessageView: View {
     
     
     private var isIncoming: Bool {
-        return authVM.currentUser.qrCode != vm.message.userID
+        return authVM.currentUser?.qrCode ?? "" != vm.message.userID
     }
     
     private var waveformBarColor: UIColor {

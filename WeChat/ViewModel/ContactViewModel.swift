@@ -27,11 +27,16 @@ class ContactViewModel: ObservableObject {
     
     @Published var originalContacts = [UserVO]()
     
-    private let currentUser: UserVO
+    private let currentUser: UserVO?
     private var cancellables = [AnyCancellable]()
     private let contactModel: ContactModel = ContactModelImpl.shared
     
-    init(user: UserVO) {
+    init(user: UserVO?) {
+        guard let user = user else {
+            currentUser = nil
+            return
+        }
+
         currentUser = user
         
         $originalContacts.sink { [weak self] contacts in
@@ -60,7 +65,11 @@ class ContactViewModel: ObservableObject {
     }
     
     func fetchContacts() {
-        contactModel.getContacts(for: self.currentUser) { [weak self] contacts in
+        guard let currentUser = currentUser else {
+            return
+        }
+
+        contactModel.getContacts(for: currentUser) { [weak self] contacts in
             guard let self = self else { return }
             
             self.originalContacts = contacts
@@ -68,7 +77,11 @@ class ContactViewModel: ObservableObject {
     }
     
     func fetchGroups() {
-        contactModel.getGroups(for: self.currentUser) { [weak self] groups in
+        guard let currentUser = currentUser else {
+            return
+        }
+
+        contactModel.getGroups(for: currentUser) { [weak self] groups in
             guard let self = self else { return }
             
             self.groups = groups
@@ -93,6 +106,10 @@ class ContactViewModel: ObservableObject {
     // MARK: - UI Events
     
     func addContact(qrCode: String, onDone: @escaping () -> Void) {
+        guard let currentUser = currentUser else {
+            return
+        }
+
         contactModel.addContact(qrCode: qrCode, to: currentUser) {
             onDone()
         } onFailure: { [weak self] msg in
@@ -103,6 +120,10 @@ class ContactViewModel: ObservableObject {
     }
     
     func createNewGroup() {
+        guard let currentUser = currentUser else {
+            return
+        }
+
         guard groupName.isNotEmpty,
               !selectedUsers.isEmpty else {
             return

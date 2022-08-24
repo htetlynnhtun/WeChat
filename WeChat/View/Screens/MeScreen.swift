@@ -52,27 +52,27 @@ struct MeScreen: View {
                             .padding()
                             
                             VStack(alignment: .leading, spacing: 12) {
-                                Text(meVM.name)
+                                Text(meVM.name ?? "")
                                     .font(.system(size: 20))
                                 
                                 HStack {
                                     Image(systemName: "iphone.homebutton")
                                     
-                                    Text(authVM.currentUser.qrCode )
+                                    Text(authVM.currentUser?.qrCode ?? "" )
                                         .font(.system(size: 14))
                                 }
                                 
                                 HStack {
                                     Image(systemName: "calendar")
                                     
-                                    Text(meVM.dob.toDobFormat())
+                                    Text(meVM.dob?.toDobFormat() ?? "")
                                         .font(.system(size: 14))
                                 }
                                 
                                 HStack {
                                     Image(systemName: "arrow.triangle.branch")
                                     
-                                    Text(meVM.gender)
+                                    Text(meVM.gender ?? "")
                                         .font(.system(size: 14))
                                 }
                             }

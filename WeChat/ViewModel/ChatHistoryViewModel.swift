@@ -10,7 +10,7 @@ import Combine
 
 class ChatHistoryViewModel: ObservableObject {
     
-    private let qrCode: String
+    private let qrCode: String?
     private let chatModel: ChatModel = ChatModelImpl.shared
     
     @Published var messages = [MessageVO]()
@@ -18,7 +18,7 @@ class ChatHistoryViewModel: ObservableObject {
     @Published private var latestGroupMessages = [MessageVO]()
     private var cancellables = [AnyCancellable]()
     
-    init(qrCode: String) {
+    init(qrCode: String?) {
         self.qrCode = qrCode
         
         $latestMessages.combineLatest($latestGroupMessages)
@@ -37,6 +37,10 @@ class ChatHistoryViewModel: ObservableObject {
     }
     
     func fetchLatestMessages() {
+        guard let qrCode = qrCode else {
+            return
+        }
+
         chatModel.getLatestMessages(for: qrCode) { [weak self] messages in
             guard let self = self else { return }
             

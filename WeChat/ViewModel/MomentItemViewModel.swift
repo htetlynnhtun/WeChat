@@ -10,22 +10,22 @@ import SwiftUI
 
 class MomentItemViewModel: ObservableObject {
     var moment: MomentVO
-    var currentUser: UserVO
+    var currentUser: UserVO?
     
-    init(moment: MomentVO, user: UserVO) {
+    init(moment: MomentVO, user: UserVO?) {
         self.moment = moment
         self.currentUser = user
     }
     
     var liked: Bool {
         moment.likes.contains { userVO in
-            userVO.qrCode == currentUser.qrCode
+            userVO.qrCode == currentUser?.qrCode ?? ""
         }
     }
     
     var bookmarked: Bool {
         moment.bookmarks.contains { userVO in
-            userVO.qrCode == currentUser.qrCode
+            userVO.qrCode == currentUser?.qrCode ?? ""
         }
     }
     
@@ -48,6 +48,10 @@ class MomentItemViewModel: ObservableObject {
     private let model: MomentModel = MomentModelImpl.shared
     
     func onTapLike() {
+        guard let currentUser = currentUser else {
+            return
+        }
+
         if liked {
             model.unlikeMoment(moment: moment, user: currentUser)
         } else {
@@ -56,6 +60,10 @@ class MomentItemViewModel: ObservableObject {
     }
     
     func onTapBookmark() {
+        guard let currentUser = currentUser else {
+            return
+        }
+
         if bookmarked {
             model.unbookmarkMoment(moment: moment, user: currentUser)
         } else {

@@ -25,7 +25,11 @@ class MomentViewModel: ObservableObject {
     @Published var toastMessage = ""
     @Published var isShowingToast = false
     
-    init(currentUser: UserVO) {
+    init(currentUser: UserVO?) {
+        guard let currentUser = currentUser else {
+            return
+        }
+        
         model.getMoments { [weak self] moments in
             self?.moments = moments
         }
@@ -46,7 +50,11 @@ class MomentViewModel: ObservableObject {
         selectedUIImages = []
     }
     
-    func onTapCreateMoment(userVO: UserVO) {
+    func onTapCreateMoment(userVO: UserVO?) {
+        guard let userVO = userVO else {
+            return
+        }
+
         guard textEditorValue.isNotEmpty,
               !selectedUIImages.isEmpty else {
             return

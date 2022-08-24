@@ -68,6 +68,8 @@ class ContactAPIImpl: ContactAPI {
     }
     
     func getContacts(for user: UserVO, onDataArrived: @escaping ([UserVO]) -> Void) {
+        guard user.qrCode.isNotEmpty else { return }
+        
         let contactsCollectionRef = db.collection(usersCollection).document(user.qrCode).collection("contacts")
         
         contactsCollectionRef.addSnapshotListener { querySnapshot, error in
@@ -92,6 +94,8 @@ class ContactAPIImpl: ContactAPI {
     }
     
     func getGroups(for user: UserVO, onDataArrived: @escaping ([GroupVO]) -> Void) {
+        guard user.qrCode.isNotEmpty else { return }
+        
         let groupsCollectionRef = db.collection(usersCollection).document(user.qrCode).collection(groupsSubCollection)
         
         groupsCollectionRef.addSnapshotListener { querySnapshot, error in

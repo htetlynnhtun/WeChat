@@ -10,11 +10,11 @@ import UIKit
 import Combine
 
 class MeViewModel: ObservableObject {
-    @Published var profilePicture: URL
-    @Published var name: String
-    @Published var dob: Date
-    @Published var gender: String
-    @Published var qrCodeImage: UIImage
+    @Published var profilePicture: URL?
+    @Published var name: String?
+    @Published var dob: Date?
+    @Published var gender: String?
+    @Published var qrCodeImage = UIImage()
     @Published var selectedImages = [UIImage]()
     
     // For Editing
@@ -30,22 +30,28 @@ class MeViewModel: ObservableObject {
     private var cancellables = [AnyCancellable]()
     private let meModel: MeModel = MeModelImpl.shared
     private let storageModel: StorageModel = StorageModelImpl.shared
-    private let user: UserVO
+    private let user: UserVO?
     
-    init(user: UserVO) {
+    init(user: UserVO?) {
         self.user = user
-        profilePicture = user.profilePicture
-        name = user.name
-        dob = user.dob
-        gender = user.gender
+        profilePicture = user?.profilePicture
+        name = user?.name
+        dob = user?.dob
+        gender = user?.gender
         
-        qrCodeImage = QRCodeGenerator.generateQRCode(from: user.qrCode)
+        if let qrCode = user?.qrCode {
+            qrCodeImage = QRCodeGenerator.generateQRCode(from: qrCode)
+        }
         
-        nameValue = user.name
-        dobValue = user.dob
-        genderValue = user.gender
+        nameValue = user?.name ?? ""
+        dobValue = user?.dob ?? .now
+        genderValue = user?.gender ?? ""
         
         $selectedImages.sink { [weak self] images in
+            guard let user = user else {
+                return
+            }
+
             if let image = images.first,
                let data = image.pngData() {
                 
@@ -65,12 +71,16 @@ class MeViewModel: ObservableObject {
     
     
     func onTapSave() {
+        guard let user = user else {
+            return
+        }
+
         let updated = UserVO(name: nameValue,
                              dob: dobValue,
                              gender: genderValue,
-                             profilePicture: self.user.profilePicture,
-                             qrCode: self.user.qrCode,
-                             password: self.user.password)
+                             profilePicture: user.profilePicture,
+                             qrCode: user.qrCode,
+                             password: user.password)
         
         showActivityIndicator = true
         meModel.updateInfo(with: updated) { [weak self] in
