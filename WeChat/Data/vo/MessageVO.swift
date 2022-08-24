@@ -24,6 +24,7 @@ struct MessageVO: Codable, Hashable, Identifiable {
     enum MessagePayloadType: String, Codable {
         case text = "text"
         case image = "image"
+        case gif = "gif"
         case video = "video"
         case audio = "audio"
     }

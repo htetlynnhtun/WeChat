@@ -9,6 +9,7 @@ import Foundation
 
 protocol StorageModel {
     func uploadImage(imageData: Data, to dir: String, completion: @escaping (URL) -> Void)
+    func uploadImage(imageData: Data, to dir: String, fileExtension: String, completion: @escaping (URL) -> Void)
     func uploadAudio(audioData: Data, completion: @escaping (URL) -> Void)
 }
 
@@ -21,6 +22,10 @@ class StorageModelImpl: StorageModel {
     
     func uploadImage(imageData: Data, to dir: String, completion: @escaping (URL) -> Void) {
         api.uploadImage(imageData: imageData, to: dir, completion: completion)
+    }
+    
+    func uploadImage(imageData: Data, to dir: String, fileExtension: String, completion: @escaping (URL) -> Void) {
+        api.uploadImage(imageData: imageData, to: dir, fileExtension: fileExtension, completion: completion)
     }
     
     func uploadAudio(audioData: Data, completion: @escaping (URL) -> Void) {

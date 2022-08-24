@@ -36,6 +36,27 @@ class StorageAPIImpl: StorageAPI {
         }
     }
     
+    func uploadImage(imageData: Data, to dir: String, fileExtension: String, completion: @escaping (URL) -> Void) {
+        let ref = storage.reference()
+        let imageRef = ref.child("\(dir)/\(UUID().uuidString).\(fileExtension)")
+        
+        imageRef.putData(imageData) { result in
+            switch result {
+            case .success(_):
+                imageRef.downloadURL { result in
+                    switch result {
+                    case .success(let url):
+                        completion(url)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
     func uploadAudio(audioData: Data, completion: @escaping (URL) -> Void) {
         let ref = storage.reference()
         let audioRef = ref.child("audioFiles/\(UUID().uuidString).m4a")

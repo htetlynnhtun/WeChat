@@ -42,6 +42,10 @@ struct ChatImagePicker: View {
     
     private func loadAllImages() {
         let fetchResults = PHAsset.fetchAssets(with: .image, options: .none)
+//        if let filename = e?.value(forKey: "filename") as? String {
+//            let ex = URL(fileURLWithPath: filename).pathExtension
+//            print(ex)
+//        }
         
         DispatchQueue.global(qos: .background).async {
             let imageRequestOptions = PHImageRequestOptions()
@@ -65,9 +69,11 @@ struct LoadedImage: Hashable {
     var image : UIImage
     var selected : Bool
     var asset : PHAsset
+    var data: Data?
 }
 
 struct SelectedImage {
     var image : UIImage
     var asset : PHAsset
+    var data: Data?
 }

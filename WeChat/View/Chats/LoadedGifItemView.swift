@@ -1,20 +1,21 @@
 //
-//  LoadedImageItemView.swift
+//  LoadedGifItemView.swift
 //  WeChat
 //
-//  Created by kira on 06/08/2022.
+//  Created by kira on 24/08/2022.
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
-
-struct LoadedImageItemView: View {
+struct LoadedGifItemView: View {
     @State var loadedImage: LoadedImage
     @Binding var selectedImages: [SelectedImage]
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
-            Image(uiImage: loadedImage.image)
+            
+            AnimatedImage(data: loadedImage.data!)
                 .resizable()
             
             if (loadedImage.selected) {
@@ -41,6 +42,6 @@ struct LoadedImageItemView: View {
             }
         }
     }
-}
 
+}
 

@@ -92,7 +92,7 @@ struct ChatThreadScreen: View {
                     Image("gif-icon")
                         .padding(8)
                 } action: {
-                    print("Choosing GIF")
+                    chatVM.onTapChooseGif()
                 }
                 
                 MessageActionView {
@@ -127,6 +127,13 @@ struct ChatThreadScreen: View {
             
             if (chatVM.isShowingVoiceRecorder) {
                 VoiceRecorderView()
+                    .frame(height: 300)
+                    .padding(.horizontal, 16)
+                    .environmentObject(chatVM)
+            }
+            
+            if (chatVM.isShowingGifPicker) {
+                GifPicker()
                     .frame(height: 300)
                     .padding(.horizontal, 16)
                     .environmentObject(chatVM)

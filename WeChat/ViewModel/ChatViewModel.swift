@@ -25,8 +25,10 @@ class ChatViewModel: ObservableObject {
     @Published var messages = [MessageVO]()
     @Published var textFieldValue = ""
     @Published var selectedImages = [SelectedImage]()
+    @Published var selectedGifs = [SelectedImage]()
     @Published var isShowingPhotoPicker = false
     @Published var isShowingVoiceRecorder = false
+    @Published var isShowingGifPicker = false
     
     init(sender: UserVO, receiver: String, receiverName: String, receiverProfilePicture: URL, isGroupChat: Bool = false) {
         self.sender = sender
@@ -101,6 +103,31 @@ class ChatViewModel: ObservableObject {
             selectedImages = []
             isShowingPhotoPicker = false
         }
+        
+        if !selectedGifs.isEmpty {
+            selectedGifs.forEach { gif in
+                if let data = gif.data {
+                    storageModel.uploadImage(imageData: data, to: messageImagesDir, fileExtension: "gif") { [weak self] url in
+                        guard let self = self else { return }
+                        
+                        let imageMessage = MessageVO(id: UUID().uuidString,
+                                                     type: .gif,
+                                                     payload: url.absoluteString,
+                                                     userID: self.sender.qrCode,
+                                                     userName: self.sender.name,
+                                                     profilePicture: self.sender.profilePicture,
+                                                     rUserID: self.receiver,
+                                                     rUserName: self.receiverName,
+                                                     rProfilePicture: self.receiverProfilePicture,
+                                                     timestamp: Date.now)
+                        self.sendItOut(message: imageMessage)
+                    }
+                }
+                
+            }
+            selectedGifs = []
+            isShowingGifPicker = false
+        }
     }
     
     func startRecording() {
@@ -158,6 +185,10 @@ class ChatViewModel: ObservableObject {
     
     func onTapChoosePhoto() {
         isShowingPhotoPicker.toggle()
+    }
+    
+    func onTapChooseGif() {
+        isShowingGifPicker.toggle()
     }
     
     func onTapVoiceRecorder() {

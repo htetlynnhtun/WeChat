@@ -36,6 +36,9 @@ struct MessageItemView: View {
                 case .image:
                     ImageMessageView(message: message)
                     
+                case .gif:
+                    GifMessageView(message: message)
+                    
                 case .audio:
                     VoiceMessageView(vm: VoiceMessageViewModel(message: message))
                 default:
