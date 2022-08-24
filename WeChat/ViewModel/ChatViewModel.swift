@@ -16,7 +16,10 @@ class ChatViewModel: ObservableObject {
     let receiver: String
     let receiverName: String
     let receiverProfilePicture: URL
-    let isGroupChat: Bool
+    let groupID: String?
+    let groupName: String?
+    let groupPicture: URL?
+    var isGroupChat: Bool
     
     private let model: ChatModel = ChatModelImpl.shared
     private let storageModel: StorageModel = StorageModelImpl.shared
@@ -30,17 +33,31 @@ class ChatViewModel: ObservableObject {
     @Published var isShowingVoiceRecorder = false
     @Published var isShowingGifPicker = false
     
-    init(sender: UserVO, receiver: String, receiverName: String, receiverProfilePicture: URL, isGroupChat: Bool = false) {
+    init(sender: UserVO,
+         receiver: String,
+         receiverName: String,
+         receiverProfilePicture: URL,
+         groupID: String?,
+         groupName: String?,
+         groupPicture: URL?,
+         isGroupChat: Bool = false) {
         self.sender = sender
         self.receiver = receiver
         self.receiverName = receiverName
         self.receiverProfilePicture = receiverProfilePicture
+        self.groupID = groupID
+        self.groupName = groupName
+        self.groupPicture = groupPicture
         self.isGroupChat = isGroupChat
+        
+        if let _ = groupID {
+            self.isGroupChat = true
+        }
     }
     
     func fetchMessages() {
         if (isGroupChat) {
-            model.getGroupMessages(for: receiver) { [weak self] messages in
+            model.getGroupMessages(for: groupID!) { [weak self] messages in
                 guard let self = self else { return }
                 
                 let sorted = messages.sorted { a, b in
@@ -205,7 +222,11 @@ class ChatViewModel: ObservableObject {
     
     private func sendItOut(message: MessageVO) {
         if (isGroupChat) {
-            model.sendGroupMessage(to: receiver, message: message)
+            var m = message
+            m.groupID = groupID
+            m.groupName = groupName
+            m.groupPicture = groupPicture
+            model.sendGroupMessage(to: receiver, message: m)
         } else {
             model.sendP2PMessage(from: sender.qrCode, to: receiver, message: message)
         }

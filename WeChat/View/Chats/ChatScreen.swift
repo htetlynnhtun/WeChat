@@ -27,7 +27,10 @@ struct ChatScreen: View {
                             ChatThreadScreen(chatVM: ChatViewModel(sender: authVM.currentUser,
                                                                    receiver: chatHistoryVM.receiver(for: message),
                                                                    receiverName: chatHistoryVM.username(for: message),
-                                                                   receiverProfilePicture: chatHistoryVM.profileLink(for: message)))
+                                                                   receiverProfilePicture: chatHistoryVM.profileLink(for: message),
+                                                                   groupID: message.groupID,
+                                                                   groupName: message.groupName,
+                                                                   groupPicture: message.groupPicture))
                         } label: {
                             ChatItemView(message: message, indicator: .allCases.randomElement()!)
                                 .padding(.bottom, 6)

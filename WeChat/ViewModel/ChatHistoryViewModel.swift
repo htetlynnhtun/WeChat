@@ -43,11 +43,11 @@ class ChatHistoryViewModel: ObservableObject {
             self.latestMessages = messages
         }
         
-//        chatModel.getLatestGroupMessages(for: qrCode) { [weak self] messages in
-//            guard let self = self else { return }
-//
-//            self.latestGroupMessages = messages
-//        }
+        chatModel.getLatestGroupMessages(for: qrCode) { [weak self] messages in
+            guard let self = self else { return }
+
+            self.latestGroupMessages = messages
+        }
     }
     
     func previewMessage(for message: MessageVO) -> String {
@@ -61,15 +61,27 @@ class ChatHistoryViewModel: ObservableObject {
     }
     
     func profileLink(for message: MessageVO) -> URL {
-        message.userID == qrCode ? message.rProfilePicture : message.profilePicture
+        if let groupPicture = message.groupPicture {
+            return groupPicture
+        } else {
+            return message.userID == qrCode ? message.rProfilePicture : message.profilePicture
+        }
     }
     
     func username(for message: MessageVO) -> String {
-        message.userID == qrCode ? message.rUserName : message.userName
+        if let groupName = message.groupName {
+            return groupName
+        } else {
+            return message.userID == qrCode ? message.rUserName : message.userName
+        }
     }
     
     func receiver(for message: MessageVO) -> String {
-        message.userID == qrCode ? message.rUserID : message.userID
+        if let groupID = message.groupID {
+            return groupID
+        } else {
+            return message.userID == qrCode ? message.rUserID : message.userID
+        }
     }
     
 }

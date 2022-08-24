@@ -19,6 +19,9 @@ struct MessageVO: Codable, Hashable, Identifiable {
     var rUserID: String
     var rUserName: String
     var rProfilePicture: URL
+    var groupID: String?
+    var groupName: String?
+    var groupPicture: URL?
     var timestamp: Date
     
     enum MessagePayloadType: String, Codable {
@@ -64,6 +67,12 @@ struct MessageVO: Codable, Hashable, Identifiable {
         rUserName = value["rUserName"] as! String
         rProfilePicture = URL(string: value["rProfilePicture"] as! String)!
         timestamp = Date.create(from: value["timestamp"] as! String)
+        
+        groupID = value["groupID"] as? String
+        groupName = value["groupName"] as? String
+        if let gpPicture = value["groupPicture"] as? String {
+            groupPicture = URL(string: gpPicture)!
+        }
     }
     
     func toAny() -> Any {
@@ -76,7 +85,11 @@ struct MessageVO: Codable, Hashable, Identifiable {
             "rUserID": rUserID,
             "rUserName": rUserName,
             "rProfilePicture": rProfilePicture.absoluteString,
-            "timestamp": timestamp.toString()
+            "timestamp": timestamp.toString(),
+            
+            "groupID": groupID,
+            "groupName": groupName,
+            "groupPicture": groupPicture?.absoluteString,
         ]
     }
 }

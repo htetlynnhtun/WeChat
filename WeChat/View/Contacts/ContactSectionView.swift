@@ -34,7 +34,10 @@ struct ContactSectionView: View {
                         ChatThreadScreen(chatVM: ChatViewModel(sender: authVM.currentUser,
                                                                receiver: user.qrCode,
                                                                receiverName: user.name,
-                                                               receiverProfilePicture: user.profilePicture))
+                                                               receiverProfilePicture: user.profilePicture,
+                                                               groupID: nil,
+                                                               groupName: nil,
+                                                               groupPicture: nil))
                     } label: {
                         ContactItemView(user: user)
                     }
